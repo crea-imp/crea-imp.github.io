@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nuestros Servicios | Crea-Imp</title>
+  <meta name="description" content="Soluciones visuales diseñadas para fortalecer la identidad, presencia y comunicación de tu marca.">
+  
+  <!-- FontAwesome CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Google Fonts: Poppins -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- CSS Global -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- ==================== HEADER / NAV ==================== -->
+  <header class="main-header">
+    <div class="header-container">
+      <a href="index.html" class="logo">
+        Crea<span>-Imp</span>
+      </a>
+
+      <button class="hamburger" id="hamburger-btn" aria-label="Abrir menú de navegación">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav>
+        <ul class="nav-menu" id="nav-menu">
+          <li>
+            <a href="index.html" class="nav-link">
+              <i class="fa-solid fa-sparkles"></i> Inicio
+            </a>
+          </li>
+          <li>
+            <a href="servicios.html" class="nav-link active">
+              <i class="fa-solid fa-layer-group"></i> Servicios
+            </a>
+          </li>
+          <li>
+            <a href="contacto.html" class="nav-link">
+              <i class="fa-solid fa-envelope"></i> Contacto
+            </a>
+          </li>
+          <li>
+            <a href="nosotros.html" class="nav-link">
+              <i class="fa-solid fa-chart-simple"></i>  Nosotros
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- Encabezado de Sección -->
+    <section class="services-header">
+      <h1 class="page-title">Nuestros <span class="text-orange">Servicios</span></h1>
+      <p class="page-subtitle">
+        Soluciones visuales diseñadas para fortalecer la identidad, presencia y comunicación de tu marca.
+      </p>
+    </section>
+
+    <!-- Contenedor Principal de Servicios -->
+    <section class="services-wrapper">
+      
+      <!-- Navegación por pestañas (Tabs) -->
+      <div class="services-tabs" role="tablist">
+        <button class="tab-btn active" data-tab="grafico" role="tab" aria-selected="true">
+          <i class="fa-solid fa-palette"></i> Diseño Gráfico
+        </button>
+        <button class="tab-btn" data-tab="redes" role="tab" aria-selected="false">
+          <i class="fa-brands fa-instagram"></i> Redes Sociales
+        </button>
+        <button class="tab-btn" data-tab="identidad" role="tab" aria-selected="false">
+          <i class="fa-solid fa-id-card"></i> Identidad Visual
+        </button>
+        <button class="tab-btn" data-tab="digital" role="tab" aria-selected="false">
+          <i class="fa-solid fa-pen-to-square"></i> Edición Digital
+        </button>
+      </div>
+
+      <!-- Tarjeta 1: Diseño Gráfico Profesional -->
+      <article class="card-box service-card active" id="tab-grafico" role="tabpanel">
+        <div class="service-content">
+          <div class="service-header">
+            <div class="service-icon-badge">
+              <i class="fa-solid fa-palette"></i>
+            </div>
+            <h2>Diseño Gráfico Profesional</h2>
+          </div>
+          <p class="service-description">
+            Desarrollo de piezas gráficas estratégicas que fortalecen la imagen de marca y comunican mensajes de forma clara, atractiva y profesional.
+          </p>
+          <ul class="service-list">
+            <li><i class="fa-solid fa-circle"></i> Diseño de logotipos.</li>
+            <li><i class="fa-solid fa-circle"></i> Material publicitario impreso y digital.</li>
+            <li><i class="fa-solid fa-circle"></i> Tarjetas de presentación.</li>
+            <li><i class="fa-solid fa-circle"></i> Afiches, flyers y piezas promocionales.</li>
+          </ul>
+        </div>
+        <div class="service-image-wrapper">
+          <img src="https://images.unsplash.com/photo-1586717791821-3f44a563fa4c?auto=format&fit=crop&w=800&q=80" 
+               alt="Mockup de papelería corporativa y tarjetas de presentación" 
+               class="service-img">
+        </div>
+      </article>
+
+      <!-- Tarjeta 2: Diseño para Redes Sociales -->
+      <article class="card-box service-card" id="tab-redes" role="tabpanel">
+        <div class="service-content">
+          <div class="service-header">
+            <div class="service-icon-badge">
+              <i class="fa-brands fa-instagram"></i>
+            </div>
+            <h2>Diseño para Redes Sociales</h2>
+          </div>
+          <p class="service-description">
+            Creación de contenido visual para redes sociales enfocado en mantener una identidad consistente, generar interacción y fortalecer la presencia digital de la marca.
+          </p>
+          <ul class="service-list">
+            <li><i class="fa-solid fa-circle"></i> Diseño de publicaciones y contenido visual.</li>
+            <li><i class="fa-solid fa-circle"></i> Historias para redes sociales.</li>
+            <li><i class="fa-solid fa-circle"></i> Plantillas personalizadas.</li>
+            <li><i class="fa-solid fa-circle"></i> Adaptación de contenido para diferentes plataformas.</li>
+          </ul>
+        </div>
+        <div class="service-image-wrapper">
+          <img src="https://images.unsplash.com/photo-1611162617474-5b21e879e113?auto=format&fit=crop&w=800&q=80" 
+               alt="Diseño de feed e historias para Instagram en Smartphone" 
+               class="service-img">
+        </div>
+      </article>
+
+      <!-- Tarjeta 3: Diseño de Identidad Visual -->
+      <article class="card-box service-card" id="tab-identidad" role="tabpanel">
+        <div class="service-content">
+          <div class="service-header">
+            <div class="service-icon-badge">
+              <i class="fa-solid fa-id-card"></i>
+            </div>
+            <h2>Diseño de Identidad Visual</h2>
+          </div>
+          <p class="service-description">
+            Construcción de una identidad visual sólida mediante la definición de elementos gráficos que permitan diferenciar y posicionar la marca.
+          </p>
+          <ul class="service-list">
+            <li><i class="fa-solid fa-circle"></i> Diseño de logotipo.</li>
+            <li><i class="fa-solid fa-circle"></i> Definición de paleta de colores.</li>
+            <li><i class="fa-solid fa-circle"></i> Selección de tipografía.</li>
+            <li><i class="fa-solid fa-circle"></i> Lineamientos básicos de identidad visual.</li>
+          </ul>
+        </div>
+        <div class="service-image-wrapper">
+          <img src="https://images.unsplash.com/photo-1542744094-3a31216914fc?auto=format&fit=crop&w=800&q=80" 
+               alt="Manual de identidad corporativa y paleta de colores" 
+               class="service-img">
+        </div>
+      </article>
+
+      <!-- Tarjeta 4: Edición y Diseño Digital -->
+      <article class="card-box service-card" id="tab-digital" role="tabpanel">
+        <div class="service-content">
+          <div class="service-header">
+            <div class="service-icon-badge">
+              <i class="fa-solid fa-pen-to-square"></i>
+            </div>
+            <h2>Edición y Diseño Digital</h2>
+          </div>
+          <p class="service-description">
+            Optimización y tratamiento de recursos visuales para garantizar una presentación profesional, coherente y lista para cualquier medio.
+          </p>
+          <ul class="service-list">
+            <li><i class="fa-solid fa-circle"></i> Edición y retoque de imágenes.</li>
+            <li><i class="fa-solid fa-circle"></i> Corrección de color.</li>
+            <li><i class="fa-solid fa-circle"></i> Ajustes de composición visual.</li>
+            <li><i class="fa-solid fa-circle"></i> Preparación de archivos finales para publicación.</li>
+          </ul>
+        </div>
+        <div class="service-image-wrapper">
+          <img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&w=800&q=80" 
+               alt="Estación de trabajo para retoque y edición digital profesional" 
+               class="service-img">
+        </div>
+      </article>
+
+    </section>
+  </main>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="main-footer">
+    <div class="container footer-content">
+      <p>&copy; 2026 Crea-Imp. Todos los derechos reservados.</p>
+      <div class="footer-socials">
+        <a href="https://instagram.com" target="_blank" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+        <a href="https://tiktok.com" target="_blank" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+        <a href="https://facebook.com" target="_blank" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="main.js"></script>
+  <script>
+    // Lógica interactiva para cambio de pestañas de servicios
+    document.addEventListener('DOMContentLoaded', () => {
+      const tabs = document.querySelectorAll('.tab-btn');
+      const cards = document.querySelectorAll('.service-card');
+
+      tabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+          const targetId = `tab-${tab.dataset.tab}`;
+
+          tabs.forEach(t => {
+            t.classList.remove('active');
+            t.setAttribute('aria-selected', 'false');
+          });
+          cards.forEach(c => c.classList.remove('active'));
+
+          tab.classList.add('active');
+          tab.setAttribute('aria-selected', 'true');
+          
+          const activeCard = document.getElementById(targetId);
+          if (activeCard) {
+            activeCard.classList.add('active');
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html>

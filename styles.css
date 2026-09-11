@@ -1,0 +1,320 @@
+/* ==========================================
+   RESET & VARIABLES GLOBALES
+   ========================================== */
+:root {
+  /* Colors */
+  --bg-dark-primary: #0b0c0e;
+  --bg-dark-secondary: #14161a;
+  --bg-card: #1a1c23;
+  --color-orange: #f26522;
+  --color-orange-hover: #d95316;
+  --color-orange-dark: #8c3203;
+  --color-text-white: #ffffff;
+  --color-text-muted: #b3b3b3;
+  --color-border: rgba(255, 255, 255, 0.85);
+
+  /* Typography */
+  --font-family: 'Poppins', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  
+  /* Layout & Spacing */
+  --container-max-width: 1200px;
+  --header-height: 80px;
+  --border-radius-card: 22px;
+  --border-radius-btn: 30px;
+
+  /* Transitions */
+  --transition-fast: 0.25s ease;
+  --transition-smooth: 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  font-family: var(--font-family);
+  background-color: var(--bg-dark-primary);
+  color: var(--color-text-white);
+  line-height: 1.6;
+  overflow-x: hidden;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Background Diagonal Shapes / Decorative accents */
+body::before {
+  content: '';
+  position: fixed;
+  top: -150px;
+  left: -100px;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(242,101,34,0.15) 0%, rgba(0,0,0,0) 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ==========================================
+   TYPOGRAPHY
+   ========================================== */
+h1, h2, h3, h4 {
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+h1 {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+}
+
+h2 {
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+
+p {
+  color: var(--color-text-muted);
+  font-size: 1rem;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: var(--transition-fast);
+}
+
+ul {
+  list-style: none;
+}
+
+/* ==========================================
+   LAYOUT CONTAINERS
+   ========================================== */
+.container {
+  width: 90%;
+  max-width: var(--container-max-width);
+  margin: 0 auto;
+  padding: 2rem 0;
+  position: relative;
+  z-index: 1;
+}
+
+/* ==========================================
+   HEADER & NAVIGATION
+   ========================================== */
+.main-header {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  height: var(--header-height);
+  background-color: rgba(14, 15, 18, 0.95);
+  backdrop-filter: blur(10px);
+  border-bottom: 2px solid #252830;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 90%;
+  max-width: var(--container-max-width);
+  margin: 0 auto;
+}
+
+/* Logo */
+.logo {
+  font-size: 1.8rem;
+  font-weight: 800;
+  font-style: italic;
+  color: var(--color-orange);
+  text-shadow: 2px 2px 0px #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000;
+  display: flex;
+  align-items: center;
+  gap: 0.2rem;
+}
+
+.logo span {
+  color: #ffffff;
+}
+
+/* Nav Menu */
+.nav-menu {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.nav-link {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--color-text-white);
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  position: relative;
+}
+
+.nav-link i {
+  color: var(--color-text-muted);
+  font-size: 1.1rem;
+  transition: var(--transition-fast);
+}
+
+.nav-link:hover, 
+.nav-link.active {
+  color: var(--color-text-white);
+}
+
+.nav-link:hover i,
+.nav-link.active i {
+  color: var(--color-orange);
+}
+
+.nav-link.active::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60%;
+  height: 3px;
+  background-color: var(--color-orange);
+  border-radius: 2px;
+}
+
+/* Hamburger Menu Mobile */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 21px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  z-index: 1001;
+}
+
+.hamburger span {
+  width: 100%;
+  height: 3px;
+  background-color: var(--color-text-white);
+  border-radius: 2px;
+  transition: var(--transition-fast);
+}
+
+/* ==========================================
+   BUTTONS & UI COMPONENTS
+   ========================================== */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  background-color: var(--color-orange);
+  color: var(--color-text-white);
+  font-weight: 700;
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding: 0.8rem 2rem;
+  border-radius: var(--border-radius-btn);
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(242, 101, 34, 0.4);
+  transition: var(--transition-smooth);
+}
+
+.btn-primary:hover {
+  background-color: var(--color-orange-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(242, 101, 34, 0.6);
+}
+
+/* Custom Card Layout */
+.card-box {
+  background-color: var(--bg-card);
+  border: 2px solid var(--color-border);
+  border-radius: var(--border-radius-card);
+  padding: 2.5rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  position: relative;
+  overflow: hidden;
+}
+
+/* ==========================================
+   FOOTER GLOBAL
+   ========================================== */
+.main-footer {
+  margin-top: auto;
+  background-color: #08090a;
+  border-top: 1px solid #1f2229;
+  padding: 2rem 0;
+  text-align: center;
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+}
+
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.footer-socials {
+  display: flex;
+  gap: 1.2rem;
+}
+
+.footer-socials a {
+  color: var(--color-text-muted);
+  font-size: 1.2rem;
+}
+
+.footer-socials a:hover {
+  color: var(--color-orange);
+}
+
+/* ==========================================
+   RESPONSIVE DESIGN (MOBILE & TABLET)
+   ========================================== */
+@media (max-width: 868px) {
+  .hamburger {
+    display: flex;
+  }
+
+  .nav-menu {
+    position: fixed;
+    top: var(--header-height);
+    right: -100%;
+    width: 100%;
+    height: calc(100vh - var(--header-height));
+    background-color: var(--bg-dark-primary);
+    flex-direction: column;
+    justify-content: center;
+    gap: 2rem;
+    transition: var(--transition-smooth);
+  }
+
+  .nav-menu.is-active {
+    right: 0;
+  }
+
+  .nav-link {
+    font-size: 1.2rem;
+  }
+}
