@@ -14,49 +14,41 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,600;0,700;0,800;1,800&display=swap" rel="stylesheet">
   
   <!-- CSS Global -->
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/inicio.css">
 </head>
 <body>
 
   <!-- ==================== HEADER / NAV ==================== -->
-  <header class="main-header">
-    <div class="header-container">
-      <a href="index.html" class="logo">
-        Crea<span>-Imp</span>
-      </a>
+ <header class="main-header">
+  <div class="header-container">
+    
+    <!-- Logo -->
+    <a href="index.html" class="logo-link">
+      <img src="IMG/logo.png" alt="Logo Crea-Imp" class="logo-img">
+    </a>
 
-      <button class="hamburger" id="hamburger-btn" aria-label="Abrir menú de navegación">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
+    <!-- Menú de Navegación -->
+    <nav>
+      <ul class="nav-menu" id="nav-menu">
+        <li><a href="index.html" class="nav-link active"><i class="fa-solid fa-sparkles"></i> Inicio</a></li>
+        <li><a href="Servicios.html" class="nav-link"><i class="fa-solid fa-layer-group"></i> Servicios</a></li>
+        <li><a href="Contacto.html" class="nav-link"><i class="fa-solid fa-envelope"></i> Contacto</a></li>
+        <li><a href="Nosotros.html" class="nav-link"><i class="fa-solid fa-chart-simple"></i> Nosotros</a></li>
+        
+        <!-- ÚNICO BOTÓN DE INICIO DE SESIÓN -->
+        <li>
+          <a href="ingreso.html" class="nav-link btn-login-nav">
+            <i class="fa-solid fa-right-to-bracket"></i> INICIO DE SESIÓN
+          </a>
+        </li>
+      </ul>
+    </nav>
 
-      <nav>
-        <ul class="nav-menu" id="nav-menu">
-          <li>
-            <a href="index.html" class="nav-link active">
-              <i class="fa-solid fa-sparkles"></i> Inicio
-            </a>
-          </li>
-          <li>
-            <a href="servicios.html" class="nav-link">
-              <i class="fa-solid fa-layer-group"></i> Servicios
-            </a>
-          </li>
-          <li>
-            <a href="contacto.html" class="nav-link">
-              <i class="fa-solid fa-envelope"></i> Contacto
-            </a>
-          </li>
-          <li>
-            <a href="nosotros.html" class="nav-link">
-              <i class="fa-solid fa-chart-simple"></i> Nosotros
-            </a>
-          </li>
-        </ul>
-      </nav>
-    </div>
-  </header>
+  </div>
+</header>
+
+
 
   <main>
     <!-- ==================== HERO SECTION ==================== -->
@@ -75,13 +67,14 @@
         </div>
 
         <div class="hero-image-wrapper">
-          <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&w=1000&q=80" 
+          <img src="IMG/inicio.png" 
                alt="Equipo de diseño trabajando en planeación estratégica" 
                class="hero-img">
         </div>
       </div>
     </section>
 
+</main>
 
   <!-- ==================== FOOTER ==================== -->
   <footer class="main-footer">
@@ -96,6 +89,6 @@
   </footer>
 
   <!-- Script JS Global -->
-  <script src="main.js"></script>
+  <script src="js/main.js"></script>
 </body>
 </html>

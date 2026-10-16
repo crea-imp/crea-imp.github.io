@@ -1,0 +1,168 @@
+body {
+
+
+ background-image: linear-gradient(
+    rgba(0, 0, 0, 0.3),
+    rgba(0, 0, 0, 0.3)
+  ), url("../IMG/porque elegir_fondo.png");
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+
+/* ==========================================
+   SECCIÓN: ¿POR QUÉ ELEGIR CREA-IMP?
+   ========================================== */
+
+.why-us-section {
+  position: relative;
+  background: transparent;
+  padding: 4rem 2rem;
+  overflow: hidden;
+  color: #ffffff;
+}
+
+/* Patrón de puntos sutil en los bordes como el mockup */
+.why-us-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: radial-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+  background-size: 20px 20px;
+  opacity: 0.3;
+  pointer-events: none;
+}
+
+/* Título de la sección */
+.why-us-title {
+  font-family: 'Poppins', sans-serif;
+  font-size: clamp(2rem, 3.5vw, 2.8rem);
+  font-weight: 800;
+  margin-bottom: 2.5rem;
+  text-align: left;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.orange-text {
+  color: #f26522;
+}
+
+/* Contenedor Grid Principal */
+.why-us-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+/* Tarjeta de información (Izquierda) */
+.why-us-card {
+  background: rgba(20, 22, 28, 0.85);
+  border: 2px solid #ffffff;
+  border-radius: 24px;
+  padding: 3rem 2.5rem 2.5rem;
+  position: relative;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(8px);
+}
+
+/* Badge con Corazón en la parte superior */
+.card-heart-badge {
+  position: absolute;
+  top: -25px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50px;
+  height: 50px;
+  background: linear-gradient(135deg, #a82442 0%, #ff5d86 100%);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+.card-heart-badge i {
+  color: #ff6b8b;
+  font-size: 1.5rem;
+}
+
+/* Texto dentro de la tarjeta */
+.card-text {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: #ffffff;
+  text-align: justify;
+  margin: 0;
+}
+
+/* Ilustración / Gráficos 3D (Derecha) */
+.why-us-illustration {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.graphic-wrapper {
+  width: 100%;
+  max-width: 500px;
+  border-radius: 20px;
+  overflow: hidden;
+  position: relative;
+}
+
+.graphic-image {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  filter: drop-shadow(0 15px 25px rgba(0, 0, 0, 0.6));
+}
+
+/* Responsivo para móviles y tablets */
+@media (max-width: 900px) {
+  .why-us-container {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .why-us-title {
+    text-align: center;
+  }
+
+  .why-us-card {
+    padding: 2.5rem 1.8rem 1.8rem;
+  }
+}
+
+.back-button {
+  position: absolute;
+  top: 25px;
+  left: 25px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #ffffff;
+  text-decoration: none;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size: 1rem;
+  z-index: 10;
+}
+
+.back-button:hover {
+  color: #f26522;
+}

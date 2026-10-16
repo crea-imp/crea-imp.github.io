@@ -1,0 +1,221 @@
+body {
+ 
+  background-image: linear-gradient(
+    rgba(0, 0, 0, 0.3),
+    rgba(0, 0, 0, 0.3)
+  ), url("../IMG/fondo.png");
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+/* ==========================================
+   CONTACT PAGE STYLES
+   ========================================== */
+
+.contact-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2.5rem;
+  margin-bottom: 3rem;
+}
+
+.contact-card-title {
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+  text-align: left;
+}
+
+.contact-details-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.contact-details-list li {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+}
+
+.contact-icon {
+  width: 45px;
+  height: 45px;
+  min-width: 45px;
+  background-color: rgba(242, 101, 34, 0.2);
+  border: 1px solid var(--color-orange);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-orange);
+  font-size: 1.2rem;
+}
+
+.contact-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-label {
+  font-size: 0.85rem;
+  color: #ffffff;
+  font-weight: 500;
+}
+
+.contact-value {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--color-text-white);
+}
+
+.contact-value:hover {
+  color: var(--color-orange);
+}
+
+/* Map Styling */
+.map-container {
+  width: 100%;
+  height: 320px;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+/* Form Styles */
+.contact-form-section {
+  max-width: 700px;
+  margin: 0 auto 4rem;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  text-align: left;
+}
+
+.form-group label {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 0.85rem 1rem;
+  background-color: #0d0e12;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  color: var(--color-text-white);
+  font-family: inherit;
+  font-size: 0.95rem;
+  transition: var(--transition-fast);
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--color-orange);
+  box-shadow: 0 0 8px rgba(242, 101, 34, 0.4);
+}
+
+.error-msg {
+  font-size: 0.8rem;
+  color: #ff4d4d;
+  min-height: 1.2em;
+}
+
+.form-feedback {
+  margin-top: 1rem;
+  padding: 0.8rem;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  text-align: center;
+  display: none;
+}
+
+.form-feedback.success {
+  display: block;
+  background-color: rgba(46, 204, 113, 0.2);
+  border: 1px solid #2ecc71;
+  color: #2ecc71;
+}
+
+/* Responsivo para Contacto */
+@media (max-width: 868px) {
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.page-subtitle {
+  color: #ffffff !important;
+}
+
+.contact-label {
+  color: #ffffff !important;
+}
+
+.page-subtitle,
+.contact-label,
+.form-group label {
+  color: #ffffff !important;
+}
+
+
+
+
+/* ==========================================
+   ESTILOS DESTACADOS PARA EL BOTÓN DE INICIO DE SESIÓN
+   ========================================== */
+.btn-login-nav {
+  background-color: #f26522 !important;
+  color: #ffffff !important;
+  font-weight: 700 !important;
+  padding: 0.5rem 1.2rem !important;
+  border-radius: 20px !important;
+  box-shadow: 0 4px 12px rgba(242, 101, 34, 0.4);
+  transition: all 0.3s ease !important;
+}
+
+.btn-login-nav:hover {
+  background-color: #d85416 !important;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(242, 101, 34, 0.6);
+}
+
+
+
+
+/* Ajuste de la imagen del logo en el header */
+.logo-link {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.logo-img {
+  height: 45px; /* Ajusta este valor según la altura deseada */
+  width: auto;  /* Mantiene la proporción original */
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+.logo-img:hover {
+  transform: scale(1.05); /* Efecto sutil al pasar el cursor */
+}

@@ -1,0 +1,184 @@
+body {
+
+
+  background-image: linear-gradient(
+    rgba(0, 0, 0, 0.3),
+    rgba(0, 0, 0, 0.3)
+  ), url("../IMG/fondo.png");
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+/* ==========================================
+   WORK METHODOLOGY STYLES
+   ========================================== */
+
+.method-header {
+  text-align: center;
+  margin-bottom: 3.5rem;
+}
+
+.method-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.process-card {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  padding: 2rem 1.5rem 1.5rem;
+  background-color: var(--bg-card);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  transition: var(--transition-smooth);
+}
+
+.process-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--color-orange);
+  box-shadow: 0 12px 30px rgba(242, 101, 34, 0.25);
+}
+
+.process-badge {
+  position: absolute;
+  top: -15px;
+  right: 20px;
+  width: 38px;
+  height: 38px;
+  background-color: var(--color-orange);
+  color: var(--color-text-white);
+  font-weight: 800;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+}
+
+.process-title {
+  font-size: 1.25rem;
+  text-align: left;
+  margin-bottom: 1rem;
+  color: var(--color-text-white);
+}
+
+.process-img-wrapper {
+  width: 100%;
+  height: 180px;
+  border-radius: 12px;
+  overflow: hidden;
+  margin-bottom: 1.2rem;
+}
+
+.process-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+.process-card:hover .process-img {
+  transform: scale(1.05);
+}
+
+.process-desc {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #ffffff;
+}
+
+/* Call To Action Banner / Pulsa AQUÍ */
+.cta-banner {
+  display: flex;
+  justify-content: center;
+  margin: 2rem 0 4rem;
+}
+
+.pulse-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.8rem;
+  background: linear-gradient(135deg, var(--color-orange) 0%, #c4430d 100%);
+  color: var(--color-text-white);
+  font-size: 1.1rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  padding: 1rem 3rem;
+  border-radius: 40px;
+  box-shadow: 0 0 0 0 rgba(242, 101, 34, 0.7);
+  animation: pulse-animation 2s infinite;
+  transition: var(--transition-fast);
+}
+
+.pulse-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 25px rgba(242, 101, 34, 0.9);
+}
+
+@keyframes pulse-animation {
+  0% {
+    box-shadow: 0 0 0 0 rgba(242, 101, 34, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 18px rgba(242, 101, 34, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(242, 101, 34, 0);
+  }
+}
+
+.page-subtitle {
+  color: #ffffff !important;
+}
+
+
+
+
+
+/* ==========================================
+   ESTILOS DESTACADOS PARA EL BOTÓN DE INICIO DE SESIÓN
+   ========================================== */
+.btn-login-nav {
+  background-color: #f26522 !important;
+  color: #ffffff !important;
+  font-weight: 700 !important;
+  padding: 0.5rem 1.2rem !important;
+  border-radius: 20px !important;
+  box-shadow: 0 4px 12px rgba(242, 101, 34, 0.4);
+  transition: all 0.3s ease !important;
+}
+
+.btn-login-nav:hover {
+  background-color: #d85416 !important;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(242, 101, 34, 0.6);
+}
+
+
+
+
+/* Ajuste de la imagen del logo en el header */
+.logo-link {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.logo-img {
+  height: 45px; /* Ajusta este valor según la altura deseada */
+  width: auto;  /* Mantiene la proporción original */
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+.logo-img:hover {
+  transform: scale(1.05); /* Efecto sutil al pasar el cursor */
+}
