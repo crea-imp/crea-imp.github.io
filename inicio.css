@@ -1,3 +1,17 @@
+body {
+  
+background-image: linear-gradient(
+    rgba(0, 0, 0, 0.3),
+    rgba(0, 0, 0, 0.3)
+  ), url("../IMG/fondo.png");
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+
 /* ==========================================
    HOMEPAGE SPECIFIC STYLES
    ========================================== */
@@ -36,7 +50,7 @@
 
 .hero-subtitle {
   font-size: 1.25rem;
-  color: var(--color-text-muted);
+  color:  #ffffff;
 }
 
 .hero-image-wrapper {
@@ -129,5 +143,80 @@
 
   .section-title {
     text-align: center;
+  }
+}
+
+
+
+/* ==========================================
+   ESTILOS DESTACADOS PARA EL BOTÓN DE INICIO DE SESIÓN
+   ========================================== */
+.btn-login-nav {
+  background-color: #f26522 !important;
+  color: #ffffff !important;
+  font-weight: 700 !important;
+  padding: 0.5rem 1.2rem !important;
+  border-radius: 20px !important;
+  box-shadow: 0 4px 12px rgba(242, 101, 34, 0.4);
+  transition: all 0.3s ease !important;
+}
+
+.btn-login-nav:hover {
+  background-color: #d85416 !important;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(242, 101, 34, 0.6);
+}
+
+
+
+
+/* Ajuste de la imagen del logo en el header */
+.logo-link {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.logo-img {
+  height: 45px; /* Ajusta este valor según la altura deseada */
+  width: auto;  /* Mantiene la proporción original */
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+.logo-img:hover {
+  transform: scale(1.05); /* Efecto sutil al pasar el cursor */
+}
+
+ /* Ajustes generales para diferentes dispositivos */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+
+
+/* Ajustes para dispositivos móviles */
+@media (max-width: 768px) {
+  body {
+    background-attachment: scroll;
+    background-position: center top;
+  }
+
+  .hero-container,
+  .why-us-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .hero-content,
+  .why-us-card {
+    min-width: 0;
   }
 }

@@ -14,7 +14,7 @@
   --color-border: rgba(255, 255, 255, 0.85);
 
   /* Typography */
-  --font-family: 'Poppins', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-family: 'Archivo Black', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   
   /* Layout & Spacing */
   --container-max-width: 1200px;
@@ -292,9 +292,11 @@ ul {
 /* ==========================================
    RESPONSIVE DESIGN (MOBILE & TABLET)
    ========================================== */
+/* MENÚ RESPONSIVE PARA MÓVILES */
 @media (max-width: 868px) {
   .hamburger {
     display: flex;
+    flex-shrink: 0;
   }
 
   .nav-menu {
@@ -302,12 +304,18 @@ ul {
     top: var(--header-height);
     right: -100%;
     width: 100%;
+    max-width: 100vw;
     height: calc(100vh - var(--header-height));
+    height: calc(100dvh - var(--header-height));
+    overflow-y: auto;
+    overflow-x: hidden;
     background-color: var(--bg-dark-primary);
     flex-direction: column;
     justify-content: center;
+    align-items: center;
     gap: 2rem;
     transition: var(--transition-smooth);
+    z-index: 1000;
   }
 
   .nav-menu.is-active {
@@ -317,4 +325,57 @@ ul {
   .nav-link {
     font-size: 1.2rem;
   }
+}
+
+
+
+/* ==========================================
+   ESTILOS DESTACADOS PARA EL BOTÓN DE INICIO DE SESIÓN
+   ========================================== */
+.btn-login-nav {
+  background-color: #f26522 !important;
+  color: #ffffff !important;
+  font-weight: 700 !important;
+  padding: 0.5rem 1.2rem !important;
+  border-radius: 20px !important;
+  box-shadow: 0 4px 12px rgba(242, 101, 34, 0.4);
+  transition: all 0.3s ease !important;
+}
+
+.btn-login-nav:hover {
+  background-color: #d85416 !important;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(242, 101, 34, 0.6);
+}
+
+ /* Ajustes generales para diferentes dispositivos */
+
+/* Ajustes generales para diferentes dispositivos */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: clip;
+}
+
+body {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: clip;
+}
+
+img,
+video,
+iframe {
+  max-width: 100%;
+}
+
+img {
+  height: auto;
 }
