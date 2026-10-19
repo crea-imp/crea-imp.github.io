@@ -50,6 +50,11 @@
             </a>
           </li>
           <li>
+            <a href="Portafolio.html" class="nav-link">
+            <i class="fa-solid fa-images"></i> Portafolio
+          </a>
+        </li>
+          <li>
             <a href="nosotros.html" class="nav-link">
               <i class="fa-solid fa-chart-simple"></i> Nosotros
             </a>
@@ -90,7 +95,7 @@
             </div>
             <div class="contact-text">
               <span class="contact-label">Instagram</span>
-              <a href="https://instagram.com" target="_blank" class="contact-value">@crea_imp_oficial</a>
+              <a href="https://www.instagram.com/crea_imp_oficial/" target="_blank" rel="noopener noreferrer" class="contact-value">@crea_imp_oficial</a>
             </div>
           </li>
 
@@ -100,7 +105,7 @@
             </div>
             <div class="contact-text">
               <span class="contact-label">Tik Tok</span>
-              <a href="https://tiktok.com" target="_blank" class="contact-value">@Crea_Imp_oficial</a>
+              <a href="https://www.tiktok.com/@creaimp_oficial" target="_blank" rel="noopener noreferrer" class="contact-value">@creaimp_oficial</a>
             </div>
           </li>
 
@@ -110,7 +115,7 @@
             </div>
             <div class="contact-text">
               <span class="contact-label">Facebook</span>
-              <a href="https://facebook.com" target="_blank" class="contact-value">Crea-Imp.studio</a>
+              <a href="https://www.facebook.com/profile.php?id=61595700351242" target="_blank" rel="noopener noreferrer" class="contact-value">Crea Imp</a>
             </div>
           </li>
 
@@ -149,8 +154,12 @@
     <section class="contact-form-section">
       <div class="card-box form-card">
         <h2 class="contact-card-title text-orange" style="text-align: center; margin-bottom: 1.5rem;">Escríbenos un Mensaje</h2>
-        
-        <form id="contact-form" class="contact-form" novalidate>
+      
+        <form 
+        action="https://formsubmit.co/creaimp.oficial@gmail.com"
+        method="POST"
+        id="contact-form" class="contact-form">
+
           <div class="form-group">
             <label for="name">Nombre Completo *</label>
             <input type="text" id="name" name="name" placeholder="Tu nombre" required>
@@ -159,7 +168,7 @@
 
           <div class="form-group">
             <label for="email">Correo Electrónico *</label>
-            <input type="email" id="email" name="email" placeholder="ejemplo@correo.com" required>
+            <input type="email" id="email" name="_replyto" placeholder="ejemplo@correo.com" required>
             <span class="error-msg" id="error-email"></span>
           </div>
 
@@ -193,53 +202,60 @@
 
   <!-- Scripts -->
   <script src="js/main.js"></script>
-  <script>
-    // Validación Interactiva del Formulario
-    document.addEventListener('DOMContentLoaded', () => {
-      const form = document.getElementById('contact-form');
-      const feedback = document.getElementById('form-feedback');
+  
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const form = document.getElementById('contact-form');
+    const feedback = document.getElementById('form-feedback');
 
-      if (form) {
-        form.addEventListener('submit', (e) => {
-          e.preventDefault();
-          
-          let isValid = true;
-          const nameInput = document.getElementById('name');
-          const emailInput = document.getElementById('email');
-          const messageInput = document.getElementById('message');
+    if (!form) return;
 
-          // Reset errores
-          document.querySelectorAll('.error-msg').forEach(el => el.textContent = '');
-          feedback.className = 'form-feedback';
-          feedback.textContent = '';
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
 
-          // Validar Nombre
-          if (!nameInput.value.trim()) {
-            document.getElementById('error-name').textContent = 'Por favor, ingresa tu nombre.';
-            isValid = false;
-          }
+      const nameInput = document.getElementById('name');
+      const emailInput = document.getElementById('email');
+      const messageInput = document.getElementById('message');
 
-          // Validar Email
-          const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-          if (!emailRegex.test(emailInput.value.trim())) {
-            document.getElementById('error-email').textContent = 'Ingresa un correo electrónico válido.';
-            isValid = false;
-          }
+      document.querySelectorAll('.error-msg').forEach(el => {
+        el.textContent = '';
+      });
 
-          // Validar Mensaje
-          if (!messageInput.value.trim()) {
-            document.getElementById('error-message').textContent = 'Escribe un mensaje para poder atenderte.';
-            isValid = false;
-          }
+      feedback.className = 'form-feedback';
+      feedback.textContent = '';
 
-          if (isValid) {
-            feedback.classList.add('success');
-            feedback.textContent = '¡Gracias por comunicarte! Tu mensaje ha sido enviado con éxito.';
-            form.reset();
-          }
-        });
+      let isValid = true;
+
+      if (!nameInput.value.trim()) {
+        document.getElementById('error-name').textContent =
+          'Por favor, ingresa tu nombre.';
+        isValid = false;
+      }
+
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+      if (!emailRegex.test(emailInput.value.trim())) {
+        document.getElementById('error-email').textContent =
+          'Ingresa un correo electrónico válido.';
+        isValid = false;
+      }
+
+      if (!messageInput.value.trim()) {
+        document.getElementById('error-message').textContent =
+          'Escribe un mensaje para poder atenderte.';
+        isValid = false;
+      }
+
+      if (isValid) {
+        feedback.classList.add('success');
+        feedback.textContent = 'Enviando tu mensaje...';
+
+        // Envía los datos reales a FormSubmit.
+        form.submit();
       }
     });
-  </script>
+  });
+</script>
+
 </body>
 </html>
