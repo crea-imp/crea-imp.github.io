@@ -339,3 +339,14 @@ ul {
   transform: translateY(-2px);
   box-shadow: 0 6px 15px rgba(242, 101, 34, 0.6);
 }
+
+ /* Ajustes generales para diferentes dispositivos */
+
+* {
+  box-sizing: border-box;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}

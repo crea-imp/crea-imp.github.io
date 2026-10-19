@@ -219,3 +219,15 @@ body {
 .logo-img:hover {
   transform: scale(1.05); /* Efecto sutil al pasar el cursor */
 }
+
+
+ /* Ajustes generales para diferentes dispositivos */
+
+* {
+  box-sizing: border-box;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
