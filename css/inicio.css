@@ -190,11 +190,33 @@ background-image: linear-gradient(
 
  /* Ajustes generales para diferentes dispositivos */
 
-* {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 
 img {
   max-width: 100%;
   height: auto;
+}
+
+
+
+/* Ajustes para dispositivos móviles */
+@media (max-width: 768px) {
+  body {
+    background-attachment: scroll;
+    background-position: center top;
+  }
+
+  .hero-container,
+  .why-us-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .hero-content,
+  .why-us-card {
+    min-width: 0;
+  }
 }
