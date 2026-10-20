@@ -220,3 +220,18 @@ img {
     min-width: 0;
   }
 }
+
+.hero-video {
+    width: 100%;
+    max-width: 450px;
+    margin: 0 auto;
+    overflow: hidden;
+    border-radius: 14px;
+}
+
+.hero-video video {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+}
