@@ -1,0 +1,404 @@
+/* =========================================
+   INICIO - CREA-IMP
+   Diseño moderno, oscuro y adaptable
+   ========================================= */
+
+body {
+    background: var(--bg-dark-primary, #0b0c0e);
+    background-image: none;
+    overflow-x: hidden;
+}
+
+/* CONTENEDORES */
+
+.hero-section,
+.featured-portfolio,
+.home-contact {
+    position: relative;
+    width: 100%;
+}
+
+.hero-container,
+.portfolio-container,
+.home-contact-content {
+    width: min(1120px, 90%); 
+    margin: 0 auto;
+}
+
+/* =========================================
+   HERO PRINCIPAL
+   ========================================= */
+
+.hero-section {
+    padding: 85px 0 75px;
+    overflow: hidden;
+}
+
+.hero-section::before {
+    content: "";
+    position: absolute;
+    width: 380px;
+    height: 380px;
+    top: -150px;
+    left: -180px;
+    background: rgba(242, 101, 34, 0.10);
+    filter: blur(100px);
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+.hero-container {
+    display: grid;
+    grid-template-columns: 1fr 0.9fr;
+    align-items: center;
+    gap: 55px;
+    position: relative;
+    z-index: 1;
+}
+
+.hero-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 22px;
+    min-width: 0;
+}
+
+.hero-eyebrow,
+.section-eyebrow {
+    color: var(--color-orange, #f26522);
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.hero-title {
+    margin: 0;
+    color: var(--color-text-white, #ffffff);
+    font-family: "Archivo Black", sans-serif;
+    font-size: clamp(2.7rem, 5vw, 4.6rem);
+    line-height: 1.08;
+    overflow-wrap: anywhere;
+}
+
+.hero-title .text-orange {
+    color: var(--color-orange, #f26522);
+}
+
+.hero-subtitle {
+    margin: 0;
+    color: #ffffff;
+    font-size: clamp(1.15rem, 2vw, 1.4rem);
+    font-weight: 600;
+    line-height: 1.5;
+}
+
+.hero-description {
+    max-width: 520px;
+    margin: 0;
+    color: var(--color-text-muted, #b3b3b3);
+    font-size: 1rem;
+    line-height: 1.9;
+}
+
+.hero-content .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 5px;
+    padding: 15px 25px;
+    border-radius: 30px;
+    background: var(--color-orange, #f26522);
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 700;
+    transition: background 0.25s ease, transform 0.25s ease;
+}
+
+.hero-content .btn-primary:hover {
+    background: var(--color-orange-hover, #d95316);
+    transform: translateY(-3px);
+}
+
+.hero-content .btn-primary i {
+    transition: transform 0.25s ease;
+}
+
+.hero-content .btn-primary:hover i {
+    transform: translateX(4px);
+}
+
+/* VIDEO */
+
+.hero-video {
+    width: 100%;
+    max-width: 530px;
+    margin: 0 auto;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 22px;
+    background: #111111;
+    box-shadow: 0 20px 55px rgba(0, 0, 0, 0.45);
+}
+
+.hero-video video {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-height: 520px;
+    object-fit: contain;
+    background: #080808;
+}
+
+/* =========================================
+   PORTAFOLIO DESTACADO
+   No se muestran proyectos ficticios
+   ========================================= */
+
+.featured-portfolio {
+    padding: 75px 0 85px;
+    border-top: 1px solid rgba(255, 255, 255, 0.07);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+    background: var(--bg-dark-secondary, #14161a);
+}
+
+.portfolio-container {
+    text-align: center;
+}
+
+.portfolio-heading {
+    max-width: 760px;
+    margin: 0 auto;
+}
+
+.portfolio-heading .section-eyebrow {
+    display: inline-block;
+    margin-bottom: 18px;
+}
+
+.portfolio-heading .section-title {
+    margin: 0 0 20px;
+    color: var(--color-text-white, #ffffff);
+    font-family: "Archivo Black", sans-serif;
+    font-size: clamp(2rem, 4vw, 3rem);
+    line-height: 1.2;
+    text-align: center;
+}
+
+.portfolio-heading .section-description {
+    max-width: 650px;
+    margin: 0 auto;
+    color: var(--color-text-muted, #b3b3b3);
+    font-size: 1rem;
+    line-height: 1.8;
+}
+
+.portfolio-cta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 30px;
+    padding: 13px 23px;
+    border: 1px solid var(--color-orange, #f26522);
+    border-radius: 30px;
+    color: var(--color-orange, #f26522);
+    text-decoration: none;
+    font-weight: 700;
+    transition: background 0.25s ease, color 0.25s ease,
+                transform 0.25s ease;
+}
+
+.portfolio-cta:hover {
+    background: var(--color-orange, #f26522);
+    color: #ffffff;
+    transform: translateY(-3px);
+}
+
+/* =========================================
+   INVITACIÓN A CONTACTAR
+   ========================================= */
+
+.home-contact {
+    padding: 80px 0;
+}
+
+.home-contact-content {
+    padding: 55px 35px;
+    text-align: center;
+    border: 1px solid rgba(242, 101, 34, 0.3);
+    border-radius: 24px;
+    background:
+        radial-gradient(
+            circle at top,
+            rgba(242, 101, 34, 0.12),
+            transparent 65%
+        ),
+        var(--bg-dark-secondary, #14161a);
+}
+
+.home-contact-content .section-eyebrow {
+    display: inline-block;
+    margin-bottom: 18px;
+}
+
+.home-contact-content h2 {
+    max-width: 750px;
+    margin: 0 auto 18px;
+    color: var(--color-text-white, #ffffff);
+    font-family: "Archivo Black", sans-serif;
+    font-size: clamp(1.8rem, 4vw, 2.8rem);
+    line-height: 1.25;
+}
+
+.home-contact-content p {
+    max-width: 650px;
+    margin: 0 auto;
+    color: var(--color-text-muted, #b3b3b3);
+    font-size: 1rem;
+    line-height: 1.8;
+}
+
+.home-contact-content .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 28px;
+    padding: 15px 25px;
+    border-radius: 30px;
+    background: var(--color-orange, #f26522);
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 700;
+    transition: background 0.25s ease, transform 0.25s ease;
+}
+
+.home-contact-content .btn-primary:hover {
+    background: var(--color-orange-hover, #d95316);
+    transform: translateY(-3px);
+}
+
+/* =========================================
+   RESPONSIVE: TABLETAS
+   ========================================= */
+
+@media (max-width: 900px) {
+    .hero-container {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 40px;
+    }
+
+    .hero-content {
+        align-items: center;
+        text-align: center;
+    }
+
+    .hero-description {
+        max-width: 620px;
+    }
+
+    .hero-video {
+        width: 100%;
+        max-width: 600px;
+    }
+}
+
+/* =========================================
+   RESPONSIVE: CELULARES
+   ========================================= */
+
+@media (max-width: 600px) {
+    .hero-section {
+        padding: 55px 0 50px;
+    }
+
+    .hero-container,
+    .portfolio-container,
+    .home-contact-content {
+        width: 90%;
+    }
+
+    .hero-container {
+        gap: 32px;
+    }
+
+    .hero-title {
+        font-size: clamp(2.3rem, 11vw, 3.2rem);
+    }
+
+    .hero-subtitle {
+        font-size: 1.1rem;
+    }
+
+    .hero-description {
+        font-size: 0.95rem;
+        line-height: 1.8;
+    }
+
+    .hero-content .btn-primary,
+    .portfolio-cta,
+    .home-contact-content .btn-primary {
+        max-width: 100%;
+    }
+
+    .featured-portfolio {
+        padding: 55px 0;
+    }
+
+    .portfolio-heading .section-title {
+        font-size: 2rem;
+    }
+
+    .home-contact {
+        padding: 55px 0;
+    }
+
+    .home-contact-content {
+        padding: 38px 22px;
+        border-radius: 18px;
+    }
+
+    .home-contact-content h2 {
+        font-size: 1.8rem;
+    }
+}
+
+/* Evita desbordamientos horizontales en móviles */
+.hero-container > *,
+.portfolio-container > *,
+.home-contact-content > * {
+    min-width: 0;
+}
+
+
+/* Botón de inicio de sesión: diseño de Servicios */
+.btn-login-nav,
+.login-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 16px;
+  background: #ff6b00;
+  color: #ffffff;
+  border: 1px solid #ff6b00;
+  border-radius: 5px;
+  font-family: inherit;
+  font-size: 0.73rem;
+  font-weight: 800;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.btn-login-nav:hover,
+.login-btn:hover {
+  background: #e85f00;
+  border-color: #e85f00;
+  color: #ffffff;
+  transform: translateY(-2px);
+}
+
+

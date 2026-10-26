@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html class="scroll-smooth dark" lang="es">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Acceso / Registro | Crea-Imp Multimedia Agency</title>
+
+    <!-- Google Fonts & Material Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@400;600;700;800&family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&display=swap" rel="stylesheet"/>
+
+    <!-- Tailwind Play CDN -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#ff6b00",
+                        "primary-container": "#ff6b00",
+                        "secondary": "#a0a0a0",
+                        "background": "#050505",
+                        "surface": "#050505",
+                        "surface-container": "#121212",
+                        "surface-container-low": "#0a0a0a",
+                        "surface-container-high": "#1e1e1e",
+                        "on-background": "#ffffff",
+                        "on-surface": "#ffffff"
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    fontFamily: {
+                        "body-md": ["Inter", "sans-serif"],
+                        "headline-md": ["Montserrat", "sans-serif"]
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Custom Exterior Modular CSS -->
+    <link rel="stylesheet" href="css/ingreso.css"/>
+</head>
+<body class="bg-background text-on-background font-body-md antialiased min-h-screen flex flex-col justify-between selection:bg-primary selection:text-white">
+
+    <!-- Header / Top Bar -->
+    <header class="w-full flex justify-between items-center px-6 md:px-16 py-4 bg-background/90 backdrop-blur-md border-b border-white/5">
+        <a href="index.html" class="font-headline-md font-bold text-xl tracking-tight text-white hover:opacity-90 transition-opacity">
+            Crea-Imp
+        </a>
+        <a href="index.html" class="bg-transparent border border-white/20 px-4 py-2 rounded-lg text-sm font-bold text-white hover:bg-white hover:text-black transition-all">
+            Regresar
+        </a>
+    </header>
+
+    <!-- Main Container -->
+    <main class="flex-grow flex items-center justify-center px-4 py-12">
+        
+        <!-- CUADRO 1: INICIO DE SESIÓN -->
+        <div id="loginCard" class="w-full max-w-md bg-surface-container border border-white/5 p-8 rounded-xl shadow-2xl relative">
+            <div class="text-center mb-8">
+                <div class="inline-flex items-center justify-center w-12 h-12 bg-primary/10 rounded-xl text-primary mb-3">
+                    <span class="material-symbols-outlined text-2xl">lock</span>
+                </div>
+                <h1 class="font-headline-md text-2xl md:text-3xl font-bold tracking-tight text-white mb-2">
+                    Iniciar Sesión
+                </h1>
+                <p class="text-secondary text-sm">
+                    Ingresa tu correo electrónico y contraseña para acceder a tu cuenta.
+                </p>
+            </div>
+
+            <form id="loginForm" class="space-y-5">
+                <div>
+                    <label class="block text-xs font-semibold uppercase tracking-wider text-secondary mb-2" for="email">
+                        Correo Electrónico
+                    </label>
+                    <input class="w-full bg-surface-container-low border border-white/10 rounded-lg p-3 text-white placeholder:text-secondary/40 focus:border-primary focus:outline-none transition-all text-sm" 
+                           id="email" type="email" placeholder="ejemplo@creaimp.com" required>
+                </div>
+
+                <div>
+                    <div class="flex justify-between items-center mb-2">
+                        <label class="block text-xs font-semibold uppercase tracking-wider text-secondary" for="password">
+                            Contraseña
+                        </label>
+                        <a href="contacto.html" class="text-xs text-primary hover:underline">
+                            ¿Olvidaste tu contraseña?
+                        </a>
+                    </div>
+                    <input class="w-full bg-surface-container-low border border-white/10 rounded-lg p-3 text-white placeholder:text-secondary/40 focus:border-primary focus:outline-none transition-all text-sm" 
+                           id="password" type="password" placeholder="••••••••" required>
+                </div>
+
+                <!-- Math Captcha Validation System -->
+                <div class="bg-surface-container-low p-4 rounded-lg border border-white/10 space-y-2">
+                    <label class="block text-xs font-semibold uppercase tracking-wider text-secondary">
+                        Verificación de seguridad matemática
+                    </label>
+                    <div class="flex items-center gap-3">
+                        <span id="captchaQuestionLogin" class="font-mono font-bold text-primary text-base bg-surface px-4 py-2 rounded border border-white/10 select-none">
+                            --
+                        </span>
+                        <input class="w-full bg-surface border border-white/10 rounded-lg p-2.5 text-white placeholder:text-secondary/40 focus:border-primary focus:outline-none transition-all text-center font-mono text-sm" 
+                               id="captchaAnswerLogin" type="number" placeholder="Resultado" required>
+                    </div>
+                </div>
+
+                <button type="submit" class="w-full bg-primary text-white py-3 px-4 rounded-lg font-bold hover:brightness-110 active:scale-95 transition-all shadow-lg text-sm tracking-wide">
+                    INGRESAR
+                </button>
+            </form>
+
+            <div class="mt-6 text-center text-sm text-secondary">
+                ¿No tienes cuenta? 
+                <button id="showRegisterBtn" class="text-primary font-bold hover:underline ml-1 focus:outline-none">
+                    Regístrate
+                </button>
+            </div>
+
+            <div class="mt-4 text-center border-t border-white/5 pt-4">
+                <a href="index.html" class="text-xs text-secondary hover:text-white transition-colors">
+                    ← Regresar al sitio principal
+                </a>
+            </div>
+        </div>
+
+        <!-- CUADRO 2: REGISTRO DE USUARIOS COMPLETO -->
+        <div id="registerCard" class="w-full max-w-lg bg-surface-container border border-white/5 p-8 rounded-xl shadow-2xl relative hidden">
+            <div class="text-center mb-6">
+                <div class="inline-flex items-center justify-center w-12 h-12 bg-primary/10 rounded-xl text-primary mb-3">
+                    <span class="material-symbols-outlined text-2xl">person_add</span>
+                </div>
+                <h2 class="font-headline-md text-2xl md:text-3xl font-bold tracking-tight text-white mb-2">
+                    Crear una Cuenta
+                </h2>
+                <p class="text-secondary text-sm">
+                    Completa tus datos para registrarte en el portal de Crea-Imp.
+                </p>
+            </div>
+
+            <form id="registerForm" class="space-y-4">
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-xs font-semibold uppercase tracking-wider text-secondary mb-2" for="regFirstName">
+                            Nombres
+                        </label>
+                        <input class="w-full bg-surface-container-low border border-white/10 rounded-lg p-3 text-white placeholder:text-secondary/40 focus:border-primary focus:outline-none transition-all text-sm" 
+                               id="regFirstName" type="text" placeholder="Ej. Juan Carlos" required>
+                    </div>
+                    <div>
+                        <label class="block text-xs font-semibold uppercase tracking-wider text-secondary mb-2" for="regLastName">
+                            Apellidos
+                        </label>
+                        <input class="w-full bg-surface-container-low border border-white/10 rounded-lg p-3 text-white placeholder:text-secondary/40 focus:border-primary focus:outline-none transition-all text-sm" 
+                               id="regLastName" type="text" placeholder="Ej. Pérez Gómez" required>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-xs font-semibold uppercase tracking-wider text-secondary mb-2" for="regEmail">
+                            Correo Electrónico
+                        </label>
+                        <input class="w-full bg-surface-container-low border border-white/10 rounded-lg p-3 text-white placeholder:text-secondary/40 focus:border-primary focus:outline-none transition-all text-sm" 
+                               id="regEmail" type="email" placeholder="usuario@creaimp.com" required>
+                    </div>
+                    <div>
+                        <label class="block text-xs font-semibold uppercase tracking-wider text-secondary mb-2" for="regPhone">
+                            Teléfono
+                        </label>
+                        <input class="w-full bg-surface-container-low border border-white/10 rounded-lg p-3 text-white placeholder:text-secondary/40 focus:border-primary focus:outline-none transition-all text-sm" 
+                               id="regPhone" type="tel" placeholder="+57 300 000 0000" required>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-xs font-semibold uppercase tracking-wider text-secondary mb-2" for="regPassword">
+                            Contraseña
+                        </label>
+                        <input class="w-full bg-surface-container-low border border-white/10 rounded-lg p-3 text-white placeholder:text-secondary/40 focus:border-primary focus:outline-none transition-all text-sm" 
+                               id="regPassword" type="password" placeholder="••••••••" required>
+                    </div>
+                    <div>
+                        <label class="block text-xs font-semibold uppercase tracking-wider text-secondary mb-2" for="regPasswordConfirm">
+                            Confirmar Contraseña
+                        </label>
+                        <input class="w-full bg-surface-container-low border border-white/10 rounded-lg p-3 text-white placeholder:text-secondary/40 focus:border-primary focus:outline-none transition-all text-sm" 
+                               id="regPasswordConfirm" type="password" placeholder="••••••••" required>
+                    </div>
+                </div>
+
+                <!-- Math Captcha para Registro -->
+                <div class="bg-surface-container-low p-4 rounded-lg border border-white/10 space-y-2">
+                    <label class="block text-xs font-semibold uppercase tracking-wider text-secondary">
+                        Verificación de seguridad matemática
+                    </label>
+                    <div class="flex items-center gap-3">
+                        <span id="captchaQuestionReg" class="font-mono font-bold text-primary text-base bg-surface px-4 py-2 rounded border border-white/10 select-none">
+                            --
+                        </span>
+                        <input class="w-full bg-surface border border-white/10 rounded-lg p-2.5 text-white placeholder:text-secondary/40 focus:border-primary focus:outline-none transition-all text-center font-mono text-sm" 
+                               id="captchaAnswerReg" type="number" placeholder="Resultado" required>
+                    </div>
+                </div>
+
+                <button type="submit" class="w-full bg-primary text-white py-3 px-4 rounded-lg font-bold hover:brightness-110 active:scale-95 transition-all shadow-lg text-sm tracking-wide">
+                    REGISTRARSE
+                </button>
+            </form>
+
+            <div class="mt-6 text-center text-sm text-secondary">
+                ¿Ya tienes cuenta? 
+                <button id="showLoginBtn" class="text-primary font-bold hover:underline ml-1 focus:outline-none">
+                    Inicia sesión
+                </button>
+            </div>
+
+            <div class="mt-4 text-center border-t border-white/5 pt-4">
+                <a href="index.html" class="text-xs text-secondary hover:text-white transition-colors">
+                    ← Regresar al sitio principal
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <!-- Error Modal Popup -->
+    <div id="errorModal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm flex items-center justify-center p-4 hidden">
+        <div class="bg-surface-container border border-white/10 max-w-md w-full p-6 md:p-8 rounded-xl shadow-2xl text-center space-y-5">
+            <div class="w-14 h-14 bg-red-500/10 text-red-500 rounded-full flex items-center justify-center mx-auto text-2xl font-bold border border-red-500/20">
+                <span class="material-symbols-outlined text-3xl">error</span>
+            </div>
+            <div>
+                <h3 class="text-xl font-bold text-white mb-2">Error de Validación</h3>
+                <p id="errorMessage" class="text-secondary text-sm">
+                    Los datos ingresados son incorrectos.
+                </p>
+            </div>
+            <div class="flex flex-col gap-2.5 pt-2">
+                <button id="btnRetry" class="w-full bg-primary text-white py-3 px-4 rounded-lg font-bold hover:brightness-110 transition-all text-xs tracking-wider">
+                    INTENTAR NUEVAMENTE
+                </button>
+                <div class="flex gap-2.5">
+                    <button id="btnCancel" class="flex-1 bg-surface-container-low border border-white/20 text-white py-2.5 px-4 rounded-lg font-bold hover:bg-white hover:text-black transition-all text-xs tracking-wider">
+                        CANCELAR
+                    </button>
+                    <a href="contacto.html" class="flex-1 bg-surface-container-low border border-white/20 text-white py-2.5 px-4 rounded-lg font-bold hover:bg-white hover:text-black transition-all text-xs tracking-wider flex items-center justify-center">
+                        AYUDA
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="w-full py-6 text-center text-xs text-secondary border-t border-white/5">
+        © 2026 Crea-Imp Multimedia Agency. Todos los derechos reservados.
+    </footer>
+
+    <!-- External Script File -->
+    <script src="js/ingreso.js" defer></script>
+</body>
+</html>

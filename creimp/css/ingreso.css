@@ -1,0 +1,25 @@
+/* ==========================================================================
+   Crea-Imp - Ingreso Stylesheet
+   ========================================================================== */
+
+:root {
+  --color-primary: #ff6b00;
+  --color-secondary: #a0a0a0;
+  --color-background: #050505;
+  --color-surface-container: #121212;
+  --color-surface-container-low: #0a0a0a;
+}
+
+/* Material Symbols Adjustments */
+.material-symbols-outlined {
+  font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+}
+
+/* Smooth transitions for inputs */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus {
+  -webkit-box-shadow: 0 0 0px 1000px #0a0a0a inset;
+  -webkit-text-fill-color: white;
+  transition: background-color 5000s ease-in-out 0s;
+}

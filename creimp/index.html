@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Crea-Imp | Design & Digital Agency</title>
+
+  <meta name="description"
+        content="We design brands with identity and purpose.">
+
+  <meta name="theme-color" content="#0b0c0e">
+
+  <!-- Fuentes -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Poppins:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+  <!-- Iconos -->
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- Estilos globales y de Inicio -->
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/inicio.css">
+</head>
+
+<body>
+
+  <!-- =====================================
+       HEADER / NAVEGACIÓN
+  ====================================== -->
+  <header class="main-header">
+    <div class="header-container">
+
+      <a href="index.html"
+         class="logo-link"
+         aria-label="Crea-Imp - Home">
+
+        <img src="IMG/logo.png"
+             alt="Crea-Imp Logo"
+             class="logo-img"
+             data-i18n-alt="logoAlt">
+      </a>
+
+      <!-- Menú móvil -->
+      <button class="hamburger"
+              id="hamburger-btn"
+              type="button"
+              aria-label="Open menu"
+              aria-controls="nav-menu"
+              aria-expanded="false"
+              data-i18n-aria="menuLabel">
+
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <!-- Navegación principal -->
+      <nav aria-label="Main navigation">
+        <ul class="nav-menu" id="nav-menu">
+
+          <li>
+            <a href="index.html" class="nav-link active">
+              <span data-i18n="home">Home</span>
+            </a>
+          </li>
+
+          <li>
+            <a href="Nosotros.html" class="nav-link">
+              <span data-i18n="about">About Us</span>
+            </a>
+          </li>
+
+          <li>
+            <a href="Portafolio.html" class="nav-link">
+              <span data-i18n="portfolio">Portfolio</span>
+            </a>
+          </li>
+
+          <li>
+            <a href="Servicios.html" class="nav-link">
+              <span data-i18n="services">Services</span>
+            </a>
+          </li>
+
+          <li>
+            <a href="Contacto.html" class="nav-link">
+              <span data-i18n="contact">Contact</span>
+            </a>
+          </li>
+
+          
+          <!-- Cambio de idioma -->
+          <li class="language-switch-item">
+            <button type="button"
+                    id="language-toggle"
+                    class="nav-link btn-language"
+                    aria-label="Cambiar a español">
+              ESP
+            </button>
+          </li>
+
+          <!-- Inicio de sesión -->
+          <li>
+            <a href="ingreso.html"
+               class="nav-link btn-login-nav">
+              <span data-i18n="login">LOG IN</span>
+            </a>
+          </li>
+
+        </ul>
+      </nav>
+
+    </div>
+  </header>
+
+
+  <main>
+
+    <!-- =====================================
+         PRESENTACIÓN PRINCIPAL
+    ====================================== -->
+    <section class="hero-section" id="inicio">
+      <div class="container hero-container">
+
+        <div class="hero-content">
+
+          <p class="hero-eyebrow">
+            CREA-IMP · DISEÑO CON PROPÓSITO
+          </p>
+
+          <h1 class="hero-title">
+            <span class="text-orange">Crea-Imp</span>
+            <span data-i18n="headline">the key to</span>
+            <span class="text-orange" data-i18n="success">
+              success
+            </span>
+          </h1>
+
+          <p class="hero-subtitle" data-i18n="subtitle">
+            We design brands with identity and purpose.
+          </p>
+
+          <p class="hero-description"
+             data-i18n="heroDescription">
+            We help entrepreneurs and small businesses
+            communicate their ideas through creative design
+            and visual content.
+          </p>
+
+          <a href="Contacto.html" class="btn-primary">
+            <span data-i18n="getStarted">GET STARTED</span>
+            <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+          </a>
+
+        </div>
+
+        <!-- Video de presentación -->
+        <div class="hero-video">
+
+          <video controls
+                 playsinline
+                 preload="metadata"
+                 poster="IMG/inicio.png"
+                 aria-label="Crea-Imp presentation video">
+
+            <source src="video/video-crea-imp.mp4"
+                    type="video/mp4">
+
+            <span data-i18n="videoFallback">
+              Your browser does not support video playback.
+            </span>
+          </video>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- =====================================
+         PORTAFOLIO DESTACADO
+         Sin proyectos ficticios
+    ====================================== -->
+    <section class="featured-portfolio" id="trabajos">
+      <div class="container">
+
+        <div class="portfolio-heading">
+
+          <p class="section-eyebrow"
+             data-i18n="portfolioEyebrow">
+            OUR CREATIVE WORK
+          </p>
+
+          <h2 class="section-title"
+              data-i18n="portfolioTitle">
+            Ideas that make an impact
+          </h2>
+
+          <p class="section-description"
+             data-i18n="portfolioDescription">
+            Discover the creative work and visual designs
+            developed by Crea-Imp.
+          </p>
+
+        </div>
+
+        <!-- Aquí se pueden incorporar trabajos reales
+             de IMG/portafolio cuando integremos el CSS. -->
+
+        <div class="portfolio-cta">
+
+          <a href="Portafolio.html" class="btn-primary">
+            <span data-i18n="viewPortfolio">
+              VIEW PORTFOLIO
+            </span>
+
+            <i class="fa-solid fa-arrow-right"
+               aria-hidden="true"></i>
+          </a>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- =====================================
+         LLAMADO A CONTACTAR
+    ====================================== -->
+    <section class="home-contact" id="comenzar">
+      <div class="container home-contact-content">
+
+        <p class="section-eyebrow"
+           data-i18n="contactEyebrow">
+          LET'S CREATE SOMETHING
+        </p>
+
+        <h2 data-i18n="contactTitle">
+          Ready to bring your ideas to life?
+        </h2>
+
+        <p data-i18n="contactDescription">
+          Tell us about your project and let's get started.
+        </p>
+
+        <a href="Contacto.html" class="btn-primary">
+          <span data-i18n="contactButton">
+            CONTACT US
+          </span>
+
+          <i class="fa-solid fa-arrow-right"
+             aria-hidden="true"></i>
+        </a>
+
+      </div>
+    </section>
+
+  </main>
+
+
+  <!-- =====================================
+       FOOTER
+  ====================================== -->
+  <footer class="main-footer">
+    <div class="container footer-content">
+
+      <a href="index.html" class="footer-brand">
+        <img src="IMG/logo.png"
+             alt="Crea-Imp Logo"
+             class="footer-logo">
+      </a>
+
+      <p data-i18n="copyright">
+        © 2026 Crea-Imp. All rights reserved.
+      </p>
+
+      <div class="footer-socials">
+
+        <a href="https://instagram.com/Crea-Imp_oficial"
+           target="_blank"
+           rel="noopener noreferrer"
+           aria-label="Instagram">
+
+          <i class="fa-brands fa-instagram"></i>
+        </a>
+
+        <a href="https://www.tiktok.com/@Crea_Imp_oficial"
+           target="_blank"
+           rel="noopener noreferrer"
+           aria-label="TikTok">
+
+          <i class="fa-brands fa-tiktok"></i>
+        </a>
+
+        <a href="https://facebook.com"
+           target="_blank"
+           rel="noopener noreferrer"
+           aria-label="Facebook">
+
+          <i class="fa-brands fa-facebook"></i>
+        </a>
+
+      </div>
+
+    </div>
+  </footer>
+
+
+  <!-- JavaScript -->
+  <script src="js/main.js"></script>
+
+</body>
+</html>

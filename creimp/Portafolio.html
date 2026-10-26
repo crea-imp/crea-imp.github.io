@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0b0c0e">
+  <meta name="description" content="Explora el portafolio de Crea-Imp: logotipos, identidad visual, diseños para redes sociales, publicidad y edición de imágenes.">
+  <title>Crea-Imp | Portafolio</title>
+
+  <link rel="icon" href="IMG/logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+ 
+  <link rel="stylesheet" href="css/portafolio.css">
+  <script src="js/portafolio.js" defer></script>
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="index.html" aria-label="Crea-Imp, inicio">
+        <img src="IMG/logo.png" alt="Logo Crea-Imp">
+      </a>
+
+      <button class="mobile-menu-btn" id="mobile-menu-btn"
+        aria-label="Abrir menú" aria-controls="mobile-menu"
+        aria-expanded="false" type="button">
+        <span class="material-symbols-outlined" aria-hidden="true">menu</span>
+      </button>
+
+      <nav class="desktop-nav" aria-label="Navegación principal">
+        <a href="index.html" data-es="Inicio" data-en="Home">Inicio</a>
+        <a href="Nosotros.html" data-es="Nosotros" data-en="About us">Nosotros</a>
+        <a href="Portafolio.html" class="current" aria-current="page"
+          data-es="Portafolio" data-en="Portfolio">Portafolio</a>
+        <a href="Servicios.html" data-es="Servicios" data-en="Services">Servicios</a>
+        <a href="Contacto.html" data-es="Contacto" data-en="Contact">Contacto</a>
+
+        <button class="language-btn" id="language-toggle" type="button"
+          aria-label="Cambiar idioma">ESP</button>
+        <a class="login-btn" href="ingreso.html"
+          data-es="INICIO DE SESIÓN" data-en="LOG IN">INICIO DE SESIÓN</a>
+      </nav>
+    </div>
+
+    <nav class="mobile-nav hidden" id="mobile-menu" aria-label="Menú móvil">
+      <a href="index.html" data-es="Inicio" data-en="Home">Inicio</a>
+      <a href="Nosotros.html" data-es="Nosotros" data-en="About us">Nosotros</a>
+      <a href="Portafolio.html" class="current"
+        data-es="Portafolio" data-en="Portfolio">Portafolio</a>
+      <a href="Servicios.html" data-es="Servicios" data-en="Services">Servicios</a>
+      <a href="Contacto.html" data-es="Contacto" data-en="Contact">Contacto</a>
+      <button class="language-btn" id="mobile-language-toggle" type="button">ESP</button>
+      <a class="login-btn" href="ingreso.html"
+        data-es="INICIO DE SESIÓN" data-en="LOG IN">INICIO DE SESIÓN</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="portfolio-hero">
+      <span class="eyebrow" data-es="NUESTRO TRABAJO" data-en="OUR WORK">NUESTRO TRABAJO</span>
+      <h1 data-es="Diseños que dejan huella."
+          data-en="Designs that make an impact.">Diseños que dejan huella.</h1>
+      <p data-es="Explora una muestra de los trabajos de diseño de Crea-Imp. Cada propuesta busca comunicar ideas y dar personalidad a cada marca."
+         data-en="Explore a selection of Crea-Imp design work. Each project aims to communicate ideas and give every brand its own personality.">
+        Explora una muestra de los trabajos de diseño de Crea-Imp. Cada propuesta busca comunicar ideas y dar personalidad a cada marca.
+      </p>
+    </section>
+
+    <section class="portfolio-section" aria-label="Galería del portafolio">
+      <div class="portfolio-heading">
+        <div>
+          <span class="eyebrow" data-es="GALERÍA" data-en="GALLERY">GALERÍA</span>
+          <h2 data-es="Explora nuestros diseños" data-en="Explore our designs">Explora nuestros diseños</h2>
+        </div>
+        <p data-es="Selecciona una categoría para filtrar los trabajos."
+           data-en="Choose a category to filter the work.">
+          Selecciona una categoría para filtrar los trabajos.
+        </p>
+      </div>
+
+      <div class="filter-list" role="group" aria-label="Filtrar trabajos">
+        <button class="filter-btn active" type="button" data-filter="all"
+          aria-pressed="true" data-es="Todos" data-en="All">Todos</button>
+        <button class="filter-btn" type="button" data-filter="logotipos"
+          aria-pressed="false" data-es="Logotipos" data-en="Logos">Logotipos</button>
+        <button class="filter-btn" type="button" data-filter="identidad"
+          aria-pressed="false" data-es="Identidad visual" data-en="Visual identity">Identidad visual</button>
+        <button class="filter-btn" type="button" data-filter="redes"
+          aria-pressed="false" data-es="Redes sociales" data-en="Social media">Redes sociales</button>
+        <button class="filter-btn" type="button" data-filter="publicidad"
+          aria-pressed="false" data-es="Publicidad" data-en="Advertising">Publicidad</button>
+        <button class="filter-btn" type="button" data-filter="productos"
+          aria-pressed="false" data-es="Productos" data-en="Products">Productos</button>
+        <button class="filter-btn" type="button" data-filter="edicion"
+          aria-pressed="false" data-es="Edición de imágenes" data-en="Image editing">Edición de imágenes</button>
+      </div>
+
+      <div class="project-grid" id="project-grid">
+        <article class="project-card" data-category="logotipos">
+          <a class="project-image-link" href="IMG/portafolio/logotipos.png" target="_blank" rel="noopener">
+            <img class="project-image" src="IMG/portafolio/logotipos.png"
+              alt="Ejemplos de diseño de logotipos" loading="lazy">
+            <span class="image-open" aria-hidden="true">↗</span>
+          </a>
+          <div class="project-info">
+            <span class="project-category" data-es="DISEÑO GRÁFICO" data-en="GRAPHIC DESIGN">DISEÑO GRÁFICO</span>
+            <h3 data-es="Diseño de logotipos" data-en="Logo design">Diseño de logotipos</h3>
+            <p data-es="Propuestas visuales para representar la identidad de una marca."
+               data-en="Visual concepts that represent a brand's identity.">
+              Propuestas visuales para representar la identidad de una marca.
+            </p>
+          </div>
+        </article>
+
+        <article class="project-card" data-category="identidad">
+          <a class="project-image-link" href="IMG/portafolio/identidad-visual.png" target="_blank" rel="noopener">
+            <img class="project-image" src="IMG/portafolio/identidad-visual.png"
+              alt="Diseño de identidad visual, tarjetas y papelería" loading="lazy">
+            <span class="image-open" aria-hidden="true">↗</span>
+          </a>
+          <div class="project-info">
+            <span class="project-category" data-es="IDENTIDAD DE MARCA" data-en="BRAND IDENTITY">IDENTIDAD DE MARCA</span>
+            <h3 data-es="Identidad visual" data-en="Visual identity">Identidad visual</h3>
+            <p data-es="Aplicación del logo, los colores y otros elementos de marca."
+               data-en="Use of logos, colors and other brand elements.">
+              Aplicación del logo, los colores y otros elementos de marca.
+            </p>
+          </div>
+        </article>
+
+        <article class="project-card" data-category="redes">
+          <a class="project-image-link" href="IMG/portafolio/redes-sociales.png" target="_blank" rel="noopener">
+            <img class="project-image" src="IMG/portafolio/redes-sociales.png"
+              alt="Diseños para publicaciones e historias de redes sociales" loading="lazy">
+            <span class="image-open" aria-hidden="true">↗</span>
+          </a>
+          <div class="project-info">
+            <span class="project-category" data-es="CONTENIDO DIGITAL" data-en="DIGITAL CONTENT">CONTENIDO DIGITAL</span>
+            <h3 data-es="Diseños para redes sociales" data-en="Social media designs">Diseños para redes sociales</h3>
+            <p data-es="Publicaciones, historias y plantillas para comunicar ideas."
+               data-en="Posts, stories and templates to communicate ideas.">
+              Publicaciones, historias y plantillas para comunicar ideas.
+            </p>
+          </div>
+        </article>
+
+        <article class="project-card" data-category="publicidad">
+          <a class="project-image-link" href="IMG/portafolio/publicidad.png" target="_blank" rel="noopener">
+            <img class="project-image" src="IMG/portafolio/publicidad.png"
+              alt="Diseños publicitarios para afiches y volantes" loading="lazy">
+            <span class="image-open" aria-hidden="true">↗</span>
+          </a>
+          <div class="project-info">
+            <span class="project-category" data-es="DISEÑO PUBLICITARIO" data-en="ADVERTISING DESIGN">DISEÑO PUBLICITARIO</span>
+            <h3 data-es="Afiches y volantes" data-en="Posters and flyers">Afiches y volantes</h3>
+            <p data-es="Piezas visuales pensadas para presentar promociones o información."
+               data-en="Visual pieces designed to present promotions or information.">
+              Piezas visuales pensadas para presentar promociones o información.
+            </p>
+          </div>
+        </article>
+
+        <article class="project-card" data-category="productos">
+          <a class="project-image-link" href="IMG/portafolio/productos-creaimp.png" target="_blank" rel="noopener">
+            <img class="project-image" src="IMG/portafolio/productos-creaimp.png"
+              alt="Productos con el logo de Crea-Imp" loading="lazy">
+            <span class="image-open" aria-hidden="true">↗</span>
+          </a>
+          <div class="project-info">
+            <span class="project-category" data-es="APLICACIÓN DE MARCA" data-en="BRAND APPLICATION">APLICACIÓN DE MARCA</span>
+            <h3 data-es="Productos con logo" data-en="Branded products">Productos con logo</h3>
+            <p data-es="Ejemplos de cómo se puede aplicar una identidad visual en productos."
+               data-en="Examples of how a visual identity can be applied to products.">
+              Ejemplos de cómo se puede aplicar una identidad visual en productos.
+            </p>
+          </div>
+        </article>
+
+        <article class="project-card" data-category="edicion">
+          <a class="project-image-link" href="IMG/portafolio/edicion-imagenes.png" target="_blank" rel="noopener">
+            <img class="project-image" src="IMG/portafolio/edicion-imagenes.png"
+              alt="Ejemplo de edición y mejora de imágenes" loading="lazy">
+            <span class="image-open" aria-hidden="true">↗</span>
+          </a>
+          <div class="project-info">
+            <span class="project-category" data-es="EDICIÓN DIGITAL" data-en="DIGITAL EDITING">EDICIÓN DIGITAL</span>
+            <h3 data-es="Edición de imágenes" data-en="Image editing">Edición de imágenes</h3>
+            <p data-es="Ajustes de color y mejoras visuales para presentar imágenes."
+               data-en="Color adjustments and visual improvements for images.">
+              Ajustes de color y mejoras visuales para presentar imágenes.
+            </p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="portfolio-cta">
+      <span class="eyebrow" data-es="¿TIENES UNA IDEA?" data-en="HAVE AN IDEA?">¿TIENES UNA IDEA?</span>
+      <h2 data-es="Hagámosla realidad." data-en="Let's bring it to life.">Hagámosla realidad.</h2>
+      <p data-es="Cuéntanos qué necesitas y exploremos cómo darle forma a tu idea."
+         data-en="Tell us what you need and let's explore how to bring your idea to life.">
+        Cuéntanos qué necesitas y exploremos cómo darle forma a tu idea.
+      </p>
+      <a class="cta-button" href="Contacto.html"
+        data-es="Contáctanos" data-en="Contact us">Contáctanos <span aria-hidden="true">↗</span></a>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <a class="footer-brand" href="index.html">
+        <img src="IMG/logo.png" alt="Logo Crea-Imp">
+      </a>
+      <p data-es="Diseño gráfico y contenido visual para marcas con identidad y propósito."
+         data-en="Graphic design and visual content for brands with identity and purpose.">
+        Diseño gráfico y contenido visual para marcas con identidad y propósito.
+      </p>
+      <div class="footer-links">
+        <a href="Nosotros.html" data-es="Nosotros" data-en="About us">Nosotros</a>
+        <a href="Servicios.html" data-es="Servicios" data-en="Services">Servicios</a>
+        <a href="Contacto.html" data-es="Contacto" data-en="Contact">Contacto</a>
+      </div>
+      <span class="copyright">© 2026 Crea-Imp. <span data-es="Todos los derechos reservados." data-en="All rights reserved.">Todos los derechos reservados.</span></span>
+    </div>
+  </footer>
+
+  <script src="js/portafolio.js"></script>
+</body>
+</html>

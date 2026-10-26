@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#000000">
+  <meta name="description" content="Conoce los servicios de diseño gráfico, redes sociales, identidad visual básica y edición digital de Crea-Imp.">
+  <title>Servicios | Crea-Imp</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Montserrat:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
+  <link rel="stylesheet" href="css/servicios.css">
+  <script src="js/servicios.js" defer></script>
+</head>
+
+<body>
+  <header class="site-header">
+    <a class="logo" href="index.html" aria-label="Crea-Imp, inicio">
+      <img src="IMG/logo.png" alt="Logo de Crea-Imp">
+    </a>
+
+    <button class="mobile-menu-btn" id="mobile-menu-btn"
+      type="button" aria-label="Abrir menú" aria-expanded="false"
+      aria-controls="mobile-menu">
+      <span class="material-symbols-outlined" aria-hidden="true">menu</span>
+    </button>
+
+    <nav class="desktop-nav" aria-label="Navegación principal">
+      <a href="index.html" data-es="Inicio" data-en="Home">Inicio</a>
+      <a href="Nosotros.html" data-es="Nosotros" data-en="About us">Nosotros</a>
+      <a href="Portafolio.html" data-es="Portafolio" data-en="Portfolio">Portafolio</a>
+      <a href="Servicios.html" class="active" aria-current="page" data-es="Servicios" data-en="Services">Servicios</a>
+      <a href="Contacto.html" data-es="Contacto" data-en="Contact">Contacto</a>
+      <button class="language-btn" id="language-toggle" type="button" aria-label="Cambiar idioma">ESP</button>
+      <a class="login-btn" href="ingreso.html" data-es="INICIO DE SESIÓN" data-en="LOG IN">INICIO DE SESIÓN</a>
+    </nav>
+
+    <nav class="mobile-nav hidden" id="mobile-menu" aria-label="Navegación móvil">
+      <a href="index.html" data-es="Inicio" data-en="Home">Inicio</a>
+      <a href="Nosotros.html" data-es="Nosotros" data-en="About us">Nosotros</a>
+      <a href="Portafolio.html" data-es="Portafolio" data-en="Portfolio">Portafolio</a>
+      <a href="Servicios.html" class="active" aria-current="page" data-es="Servicios" data-en="Services">Servicios</a>
+      <a href="Contacto.html" data-es="Contacto" data-en="Contact">Contacto</a>
+
+      <button class="language-btn" id="mobile-language-toggle" type="button">ESP</button>
+      <a class="login-btn" href="ingreso.html" data-es="INICIO DE SESIÓN" data-en="LOG IN">INICIO DE SESIÓN</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="services-hero">
+      <div class="hero-content">
+        <span class="eyebrow" data-es="IDEAS QUE TOMAN FORMA" data-en="IDEAS TAKING SHAPE">IDEAS QUE TOMAN FORMA</span>
+        <h1 data-es="Diseño que comunica y deja huella." data-en="Design that communicates and makes an impact.">Diseño que comunica y deja huella.</h1>
+        <p data-es="En Crea-Imp ayudamos a emprendedores y pequeños negocios a mostrar sus ideas con diseños visuales atractivos y pensados para su marca." data-en="At Crea-Imp, we help entrepreneurs and small businesses present their ideas through attractive visual designs made for their brands.">
+          En Crea-Imp ayudamos a emprendedores y pequeños negocios a mostrar sus ideas con diseños visuales atractivos y pensados para su marca.
+        </p>
+        <a class="button button-primary" href="Contacto.html">
+          <span data-es="Hablemos de tu idea" data-en="Let's talk about your idea">Hablemos de tu idea</span>
+          <span aria-hidden="true">↗</span>
+        </a>
+      </div>
+
+      <div class="hero-art" aria-hidden="true">
+        <div class="art-orbit orbit-one"></div>
+        <div class="art-orbit orbit-two"></div>
+        <div class="art-square square-one"></div>
+        <div class="art-square square-two"></div>
+        <div class="art-center">
+          <span class="material-symbols-outlined">draw</span>
+          <strong>CREA<span>-</span>IMP</strong>
+          <small>DISEÑO CON PROPÓSITO</small>
+        </div>
+      </div>
+    </section>
+
+    <section class="services-section" id="servicios">
+      <div class="section-heading reveal-on-scroll">
+        <span class="eyebrow" data-es="LO QUE HACEMOS" data-en="WHAT WE DO">LO QUE HACEMOS</span>
+        <h2 data-es="Nuestros servicios" data-en="Our services">Nuestros servicios</h2>
+        <p data-es="Soluciones visuales para darle personalidad a tu marca y comunicar mejor tus ideas." data-en="Visual solutions to give your brand personality and communicate your ideas more clearly.">
+          Soluciones visuales para darle personalidad a tu marca y comunicar mejor tus ideas.
+        </p>
+      </div>
+
+      <div class="services-grid">
+        <article class="service-card reveal-on-scroll">
+          <div class="service-visual visual-graphic">
+            <span class="visual-label">01 / DESIGN</span>
+            <div class="graphic-poster">
+              <span class="poster-small">CREATIVE STUDIO</span>
+              <strong>IDEAS<br><em>IN</em><br>FORM</strong>
+              <span class="poster-circle"></span>
+            </div>
+            <span class="service-icon material-symbols-outlined" aria-hidden="true">palette</span>
+          </div>
+          <div class="service-content">
+            <span class="service-number">01</span>
+            <h3 data-es="Diseño gráfico" data-en="Graphic design">Diseño gráfico</h3>
+            <p data-es="Diseñamos elementos visuales que ayudan a presentar tu negocio de una forma atractiva y profesional." data-en="We create visual elements that help present your business in an attractive and professional way.">
+              Diseñamos elementos visuales que ayudan a presentar tu negocio de una forma atractiva y profesional.
+            </p>
+            <ul>
+              <li data-es="Logotipos" data-en="Logos">Logotipos</li>
+              <li data-es="Afiches y volantes publicitarios" data-en="Advertising posters and flyers">Afiches y volantes publicitarios</li>
+              <li data-es="Tarjetas y material visual" data-en="Business cards and visual materials">Tarjetas y material visual</li>
+            </ul>
+            <a class="service-link" href="Contacto.html">
+              <span data-es="Consultar servicio" data-en="Ask about this service">Consultar servicio</span><span aria-hidden="true">↗</span>
+            </a>
+          </div>
+        </article>
+
+        <article class="service-card reveal-on-scroll">
+          <div class="service-visual visual-social">
+            <span class="visual-label">02 / SOCIAL</span>
+            <div class="social-mockup">
+              <div class="mockup-top"><span></span><span></span><span></span></div>
+              <div class="mockup-image"><strong>MAKE<br>IT <em>MATTER.</em></strong></div>
+              <div class="mockup-lines"><span></span><span></span><span></span></div>
+            </div>
+            <span class="service-icon material-symbols-outlined" aria-hidden="true">grid_view</span>
+          </div>
+          <div class="service-content">
+            <span class="service-number">02</span>
+            <h3 data-es="Diseño para redes sociales" data-en="Social media design">Diseño para redes sociales</h3>
+            <p data-es="Creamos contenido visual para que tu negocio se presente de manera clara y atractiva en sus redes." data-en="We create visual content so your business can present itself clearly and attractively on social media.">
+              Creamos contenido visual para que tu negocio se presente de manera clara y atractiva en sus redes.
+            </p>
+            <ul>
+              <li data-es="Publicaciones para redes" data-en="Social media posts">Publicaciones para redes</li>
+              <li data-es="Diseño de historias" data-en="Story designs">Diseño de historias</li>
+              <li data-es="Plantillas personalizadas" data-en="Custom templates">Plantillas personalizadas</li>
+            </ul>
+            <a class="service-link" href="Contacto.html">
+              <span data-es="Consultar servicio" data-en="Ask about this service">Consultar servicio</span><span aria-hidden="true">↗</span>
+            </a>
+          </div>
+        </article>
+
+        <article class="service-card reveal-on-scroll">
+          <div class="service-visual visual-identity">
+            <span class="visual-label">03 / IDENTITY</span>
+            <div class="identity-board">
+              <span class="identity-symbol">C<span>+</span></span>
+              <div class="swatches"><i></i><i></i><i></i><i></i></div>
+              <span class="identity-caption">COLOR · TYPE · LOGO</span>
+            </div>
+            <span class="service-icon material-symbols-outlined" aria-hidden="true">interests</span>
+          </div>
+          <div class="service-content">
+            <span class="service-number">03</span>
+            <h3 data-es="Identidad visual básica" data-en="Basic visual identity">Identidad visual básica</h3>
+            <p data-es="Definimos elementos visuales principales para que tu marca tenga una imagen reconocible y personal." data-en="We define key visual elements so your brand has a recognizable and personal look.">
+              Definimos elementos visuales principales para que tu marca tenga una imagen reconocible y personal.
+            </p>
+            <ul>
+              <li data-es="Diseño de logotipo" data-en="Logo design">Diseño de logotipo</li>
+              <li data-es="Selección de colores" data-en="Color selection">Selección de colores</li>
+              <li data-es="Tipografías principales" data-en="Main typefaces">Tipografías principales</li>
+            </ul>
+            <a class="service-link" href="Contacto.html">
+              <span data-es="Consultar servicio" data-en="Ask about this service">Consultar servicio</span><span aria-hidden="true">↗</span>
+            </a>
+          </div>
+        </article>
+
+        <article class="service-card reveal-on-scroll">
+          <div class="service-visual visual-editing">
+            <span class="visual-label">04 / DIGITAL</span>
+            <div class="editing-board">
+              <div class="editing-shape shape-a"></div>
+              <div class="editing-shape shape-b"></div>
+              <div class="editing-shape shape-c"></div>
+              <span class="editing-word">REFINE<br>YOUR<br><em>VISION.</em></span>
+            </div>
+            <span class="service-icon material-symbols-outlined" aria-hidden="true">tune</span>
+          </div>
+          <div class="service-content">
+            <span class="service-number">04</span>
+            <h3 data-es="Edición y diseño digital" data-en="Digital editing and design">Edición y diseño digital</h3>
+            <p data-es="Ajustamos y organizamos imágenes y elementos visuales para que estén listos para usar y publicar." data-en="We adjust and organize images and visual elements so they are ready to use and publish.">
+              Ajustamos y organizamos imágenes y elementos visuales para que estén listos para usar y publicar.
+            </p>
+            <ul>
+              <li data-es="Edición de imágenes" data-en="Image editing">Edición de imágenes</li>
+              <li data-es="Ajustes de color" data-en="Color adjustments">Ajustes de color</li>
+              <li data-es="Archivos finales listos para publicar" data-en="Final files ready to publish">Archivos finales listos para publicar</li>
+            </ul>
+            <a class="service-link" href="Contacto.html">
+              <span data-es="Consultar servicio" data-en="Ask about this service">Consultar servicio</span><span aria-hidden="true">↗</span>
+            </a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="process-section reveal-on-scroll">
+      <div class="process-intro">
+        <span class="eyebrow" data-es="ASÍ TRABAJAMOS" data-en="HOW WE WORK">ASÍ TRABAJAMOS</span>
+        <h2 data-es="Tu idea, paso a paso." data-en="Your idea, step by step.">Tu idea, paso a paso.</h2>
+        <p data-es="Queremos entender lo que necesitas y acompañarte durante el proceso de diseño." data-en="We want to understand what you need and guide you through the design process.">
+          Queremos entender lo que necesitas y acompañarte durante el proceso de diseño.
+        </p>
+      </div>
+      <div class="process-steps">
+        <div class="process-step">
+          <span>01</span>
+          <div><h3 data-es="Nos cuentas" data-en="You tell us">Nos cuentas</h3><p data-es="Escuchamos tu idea y lo que buscas para tu negocio." data-en="We listen to your idea and what you want for your business.">Escuchamos tu idea y lo que buscas para tu negocio.</p></div>
+        </div>
+        <div class="process-step">
+          <span>02</span>
+          <div><h3 data-es="Diseñamos" data-en="We design">Diseñamos</h3><p data-es="Preparamos una propuesta visual según tus necesidades." data-en="We prepare a visual proposal based on your needs.">Preparamos una propuesta visual según tus necesidades.</p></div>
+        </div>
+        <div class="process-step">
+          <span>03</span>
+          <div><h3 data-es="Entregamos" data-en="We deliver">Entregamos</h3><p data-es="Te entregamos los archivos finales acordados, listos para usar." data-en="We deliver the agreed final files, ready to use.">Te entregamos los archivos finales acordados, listos para usar.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="services-cta reveal-on-scroll">
+      <div>
+        <span class="eyebrow" data-es="EMPECEMOS" data-en="LET'S GET STARTED">EMPECEMOS</span>
+        <h2 data-es="¿Tienes una idea en mente?" data-en="Have an idea in mind?">¿Tienes una idea en mente?</h2>
+        <p data-es="Cuéntanos qué necesitas y busquemos una solución visual para tu marca." data-en="Tell us what you need and let's find a visual solution for your brand.">
+          Cuéntanos qué necesitas y busquemos una solución visual para tu marca.
+        </p>
+      </div>
+      <a class="button button-primary" href="Contacto.html">
+        <span data-es="Contactar a Crea-Imp" data-en="Contact Crea-Imp">Contactar a Crea-Imp</span>
+        <span aria-hidden="true">↗</span>
+      </a>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <a class="footer-logo" href="index.html">
+      <img src="IMG/logo.png" alt="Crea-Imp">
+    </a>
+    <p data-es="Diseñamos marcas con identidad y propósito." data-en="We design brands with identity and purpose.">Diseñamos marcas con identidad y propósito.</p>
+    <div class="footer-links">
+      <a href="Nosotros.html" data-es="Nosotros" data-en="About us">Nosotros</a>
+      <a href="Portafolio.html" data-es="Portafolio" data-en="Portfolio">Portafolio</a>
+      <a href="Servicios.html" data-es="Servicios" data-en="Services">Servicios</a>
+      <a href="Contacto.html" data-es="Contacto" data-en="Contact">Contacto</a>
+    </div>
+    <p class="copyright">© 2026 Crea-Imp. <span data-es="Todos los derechos reservados." data-en="All rights reserved.">Todos los derechos reservados.</span></p>
+  </footer>
+</body>
+</html>

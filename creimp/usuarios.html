@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html class="scroll-smooth dark" lang="es">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Panel de Usuario | Crea-Imp Multimedia Agency</title>
+
+    <!-- Google Fonts & Material Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@400;600;700;800&family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&display=swap" rel="stylesheet"/>
+
+    <!-- Tailwind Play CDN -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#ff6b00",
+                        "primary-container": "#ff6b00",
+                        "secondary": "#a0a0a0",
+                        "background": "#050505",
+                        "surface": "#050505",
+                        "surface-container": "#121212",
+                        "surface-container-low": "#0a0a0a",
+                        "surface-container-high": "#1e1e1e",
+                        "on-background": "#ffffff",
+                        "on-surface": "#ffffff"
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    fontFamily: {
+                        "body-md": ["Inter", "sans-serif"],
+                        "headline-md": ["Montserrat", "sans-serif"]
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Custom Exterior Modular CSS -->
+    <link rel="stylesheet" href="css/usuarios.css"/>
+</head>
+<body class="bg-background text-on-background font-body-md antialiased selection:bg-primary selection:text-white">
+
+    <!-- Top User Dashboard Navigation Bar -->
+    <header class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-4 md:px-16 py-4 bg-background/90 backdrop-blur-md border-b border-white/5">
+        <a href="usuarios.html" class="font-headline-md font-bold text-xl tracking-tight text-white flex items-center gap-2">
+            Crea-Imp <span class="text-xs text-primary bg-primary/10 px-2.5 py-0.5 rounded-full font-mono hidden sm:inline-block">Área de Cliente</span>
+        </a>
+        
+        <div class="flex items-center gap-4">
+            <!-- Silhouette Avatar & Logged-in Email -->
+            <div class="flex items-center gap-3 bg-surface-container border border-white/10 px-3.5 py-1.5 rounded-full shadow-inner">
+                <div class="w-8 h-8 rounded-full bg-primary/20 text-primary flex items-center justify-center font-bold">
+                    <img src="IMG/avatar.png"
+         alt="Avatar del usuario"
+         class="w-full h-full object-cover">
+                </div>
+                <span id="userEmailDisplay" class="text-sm font-medium text-white tracking-wide">
+                    cargando...
+                </span>
+            </div>
+            
+            <!-- Visible Logout Button -->
+            <button id="btnLogout" class="bg-red-500/10 hover:bg-red-500/20 border border-red-500/20 text-red-400 px-4 py-2 rounded-lg text-sm font-bold transition-all flex items-center gap-2 active:scale-95">
+                <span class="material-symbols-outlined text-sm">logout</span>
+                <span class="hidden sm:inline">Cerrar Sesión</span>
+            </button>
+        </div>
+    </header>
+
+    <main class="pt-24">
+        <!-- Welcome Banner -->
+        <section class="px-4 md:px-16 py-8 bg-surface-container-low border-b border-white/5">
+            <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+                <div>
+                    <span class="text-xs uppercase tracking-widest text-primary font-bold">Sesión Activa Verificada</span>
+                    <h1 class="font-headline-md text-2xl md:text-3xl font-bold text-white mt-1">
+                        Panel de Control y Proyectos Multimedia
+                    </h1>
+                </div>
+                <div class="text-sm text-secondary bg-surface-container px-4 py-2 rounded-lg border border-white/5">
+                    Estado: <span class="text-green-400 font-semibold">Autenticado correctamente</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Main Content Sections Preserved & Adapted from Index -->
+        <section class="relative min-h-[60vh] flex items-center py-16 px-4 md:px-16 bg-background">
+            <div class="max-w-7xl mx-auto grid md:grid-cols-12 gap-12 w-full items-center">
+                <div class="md:col-span-7 flex flex-col justify-center">
+                    <h2 class="font-headline-md text-3xl md:text-5xl font-bold text-white mb-4 leading-tight">
+                        Transformamos visiones en <span class="text-primary">realidades visuales</span>
+                    </h2>
+                    <p class="text-secondary text-base md:text-lg mb-8 max-w-2xl leading-relaxed">
+                        Como usuario registrado, tienes acceso prioritario a las herramientas de diseño, control de entregas y consulta de nuestro catálogo multimedia estratégico.
+                    </p>
+                    <div class="flex flex-wrap gap-4">
+                        <a href="servicios.html" class="bg-primary text-white px-6 py-3 rounded-lg font-bold hover:brightness-110 transition-all text-center shadow-lg">
+                            Nuestros Servicios
+                        </a>
+                        <a href="portafolio.html" class="bg-transparent border border-white/20 px-6 py-3 rounded-lg font-bold text-white hover:bg-white hover:text-black transition-all text-center">
+                            Ver Portafolio
+                        </a>
+                         <a href="Documento/manual-corporativo.pdf" class="bg-transparent border border-primary text-primary px-6 py-3 rounded-lg font-bold hover:bg-primary hover:text-white transition-all text-center">
+                            Manual Visual
+                        </a>
+
+                        <a href="Documento/BRIEF.pdf" class="bg-transparent border border-primary text-primary px-6 py-3 rounded-lg font-bold hover:bg-primary hover:text-white transition-all text-center">
+                            Ver Brief
+                        </a>
+                    </div>
+                </div>
+                <div class="md:col-span-5 relative hidden md:block">
+                    <div class="absolute inset-0 bg-primary/10 rounded-full blur-3xl"></div>
+                    <div class="relative bg-surface-container p-6 rounded-xl border border-white/5 shadow-2xl space-y-4">
+                        <div class="flex items-center justify-between pb-4 border-b border-white/5">
+                            <span class="text-sm font-bold text-white uppercase tracking-wider">Detalles de Cuenta</span>
+                            <span class="text-xs text-primary font-mono bg-primary/10 px-2 py-0.5 rounded">VIP Partner</span>
+                        </div>
+                        <div class="space-y-3 text-sm text-secondary">
+                            <div class="flex justify-between">
+                                <span>Tipo de Plan:</span>
+                                <span class="text-white font-medium">Agencia Multimedia 360°</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span>Soporte Técnico:</span>
+                                <span class="text-white font-medium">Prioritario 24/7</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span>Archivos Disponibles:</span>
+                                <span class="text-white font-medium">Paquetes Vectoriales &amp; 4K</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="w-full py-12 px-4 md:px-16 bg-surface-container border-t border-white/5 text-secondary text-sm">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between gap-4 items-center">
+            <p>© 2026 Crea-Imp Multimedia Agency. Todos los derechos reservados.</p>
+            <div class="flex gap-6">
+                <a href="contacto.html" class="hover:text-white transition-colors">Contacto y Ayuda</a>
+                <a href="servicios.html" class="hover:text-white transition-colors">Servicios</a>
+                <a href="portafolio.html" class="hover:text-white transition-colors">Portafolio</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- External Script File -->
+    <script src="js/usuarios.js" defer></script>
+</body>
+</html>
