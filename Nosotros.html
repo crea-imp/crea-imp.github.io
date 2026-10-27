@@ -14,6 +14,101 @@
   <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
 
   <style>
+    /* Estilos unificados para el menú móvil idénticos a Inicio */
+    .main-header {
+      background-color: #0b0c0e;
+      position: relative;
+      z-index: 100;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    .header-container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 1rem 5%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .logo-img {
+      max-width: 120px;
+      height: auto;
+      display: block;
+    }
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      justify-content: space-between;
+      width: 28px;
+      height: 20px;
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      z-index: 1001;
+    }
+    .hamburger span {
+      display: block;
+      width: 100%;
+      height: 3px;
+      background-color: #fff;
+      border-radius: 2px;
+      transition: all 0.3s ease;
+    }
+    .nav-menu {
+      display: flex;
+      list-style: none;
+      gap: 1.5rem;
+      align-items: center;
+      margin: 0;
+      padding: 0;
+    }
+    .nav-menu a, .nav-menu button {
+      color: #fff;
+      text-decoration: none;
+      font-family: 'Inter', sans-serif;
+      font-weight: 500;
+      font-size: 0.95rem;
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      transition: color 0.3s ease;
+    }
+    .nav-menu a:hover, .nav-menu a.active, .nav-menu button:hover {
+      color: #ff6b00;
+    }
+    .btn-login-nav {
+      background-color: #ff6b00;
+      padding: 0.5rem 1rem;
+      border-radius: 6px;
+      color: #fff !important;
+      font-weight: 600;
+    }
+
+    @media (max-width: 768px) {
+      .hamburger {
+        display: flex !important;
+      }
+      .nav-menu {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 80%;
+        max-width: 300px;
+        height: 100vh;
+        background-color: #121212;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 1.5rem;
+        transition: right 0.4s ease-in-out;
+        z-index: 1000;
+        box-shadow: -5px 0 25px rgba(0,0,0,0.5);
+        padding: 2rem;
+      }
+      .nav-menu.active {
+        right: 0;
+      }
+    }
+
     .nosotros-wrapper {
       max-width: 1280px;
       margin: 0 auto;
@@ -72,80 +167,35 @@
       max-width: 900px;
       margin: 0 auto;
     }
-
-    /* REGLAS RESPONSIVE MÓVIL PARA HEADER Y MENÚ */
-    @media (max-width: 768px) {
-      .main-header {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 1rem;
-      }
-      .hamburger {
-        display: flex !important;
-        flex-direction: column;
-        justify-content: space-between;
-        width: 28px;
-        height: 20px;
-        background: transparent;
-        border: none;
-        cursor: pointer;
-        z-index: 1001;
-      }
-      .hamburger span {
-        display: block;
-        width: 100%;
-        height: 3px;
-        background-color: #fff;
-        border-radius: 2px;
-      }
-      .nav-menu {
-        position: fixed;
-        top: 0;
-        right: -100%;
-        width: 80%;
-        max-width: 300px;
-        height: 100vh;
-        background-color: #121212;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        gap: 1.5rem;
-        transition: right 0.4s ease-in-out;
-        z-index: 1000;
-        box-shadow: -5px 0 25px rgba(0,0,0,0.5);
-        padding: 2rem;
-        display: flex !important;
-      }
-      .nav-menu.active {
-        right: 0;
-      }
-    }
   </style>
 </head>
 
 <body>
 
   <header class="main-header">
-    <a href="index.html" class="logo-link">
-      <img src="IMG/logo.png" alt="Logo de Crea-Imp" class="logo-img">
-    </a>
+    <div class="header-container">
+      <a href="index.html" class="logo-link">
+        <img src="IMG/logo.png" alt="Logo de Crea-Imp" class="logo-img">
+      </a>
 
-    <button class="hamburger" id="hamburger-btn" aria-label="Abrir menú" aria-expanded="false" type="button">
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
+      <button class="hamburger" id="hamburger-btn" aria-label="Abrir menú" aria-expanded="false" type="button">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
 
-    <nav class="nav-menu" id="nav-menu">
-      <a href="index.html" class="nav-link" data-es="Inicio" data-en="Home">Inicio</a>
-      <a href="Nosotros.html" class="nav-link active" data-es="Nosotros" data-en="About Us">Nosotros</a>
-      <a href="Portafolio.html" class="nav-link" data-es="Portafolio" data-en="Portfolio">Portafolio</a>
-      <a href="Servicios.html" class="nav-link" data-es="Servicios" data-en="Services">Servicios</a>
-      <a href="Contacto.html" class="nav-link" data-es="Contacto" data-en="Contact">Contacto</a>
-      <button id="language-toggle" class="language-toggle" type="button" aria-label="Cambiar idioma">ESP</button>
-      <a href="ingreso.html" class="btn-login-nav" data-es="INICIO DE SESIÓN" data-en="LOG IN">INICIO DE SESIÓN</a>
-    </nav>
+      <nav aria-label="Main navigation">
+        <ul class="nav-menu" id="nav-menu">
+          <li><a href="index.html" class="nav-link">Inicio</a></li>
+          <li><a href="Nosotros.html" class="nav-link active">Nosotros</a></li>
+          <li><a href="Portafolio.html" class="nav-link">Portafolio</a></li>
+          <li><a href="Servicios.html" class="nav-link">Servicios</a></li>
+          <li><a href="Contacto.html" class="nav-link">Contacto</a></li>
+          <li><button id="language-toggle" type="button" aria-label="Cambiar idioma">ESP</button></li>
+          <li><a href="ingreso.html" class="btn-login-nav">INICIO DE SESIÓN</a></li>
+        </ul>
+      </nav>
+    </div>
   </header>
 
   <main>
@@ -173,140 +223,4 @@
           </h2>
         </div>
 
-        <div style="display: flex; flex-direction: column; gap: 1rem; color: #a0a0a0; font-family: 'Inter', sans-serif; line-height: 1.6; font-size: 0.95rem; text-align: justify;">
-          <p>
-            Crea-Imp nace de reconocer que la identidad visual es clave en cómo un negocio se posiciona y es recordado. La manera en que un producto o servicio se presenta influye en cómo el público lo percibe y en la capacidad de destacar en un mercado competitivo.
-          </p>
-          <p>
-            A partir de esa realidad y de mi formación en diseño, nació la idea de crear una agencia que apoye a emprendedores y pequeños negocios a fortalecer su imagen a través del diseño gráfico y la creación de contenido visual. Nuestro nombre une las palabras <strong>crear</strong> e <strong>impacto</strong>.
-          </p>
-          <p>
-            Crea-Imp busca reflejar la esencia de cada marca, fortalecer su identidad y ayudar a que se conecte mejor con su público. En pocas palabras, unimos creatividad, identidad e impacto para ayudar a que los negocios se vean profesionales y se diferencien.
-          </p>
-        </div>
-      </section>
-
-      <section class="purpose-grid-container">
-        <article class="custom-purpose-card reveal">
-          <div style="font-size: 1.8rem; font-weight: 800; color: rgba(255,107,0,0.15); margin-bottom: 0.3rem;">01</div>
-          <span class="section-tag" data-es="NUESTRA MISIÓN" data-en="OUR MISSION">NUESTRA MISIÓN</span>
-          <h3 style="font-family: 'Montserrat', sans-serif; color: #fff; font-size: 1.1rem; margin: 0.4rem 0;" data-es="Impulsar ideas a través del diseño." data-en="Empowering ideas through design.">
-            Impulsar ideas a través del diseño.
-          </h3>
-          <p style="color: #a0a0a0; font-family: 'Inter', sans-serif; font-size: 0.85rem; line-height: 1.5; margin: 0; text-align: justify;">
-           Apoyar a emprendedores y pequeñas empresas mediante el diseño gráfico y la creación de contenido visual, ofreciéndoles un trabajo creativo de alta calidad que les permita destacar y reforzar su imagen, presencia e identidad visual.
-          </p>
-        </article>
-
-        <article class="custom-purpose-card reveal">
-          <div style="font-size: 1.8rem; font-weight: 800; color: rgba(255,107,0,0.15); margin-bottom: 0.3rem;">02</div>
-          <span class="section-tag" data-es="NUESTRA VISIÓN" data-en="OUR VISION">NUESTRA VISIÓN</span>
-          <h3 style="font-family: 'Montserrat', sans-serif; color: #fff; font-size: 1.1rem; margin: 0.4rem 0;" data-es="Crecer creando impacto." data-en="Growing by making an impact.">
-            Crecer creando impacto.
-          </h3>
-          <p style="color: #a0a0a0; font-family: 'Inter', sans-serif; font-size: 0.85rem; line-height: 1.5; margin: 0; text-align: justify;">
-             Para el año 2031, Crea-Imp será una agencia reconocida por su compromiso con cada proyecto, ayudando a los emprendedores a impulsar el crecimiento de sus negocios y convirtiéndose en un apoyo clave para que las marcas cuenten con una imagen profesional y confiable.
-          </p>
-        </article>
-
-        <article class="custom-purpose-card reveal">
-          <div style="font-size: 1.8rem; font-weight: 800; color: rgba(255,107,0,0.15); margin-bottom: 0.3rem;">03</div>
-          <span class="section-tag" data-es="NUESTROS VALORES" data-en="OUR VALUES">NUESTROS VALORES</span>
-          <h3 style="font-family: 'Montserrat', sans-serif; color: #fff; font-size: 1.1rem; margin: 0.4rem 0;">Pilares que nos definen.</h3>
-          <ul style="color: #a0a0a0; font-family: 'Inter', sans-serif; font-size: 0.8rem; line-height: 1.5; margin: 0; padding-left: 1rem; display: flex; flex-direction: column; gap: 0.2rem;">
-            <li><strong>Compromiso:</strong> Superando expectativas.</li>
-            <li><strong>Honestidad:</strong> Transparencia total.</li>
-            <li><strong>Innovación:</strong> Ideas frescas para destacar.</li>
-            <li><strong>Responsabilidad:</strong> Rigor con los tiempos.</li>
-            <li><strong>Empatía:</strong> Conexión con el cliente.</li>
-          </ul>
-        </article>
-      </section>
-
-      <section class="clean-grid-section reveal" id="fundadora">
-        <div style="display: flex; justify-content: center; align-items: center;">
-          <div style="width: 100%; max-width: 300px; height: 350px; border-radius: 12px; overflow: hidden; border: 1px solid rgba(255,255,255,0.1); background-color: #121212;">
-            <img src="IMG/fundadora.png" alt="Fundadora de Crea-Imp" style="width: 100%; height: 100%; object-fit: cover;">
-          </div>
-        </div>
-
-        <div style="display: flex; flex-direction: column; gap: 1rem;">
-          <span class="section-tag" data-es="FUNDADORA" data-en="FOUNDER">SOBRE LA FUNDADORA</span>
-          <h2 style="font-family: 'Montserrat', sans-serif; font-size: 1.8rem; font-weight: 700; color: #fff; margin-top: 0.5rem;" data-es="Pasión y liderazgo creativo." data-en="Passion and creative leadership.">
-            Pasión y liderazgo creativo.
-          </h2>
-          <p style="color: #a0a0a0; font-family: 'Inter', sans-serif; font-size: 0.95rem; line-height: 1.6; text-align: justify;">
-            Como fundadora de Crea-Imp, mi objetivo es transformar cada visión en una identidad visual única. El diseño va más allá de la estética: es una herramienta estratégica para conectar y potenciar tu marca.
-          </p>
-        </div>
-      </section>
-
-      <section class="reveal" id="objetivos">
-        <div style="text-align: center; max-width: 700px; margin: 0 auto 1.5rem auto;">
-          <span class="section-tag" data-es="LO QUE BUSCAMOS" data-en="WHAT WE AIM FOR">LO QUE BUSCAMOS</span>
-          <h2 style="font-family: 'Montserrat', sans-serif; font-size: 1.8rem; font-weight: 700; color: #fff; margin-top: 0.5rem;" data-es="Nuestros objetivos" data-en="Our objectives">Nuestros objetivos</h2>
-        </div>
-
-        <div class="objectives-clean-grid">
-          <article class="objective-clean-card">
-            <span style="color: #ff6b00; font-weight: 700; font-family: 'Montserrat', sans-serif; font-size: 1.1rem;">01</span>
-            <h3 style="color: #fff; font-family: 'Montserrat', sans-serif; font-size: 1rem; margin: 0.5rem 0;">Crear identidad</h3>
-            <p style="color: #a0a0a0; font-family: 'Inter', sans-serif; font-size: 0.85rem; line-height: 1.4; margin: 0; text-align: justify;">Diseñar logotipos y elementos visuales que representen cada marca.</p>
-          </article>
-          <article class="objective-clean-card">
-            <span style="color: #ff6b00; font-weight: 700; font-family: 'Montserrat', sans-serif; font-size: 1.1rem;">02</span>
-            <h3 style="color: #fff; font-family: 'Montserrat', sans-serif; font-size: 1rem; margin: 0.5rem 0;">Destacar</h3>
-            <p style="color: #a0a0a0; font-family: 'Inter', sans-serif; font-size: 0.85rem; line-height: 1.4; margin: 0; text-align: justify;">Ayudar a los negocios a diferenciarse mediante diseños creativos.</p>
-          </article>
-          <article class="objective-clean-card">
-            <span style="color: #ff6b00; font-weight: 700; font-family: 'Montserrat', sans-serif; font-size: 1.1rem;">03</span>
-            <h3 style="color: #fff; font-family: 'Montserrat', sans-serif; font-size: 1rem; margin: 0.5rem 0;">Comunicar mejor</h3>
-            <p style="color: #a0a0a0; font-family: 'Inter', sans-serif; font-size: 0.85rem; line-height: 1.4; margin: 0; text-align: justify;">Crear contenido visual claro y atractivo.</p>
-          </article>
-          <article class="objective-clean-card">
-            <span style="color: #ff6b00; font-weight: 700; font-family: 'Montserrat', sans-serif; font-size: 1.1rem;">04</span>
-            <h3 style="color: #fff; font-family: 'Montserrat', sans-serif; font-size: 1rem; margin: 0.5rem 0;">Aportar calidad</h3>
-            <p style="color: #a0a0a0; font-family: 'Inter', sans-serif; font-size: 0.85rem; line-height: 1.4; margin: 0; text-align: justify;">Entregar diseños cuidados y adaptados a cada proyecto.</p>
-          </article>
-        </div>
-      </section>
-
-      <section class="cta-box-modern reveal">
-        <span class="section-tag" style="justify-content: center;" data-es="HAGAMOS ALGO CREATIVO" data-en="LET'S CREATE SOMETHING">HAGAMOS ALGO CREATIVO</span>
-        <h2 style="font-family: 'Montserrat', sans-serif; font-size: 1.8rem; font-weight: 700; color: #fff; margin: 0.8rem 0;" data-es="Tu idea puede generar un gran impacto." data-en="Your idea can make a big impact.">
-          Tu idea puede generar un <span style="color: #ff6b00;">gran impacto.</span>
-        </h2>
-        <p style="color: #a0a0a0; font-family: 'Inter', sans-serif; max-width: 600px; margin: 0 auto 1.5rem auto; line-height: 1.5; font-size: 0.9rem;" data-es="Cuéntanos qué tienes en mente y exploremos cómo darle vida visualmente." data-en="Tell us what you have in mind and let's explore how to bring it to life visually.">
-          Cuéntanos qué tienes en mente y exploremos cómo darle vida visualmente.
-        </p>
-        <a href="Contacto.html" class="btn-primary" data-es="Contáctanos →" data-en="Contact us →">Contáctanos →</a>
-      </section>
-    </div>
-  </main>
-
-  <footer class="about-footer" style="padding: 2.5rem 1rem; text-align: center;">
-    <a href="index.html" class="footer-brand">Crea-Imp<span>.</span></a>
-    <p data-es="Diseñamos marcas con identidad y propósito." data-en="We design brands with identity and purpose." style="font-size: 0.9rem;">Diseñamos marcas con identidad y propósito.</p>
-    <div class="footer-links" style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; margin: 1rem 0;">
-      <a href="index.html" data-es="Inicio" data-en="Home">Inicio</a>
-      <a href="Portafolio.html" data-es="Portafolio" data-en="Portfolio">Portafolio</a>
-      <a href="Servicios.html" data-es="Servicios" data-en="Services">Servicios</a>
-      <a href="Contacto.html" data-es="Contacto" data-en="Contact">Contacto</a>
-    </div>
-    <p class="copyright" style="font-size: 0.85rem;">© 2026 Crea-Imp. <span data-es="Todos los derechos reservados." data-en="All rights reserved.">Todos los derechos reservados.</span></p>
-  </footer>
-
-  <script src="js/nosotros.js"></script>
-  <script>
-    const hamburgerBtn = document.getElementById('hamburger-btn');
-    const navMenu = document.getElementById('nav-menu');
-    if(hamburgerBtn && navMenu) {
-      hamburgerBtn.addEventListener('click', () => {
-        navMenu.classList.toggle('active');
-        const expanded = hamburgerBtn.getAttribute('aria-expanded') === 'true' || false;
-        hamburgerBtn.setAttribute('aria-expanded', !expanded);
-      });
-    }
-  </script>
-</body>
-</html>
+        <div style="display: flex; flex-direction: column; gap: 1rem; color: #a0a0a0; font-family
