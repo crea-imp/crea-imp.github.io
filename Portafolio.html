@@ -2,150 +2,255 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0,maximun-scale=1.0,user-scalable=no">
-  <title>Portafolio | Crea-Imp</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0b0c0e">
+  <meta name="description" content="Explora el portafolio de Crea-Imp: videos educativos, animación de logo y diseño de identidades visuales.">
+  <title>Crea-Imp | Portafolio</title>
 
+  <link rel="icon" href="IMG/logo.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-
-  <link rel="stylesheet" href="css/styles.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+ 
   <link rel="stylesheet" href="css/portafolio.css">
-
-  <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
+  <script src="js/portafolio.js" defer></script>
 </head>
 
 <body>
-
-  <!-- HEADER / NAV -->
-  <header class="main-header">
-    <div class="header-container">
-
-      <a href="index.html" class="logo-link">
-        <img src="IMG/logo.png" alt="Logo Crea-Imp" class="logo-img">
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="index.html" aria-label="Crea-Imp, inicio">
+        <img src="IMG/logo.png" alt="Logo Crea-Imp">
       </a>
 
-      <button class="hamburger" id="hamburger-btn"
-              aria-label="Abrir menú de navegación">
-        <span></span>
-        <span></span>
-        <span></span>
+      <button class="mobile-menu-btn" id="mobile-menu-btn"
+        aria-label="Abrir menú" aria-controls="mobile-menu"
+        aria-expanded="false" type="button">
+        <span class="material-symbols-outlined" aria-hidden="true">menu</span>
       </button>
 
-      <nav>
-        <ul class="nav-menu" id="nav-menu">
-          <li>
-            <a href="index.html" class="nav-link">
-              <i class="fa-solid fa-sparkles"></i> Inicio
-            </a>
-          </li>
+      <nav class="desktop-nav" aria-label="Navegación principal">
+        <a href="index.html" data-es="Inicio" data-en="Home">Inicio</a>
+        <a href="Nosotros.html" data-es="Nosotros" data-en="About us">Nosotros</a>
+        <a href="Portafolio.html" class="current" aria-current="page"
+          data-es="Portafolio" data-en="Portfolio">Portafolio</a>
+        <a href="Servicios.html" data-es="Servicios" data-en="Services">Servicios</a>
+        <a href="Contacto.html" data-es="Contacto" data-en="Contact">Contacto</a>
 
-          <li>
-            <a href="Servicios.html" class="nav-link">
-              <i class="fa-solid fa-layer-group"></i> Servicios
-            </a>
-          </li>
-
-          <li>
-            <a href="Contacto.html" class="nav-link">
-              <i class="fa-solid fa-envelope"></i> Contacto
-            </a>
-          </li>
-
-          <li>
-            <a href="Portafolio.html" class="nav-link active">
-              <i class="fa-solid fa-images"></i> Portafolio
-            </a>
-          </li>
-
-          <li>
-            <a href="Nosotros.html" class="nav-link">
-              <i class="fa-solid fa-chart-simple"></i> Nosotros
-            </a>
-          </li>
-        </ul>
+        <button class="language-btn" id="language-toggle" type="button"
+          aria-label="Cambiar idioma">ESP</button>
+        <a class="login-btn" href="ingreso.html"
+          data-es="INICIO DE SESIÓN" data-en="LOG IN">INICIO DE SESIÓN</a>
       </nav>
-
     </div>
+
+    <nav class="mobile-nav hidden" id="mobile-menu" aria-label="Menú móvil">
+      <a href="index.html" data-es="Inicio" data-en="Home">Inicio</a>
+      <a href="Nosotros.html" data-es="Nosotros" data-en="About us">Nosotros</a>
+      <a href="Portafolio.html" class="current"
+        data-es="Portafolio" data-en="Portfolio">Portafolio</a>
+      <a href="Servicios.html" data-es="Servicios" data-en="Services">Servicios</a>
+      <a href="Contacto.html" data-es="Contacto" data-en="Contact">Contacto</a>
+      <button class="language-btn" id="mobile-language-toggle" type="button">ESP</button>
+      <a class="login-btn" href="ingreso.html"
+        data-es="INICIO DE SESIÓN" data-en="LOG IN">INICIO DE SESIÓN</a>
+    </nav>
   </header>
 
   <main>
-    <section class="portfolio-section">
-      <div class="container">
+    <section class="portfolio-hero">
+      <span class="eyebrow" data-es="NUESTRO TRABAJO" data-en="OUR WORK">NUESTRO TRABAJO</span>
+      <h1 data-es="Diseños que dejan huella."
+          data-en="Designs that make an impact.">Diseños que dejan huella.</h1>
+      <p data-es="Explora una muestra de los trabajos multimedia y de diseño realizados por Crea-Imp."
+         data-en="Explore a selection of multimedia and design work by Crea-Imp.">
+        Explora una muestra de los trabajos multimedia y de diseño realizados por Crea-Imp.
+      </p>
+    </section>
 
-        <div class="portfolio-header">
-          <h1>Nuestro <span class="text-orange">portafolio</span></h1>
-          <p>Creatividad que transforma ideas en diseños con impacto.</p>
+    <section class="portfolio-section" aria-label="Galería del portafolio">
+      <div class="portfolio-heading">
+        <div>
+          <span class="eyebrow" data-es="GALERÍA" data-en="GALLERY">GALERÍA</span>
+          <h2 data-es="Explora nuestros proyectos" data-en="Explore our projects">Explora nuestros proyectos</h2>
         </div>
-
-        <div class="portfolio-grid">
-
-          <article class="portfolio-card">
-            <img src="IMG/portafolio/logotipos.png"
-                 alt="Diseño de logotipos">
-            <div class="portfolio-info">
-              <h2>Diseño de logotipos</h2>
-              <p>Marcas con identidad propia.</p>
-            </div>
-          </article>
-
-          <article class="portfolio-card">
-            <img src="IMG/portafolio/identidad-visual.png"
-                 alt="Diseños de identidad visual y papelería">
-            <div class="portfolio-info">
-              <h2>Identidad visual</h2>
-              <p>Colores, tarjetas y tipografías.</p>
-            </div>
-          </article>
-
-          <article class="portfolio-card">
-            <img src="IMG/portafolio/redes-sociales.png"
-                 alt="Diseños para redes sociales">
-            <div class="portfolio-info">
-              <h2>Diseños para redes sociales</h2>
-              <p>Publicaciones e historias atractivas.</p>
-            </div>
-          </article>
-
-          <article class="portfolio-card">
-            <img src="IMG/portafolio/publicidad.png"
-                 alt="Diseños publicitarios">
-            <div class="portfolio-info">
-              <h2>Diseño publicitario</h2>
-              <p>Afiches y anuncios para negocios.</p>
-            </div>
-          </article>
-
-          <article class="portfolio-card">
-            <img src="IMG/portafolio/productos-creaimp.png"
-                 alt="Productos con la marca Crea-Imp">
-            <div class="portfolio-info">
-              <h2>Productos con nuestra marca</h2>
-              <p>Aplicaciones del logo en diferentes objetos.</p>
-            </div>
-          </article>
-
-          <article class="portfolio-card">
-            <img src="IMG/portafolio/edicion-imagenes.png"
-                 alt="Ejemplos de edición de imágenes">
-            <div class="portfolio-info">
-              <h2>Edición de imágenes</h2>
-              <p>Mejoras visuales y ajustes de color.</p>
-            </div>
-          </article>
-
-        </div>
+        <p data-es="Selecciona una categoría para filtrar los trabajos."
+           data-en="Choose a category to filter the work.">
+          Selecciona una categoría para filtrar los trabajos.
+        </p>
       </div>
+
+      <div class="filter-list" role="group" aria-label="Filtrar trabajos">
+        <button class="filter-btn active" type="button" data-filter="all"
+          aria-pressed="true" data-es="Todos" data-en="All">Todos</button>
+        <button class="filter-btn" type="button" data-filter="videos"
+          aria-pressed="false" data-es="Videos" data-en="Videos">Videos</button>
+        <button class="filter-btn" type="button" data-filter="logotipos"
+          aria-pressed="false" data-es="Logotipos" data-en="Logos">Logotipos</button>
+      </div>
+
+      <div class="project-grid" id="project-grid">
+        <!-- Trabajo 1: matematicas.mp4 -->
+        <article class="project-card" data-category="videos">
+          <div class="project-preview">
+            <video src="portafolio/matematicas.mp4" preload="metadata"></video>
+          </div>
+          <div class="project-info">
+            <span class="project-category">CONTENIDO AUDIOVISUAL</span>
+            <h3>Video Educativo: Matemática</h3>
+            <p>Contenido pedagógico audiovisual enfocado en el aprendizaje dinámico y didáctico de las matemáticas.</p>
+            <button class="btn-details" onclick="openModal('video', 'portafolio/matematicas.mp4', 'Video Educativo: Matemática', 'Este material audiovisual fue diseñado para facilitar la comprensión de conceptos matemáticos mediante recursos visuales claros y dinámicos.')">Ver detalles</button>
+          </div>
+        </article>
+
+        <!-- Trabajo 2: Video_Profe_Primaria.mp4 -->
+        <article class="project-card" data-category="videos">
+          <div class="project-preview">
+            <video src="portafolio/Video_Profe_Primaria.mp4" preload="metadata"></video>
+          </div>
+          <div class="project-info">
+            <span class="project-category">PRODUCCIÓN MULTIMEDIA</span>
+            <h3>Video Profesora de Primaria</h3>
+            <p>Producción de recursos orientados al apoyo educativo y dinámicas para nivel de primaria.</p>
+            <button class="btn-details" onclick="openModal('video', 'portafolio/Video_Profe_Primaria.mp4', 'Video Profe Primaria', 'Recurso multimedia dirigido a la enseñanza escolar básica, optimizado para captar la atención de los estudiantes y apoyar al docente.')">Ver detalles</button>
+          </div>
+        </article>
+
+        <!-- Trabajo 3: animacion-logo.mp4 (NUEVO) -->
+        <article class="project-card" data-category="videos">
+          <div class="project-preview">
+            <video src="portafolio/animacion-logo.mp4" preload="metadata"></video>
+          </div>
+          <div class="project-info">
+            <span class="project-category">MOTION GRAPHICS</span>
+            <h3>Animación de Logo</h3>
+            <p>Pieza en movimiento diseñada para dar vida dinámica a la identidad de la marca y captar la atención en redes sociales.</p>
+            <button class="btn-details" onclick="openModal('video', 'portafolio/animacion-logo.mp4', 'Animación de Logotipo', 'Movimiento y fluidez aplicados a la identidad visual de la marca para dotarla de un carácter moderno, memorable y profesional en plataformas digitales.')">Ver detalles</button>
+          </div>
+        </article>
+
+       <!-- Trabajo 4: SUECA.png -->
+        <article class="project-card" data-category="logotipos">
+          <div class="project-preview">
+            <img src="portafolio/SUECA.png" alt="Logo SUECA" class="logo-img" loading="lazy">
+          </div>
+          <div class="project-info">
+            <span class="project-category">DISEÑO DE IDENTIDAD</span>
+            <h3>Logotipo SUECA</h3>
+            <p>Diseño de logotipo corporativo y propuesta de identidad visual para la marca SUECA.</p>
+            <button class="btn-details" onclick="openModal('comparison', 'portafolio/SUECA-antes.png', 'portafolio/SUECA.png', 'Logotipo SUECA: Proceso de Rediseño', 'Aquí puedes ver el antes y el después de la identidad visual de SUECA. Se realizó una evolución gráfica para modernizar la marca, mejorar su legibilidad y adaptarla con mayor solidez a diferentes plataformas corporativas.')">Ver detalles</button>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="portfolio-cta">
+      <span class="eyebrow" data-es="¿TIENES UNA IDEA?" data-en="HAVE AN IDEA?">¿TIENES UNA IDEA?</span>
+      <h2 data-es="Hagámosla realidad." data-en="Let's bring it to life.">Hagámosla realidad.</h2>
+      <p data-es="Cuéntanos qué necesitas y exploremos cómo darle forma a tu idea."
+         data-en="Tell us what you need and let's explore how to bring your idea to life.">
+        Cuéntanos qué necesitas y exploremos cómo darle forma a tu idea.
+      </p>
+      <a class="cta-button" href="Contacto.html"
+        data-es="Contáctanos" data-en="Contact us">Contáctanos <span aria-hidden="true">↗</span></a>
     </section>
   </main>
 
-  <footer>
-    <p>&copy; 2026 Crea-Imp. Todos los derechos reservados.</p>
+  <!-- Modal / Ventana Emergente -->
+  <div id="portfolioModal" class="modal">
+    <div class="modal-content">
+      <span class="close-btn" onclick="closeModal()">&times;</span>
+      <div class="modal-media-container" id="modalMedia">
+        <!-- Contenido dinámico (imagen o video) -->
+      </div>
+      <div class="modal-body">
+        <h3 class="modal-title" id="modalTitle"></h3>
+        <p class="modal-description" id="modalDescription"></p>
+      </div>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <a class="footer-brand" href="index.html">
+        <img src="IMG/logo.png" alt="Logo Crea-Imp">
+      </a>
+      <p data-es="Diseño gráfico y contenido visual para marcas con identidad y propósito."
+         data-en="Graphic design and visual content for brands with identity and purpose.">
+        Diseño gráfico y contenido visual para marcas con identidad y propósito.
+      </p>
+      <div class="footer-links">
+        <a href="Nosotros.html" data-es="Nosotros" data-en="About us">Nosotros</a>
+        <a href="Servicios.html" data-es="Servicios" data-en="Services">Servicios</a>
+        <a href="Contacto.html" data-es="Contacto" data-en="Contact">Contacto</a>
+      </div>
+      <span class="copyright">© 2026 Crea-Imp. <span data-es="Todos los derechos reservados." data-en="All rights reserved.">Todos los derechos reservados.</span></span>
+    </div>
   </footer>
 
-<script src="js/main.js"></script>
+  <script>
+    function openModal(type, src, title, description) {
+      const modal = document.getElementById('portfolioModal');
+      const mediaContainer = document.getElementById('modalMedia');
+      const modalTitle = document.getElementById('modalTitle');
+      const modalDescription = document.getElementById('modalDescription');
 
+      mediaContainer.innerHTML = '';
+
+      if (type === 'video') {
+        const video = document.createElement('video');
+        video.src = src;
+        video.controls = true;
+        video.autoplay = true;
+        mediaContainer.appendChild(video);
+      } else if (type === 'image') {
+        const img = document.createElement('img');
+        img.src = src;
+        img.alt = title;
+        mediaContainer.appendChild(img);
+      }
+
+      modalTitle.textContent = title;
+      modalDescription.textContent = description;
+      modal.classList.add('active');
+    }
+
+    function closeModal() {
+      const modal = document.getElementById('portfolioModal');
+      const mediaContainer = document.getElementById('modalMedia');
+      mediaContainer.innerHTML = '';
+      modal.classList.remove('active');
+    }
+
+    window.onclick = function(event) {
+      const modal = document.getElementById('portfolioModal');
+      if (event.target === modal) {
+        closeModal();
+      }
+    };
+
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const projectCards = document.querySelectorAll('.project-card');
+
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterBtns.forEach(b => {
+          b.classList.remove('active');
+          b.setAttribute('aria-pressed', 'false');
+        });
+        btn.classList.add('active');
+        btn.setAttribute('aria-pressed', 'true');
+
+        const filter = btn.getAttribute('data-filter');
+        projectCards.forEach(card => {
+          if (filter === 'all' || card.getAttribute('data-category') === filter) {
+            card.style.display = 'flex';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      });
+    });
+  </script>
 </body>
 </html>

@@ -1,105 +1,424 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0,maximun-scale=1.0,user-scalable=no">
-  <title>Crea-Imp | Agencia de Diseño & Desarrollo Digital</title>
-  <meta name="description" content="Diseñamos marcas con identidad y propósito. Soluciones en diseño gráfico, redes sociales y desarrollo web.">
-  
-  <!-- FontAwesome Cdn para Iconos -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <!-- Google Fonts: Poppins -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Crea-Imp | Design & Digital Agency</title>
+
+  <meta name="description"
+        content="We design brands with identity and purpose.">
+
+  <meta name="theme-color" content="#0b0c0e">
+
+  <!-- Fuentes -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,600;0,700;0,800;1,800&display=swap" rel="stylesheet">
-  
-  <!-- CSS Global -->
+
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Poppins:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+  <!-- Iconos -->
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- Estilos globales y de Inicio -->
   <link rel="stylesheet" href="css/styles.css">
   <link rel="stylesheet" href="css/inicio.css">
+  
+  <style>
+    /* Estilos específicos para ajustar el logo y el menú pequeño del footer */
+    .footer-logo-custom {
+      max-width: 140px;
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+    }
+    .footer-nav-links {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      margin: 1rem 0;
+      flex-wrap: wrap;
+    }
+    .footer-nav-links a {
+      color: #a0a0a0;
+      text-decoration: none;
+      font-size: 0.95rem;
+      font-family: 'Poppins', sans-serif;
+      transition: color 0.3s ease;
+    }
+    .footer-nav-links a:hover {
+      color: #F26522;
+    }
+  </style>
 </head>
+
 <body>
 
-  <!-- ==================== HEADER / NAV ==================== -->
- <header class="main-header">
-  <div class="header-container">
-    
-    <!-- Logo -->
-    <a href="index.html" class="logo-link">
-      <img src="IMG/logo.png" alt="Logo Crea-Imp" class="logo-img">
-    </a>
+  <!-- =====================================
+       HEADER / NAVEGACIÓN
+  ====================================== -->
+  <header class="main-header">
+    <div class="header-container">
 
-    <button class="hamburger" id="hamburger-btn"
-            aria-label="Abrir menú"
-            aria-controls="nav-menu"
-            aria-expanded="false">
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
+      <a href="index.html"
+         class="logo-link"
+         aria-label="Crea-Imp - Home">
 
-    <!-- Menú de Navegación -->
-    <nav>
-      <ul class="nav-menu" id="nav-menu">
-        <li><a href="index.html" class="nav-link active"><i class="fa-solid fa-sparkles"></i> Inicio</a></li>
-        <li><a href="Servicios.html" class="nav-link"><i class="fa-solid fa-layer-group"></i> Servicios</a></li>
-        <li><a href="Contacto.html" class="nav-link"><i class="fa-solid fa-envelope"></i> Contacto</a></li>
-        <li><a href="Portafolio.html" class="nav-link"><i class="fa-solid fa-images"></i> Portafolio</a></li>
-        <li><a href="Nosotros.html" class="nav-link"><i class="fa-solid fa-chart-simple"></i> Nosotros</a></li>
-        
-        <!-- ÚNICO BOTÓN DE INICIO DE SESIÓN -->
-        <li>
-          <a href="ingreso.html" class="nav-link btn-login-nav">
-            <i class="fa-solid fa-right-to-bracket"></i> INICIO DE SESIÓN
-          </a>
-        </li>
-      </ul>
-    </nav>
+        <img src="IMG/logo.png"
+             alt="Crea-Imp Logo"
+             class="logo-img"
+             data-i18n-alt="logoAlt">
+      </a>
 
-  </div>
-</header>
+      <!-- Menú móvil -->
+      <button class="hamburger"
+              id="hamburger-btn"
+              type="button"
+              aria-label="Open menu"
+              aria-controls="nav-menu"
+              aria-expanded="false"
+              data-i18n-aria="menuLabel">
 
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <!-- Navegación principal -->
+      <nav aria-label="Main navigation">
+        <ul class="nav-menu" id="nav-menu">
+
+          <li>
+            <a href="index.html" class="nav-link active">
+              <span data-i18n="home">Home</span>
+            </a>
+          </li>
+
+          <li>
+            <a href="Nosotros.html" class="nav-link">
+              <span data-i18n="about">About Us</span>
+            </a>
+          </li>
+
+          <li>
+            <a href="Portafolio.html" class="nav-link">
+              <span data-i18n="portfolio">Portfolio</span>
+            </a>
+          </li>
+
+          <li>
+            <a href="Servicios.html" class="nav-link">
+              <span data-i18n="services">Services</span>
+            </a>
+          </li>
+
+          <li>
+            <a href="Contacto.html" class="nav-link">
+              <span data-i18n="contact">Contact</span>
+            </a>
+          </li>
+
+          
+          <!-- Cambio de idioma -->
+          <li class="language-switch-item">
+            <button type="button"
+                    id="language-toggle"
+                    class="nav-link btn-language"
+                    aria-label="Cambiar a español">
+              ESP
+            </button>
+          </li>
+
+          <!-- Inicio de sesión -->
+          <li>
+            <a href="ingreso.html"
+               class="nav-link btn-login-nav">
+              <span data-i18n="login">LOG IN</span>
+            </a>
+          </li>
+
+        </ul>
+      </nav>
+
+    </div>
+  </header>
 
 
   <main>
-    <!-- ==================== HERO SECTION ==================== -->
-    <section class="hero-section">
+
+    <!-- =====================================
+         PRESENTACIÓN PRINCIPAL
+    ====================================== -->
+    <section class="hero-section" id="inicio">
       <div class="container hero-container">
+
         <div class="hero-content">
-          <h1 class="hero-title">
-            <span class="text-orange">Crea-Imp</span> la clave para el <span class="text-orange">éxito</span>
-          </h1>
-          <p class="hero-subtitle">
-            Diseñamos marcas con identidad y propósito
+
+          <p class="hero-eyebrow">
+            CREA-IMP · DISEÑO CON PROPÓSITO
           </p>
+
+          <h1 class="hero-title">
+            <span class="text-orange">Crea-Imp</span>
+            <span data-i18n="headline">the key to</span>
+            <span class="text-orange" data-i18n="success">
+              success
+            </span>
+          </h1>
+
+          <p class="hero-subtitle" data-i18n="subtitle">
+            We design brands with identity and purpose.
+          </p>
+
+          <p class="hero-description"
+             data-i18n="heroDescription">
+            We help entrepreneurs and small businesses
+            communicate their ideas through creative design
+            and visual content.
+          </p>
+
           <a href="Contacto.html" class="btn-primary">
-            COMENZAR <i class="fa-solid fa-arrow-right"></i>
+            <span data-i18n="getStarted">GET STARTED</span>
+            <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
           </a>
+
         </div>
 
-     <div class="hero-video">
-    <video controls playsinline preload="metadata" poster="IMG/inicio.png">
-        <source src="video/video-crea-imp.mp4" type="video/mp4">
-        Tu navegador no admite la reproducción de video.
-    </video>
-</div>
+        <!-- Video de presentación -->
+        <div class="hero-video">
+          <video controls
+                 autoplay
+                 muted
+                 playsinline
+                 preload="auto"
+                 poster="IMG/inicio.png"
+                 aria-label="Crea-Imp presentation video"
+                 style="width: 100%; height: 100%; border-radius: 12px; object-fit: cover;">
+            <source src="IMG/video-corporativo.mp4" type="video/mp4">
+            <source src="IMG/video-corporatico.mp4" type="video/mp4">
+            Your browser does not support video playback.
+          </video>
+        </div>
+
       </div>
     </section>
 
-</main>
 
-  <!-- ==================== FOOTER ==================== -->
-  <footer class="main-footer">
-    <div class="container footer-content">
-      <p>&copy; 2026 Crea-Imp. Todos los derechos reservados.</p>
-      <div class="footer-socials">
-        <a href="https://instagram.com" target="_blank" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-        <a href="https://tiktok.com" target="_blank" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
-        <a href="https://facebook.com" target="_blank" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>
+    <!-- =====================================
+         PORTAFOLIO DESTACADO
+    ====================================== -->
+    <section class="featured-portfolio" id="trabajos">
+      <div class="container">
+
+        <div class="portfolio-heading">
+
+          <p class="section-eyebrow"
+             data-i18n="portfolioEyebrow">
+            OUR CREATIVE WORK
+          </p>
+
+          <h2 class="section-title"
+              data-i18n="portfolioTitle">
+            Ideas that make an impact
+          </h2>
+
+          <p class="section-description"
+             data-i18n="portfolioDescription">
+            Discover the creative work and visual designs
+            developed by Crea-Imp.
+          </p>
+
+        </div>
+
+        <div class="portfolio-cta">
+
+          <a href="Portafolio.html" class="btn-primary">
+            <span data-i18n="viewPortfolio">
+              VIEW PORTFOLIO
+            </span>
+
+            <i class="fa-solid fa-arrow-right"
+               aria-hidden="true"></i>
+          </a>
+
+        </div>
+
       </div>
+    </section>
+
+
+    <!-- =====================================
+         PREGUNTAS FRECUENTES (FAQ)
+    ====================================== -->
+    <section class="faq-section" id="faq" style="padding: 5rem 0; background-color: #0b0c0e;">
+      <div class="container" style="max-width: 900px; margin: 0 auto; padding: 0 1.5rem;">
+
+        <div style="text-align: center; margin-bottom: 3rem;">
+          <p class="section-eyebrow" data-i18n="faqEyebrow" style="color: #F26522; font-weight: 700; letter-spacing: 1px;">
+            RESOLVEMOS TUS DUDAS
+          </p>
+          <h2 class="section-title" data-i18n="faqTitle" style="color: #fff; font-size: 2.2rem; margin-top: 0.5rem;">
+            Preguntas Frecuentes
+          </h2>
+        </div>
+
+        <div class="faq-container" style="display: flex; flex-direction: column; gap: 1.25rem;">
+
+          <!-- Pregunta 1 -->
+          <details style="background: #121212; border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 8px; padding: 1.25rem 1.5rem; cursor: pointer;">
+            <summary style="color: #fff; font-weight: 600; font-size: 1.1rem; list-style: none; display: flex; justify-content: space-between; align-items: center;">
+              ¿Cuánto cuesta contratar un servicio?
+              <span style="color: #F26522;">+</span>
+            </summary>
+            <p style="color: #a0a0a0; margin-top: 1rem; line-height: 1.6; font-size: 0.95rem;">
+              El costo varía en función del tipo de proyecto, la cantidad de piezas visuales requeridas y la complejidad del diseño. Te invitamos a contactarnos para enviarte una cotización personalizada.
+            </p>
+          </details>
+
+          <!-- Pregunta 2 -->
+          <details style="background: #121212; border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 8px; padding: 1.25rem 1.5rem; cursor: pointer;">
+            <summary style="color: #fff; font-weight: 600; font-size: 1.1rem; list-style: none; display: flex; justify-content: space-between; align-items: center;">
+              ¿Cómo es el proceso de contratación?
+              <span style="color: #F26522;">+</span>
+            </summary>
+            <p style="color: #a0a0a0; margin-top: 1rem; line-height: 1.6; font-size: 0.95rem;">
+              Primero nos cuentas tu idea o necesidad mediante nuestro formulario o canales de atención. Luego evaluamos el proyecto, definimos objetivos, enviamos la propuesta económica y, tras tu aprobación, ¡comenzamos a crear!
+            </p>
+          </details>
+
+          <!-- Pregunta 3 -->
+          <details style="background: #121212; border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 8px; padding: 1.25rem 1.5rem; cursor: pointer;">
+            <summary style="color: #fff; font-weight: 600; font-size: 1.1rem; list-style: none; display: flex; justify-content: space-between; align-items: center;">
+              ¿Cuánto tiempo tarda la entrega de un diseño?
+              <span style="color: #F26522;">+</span>
+            </summary>
+            <p style="color: #a0a0a0; margin-top: 1rem; line-height: 1.6; font-size: 0.95rem;">
+              El tiempo de entrega depende del alcance de la solicitud. Diseños de piezas individuales pueden tomar de 2 a 4 días hábiles, mientras que desarrollos completos de identidad corporativa toman entre 1 y 2 semanas.
+            </p>
+          </details>
+
+          <!-- Pregunta 4 -->
+          <details style="background: #121212; border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 8px; padding: 1.25rem 1.5rem; cursor: pointer;">
+            <summary style="color: #fff; font-weight: 600; font-size: 1.1rem; list-style: none; display: flex; justify-content: space-between; align-items: center;">
+              ¿Qué necesito para contratar un servicio de Crea-Imp?
+              <span style="color: #F26522;">+</span>
+            </summary>
+            <p style="color: #a0a0a0; margin-top: 1rem; line-height: 1.6; font-size: 0.95rem;">
+              Solo necesitas una idea clara del objetivo de tu negocio, la información o textos básicos que deseas incluir, y en caso de contar con ellos, logotipos o imágenes de referencia previos.
+            </p>
+          </details>
+
+          <!-- Pregunta 5 -->
+          <details style="background: #121212; border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 8px; padding: 1.25rem 1.5rem; cursor: pointer;">
+            <summary style="color: #fff; font-weight: 600; font-size: 1.1rem; list-style: none; display: flex; justify-content: space-between; align-items: center;">
+              ¿Puedo solicitar cambios en un diseño después de recibir la primera propuesta?
+              <span style="color: #F26522;">+</span>
+            </summary>
+            <p style="color: #a0a0a0; margin-top: 1rem; line-height: 1.6; font-size: 0.95rem;">
+              ¡Totalmente! Todos nuestros servicios incluyen rondas de ajustes para asegurar que el producto final cumpla al 100% con tus expectativas y las necesidades de tu marca.
+            </p>
+          </details>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- =====================================
+         LLAMADO A CONTACTAR
+    ====================================== -->
+    <section class="home-contact" id="comenzar">
+      <div class="container home-contact-content">
+
+        <p class="section-eyebrow"
+           data-i18n="contactEyebrow">
+          LET'S CREATE SOMETHING
+        </p>
+
+        <h2 data-i18n="contactTitle">
+          Ready to bring your ideas to life?
+        </h2>
+
+        <p data-i18n="contactDescription">
+          Tell us about your project and let's get started.
+        </p>
+
+        <a href="Contacto.html" class="btn-primary">
+          <span data-i18n="contactButton">
+            CONTACT US
+          </span>
+
+          <i class="fa-solid fa-arrow-right"
+             aria-hidden="true"></i>
+        </a>
+
+      </div>
+    </section>
+
+  </main>
+
+
+  <!-- =====================================
+       FOOTER
+  ====================================== -->
+  <footer class="main-footer" style="padding: 3rem 0; background-color: #08090a; text-align: center;">
+    <div class="container footer-content" style="display: flex; flex-direction: column; align-items: center; gap: 1rem;">
+
+      <a href="index.html" class="footer-brand">
+        <img src="IMG/logo.png"
+             alt="Crea-Imp Logo"
+             class="footer-logo footer-logo-custom">
+      </a>
+
+      <!-- Menú pequeño / Enlaces rápidos al pie -->
+      <nav class="footer-nav-links" aria-label="Footer navigation">
+        <a href="index.html">Inicio</a>
+        <a href="Nosotros.html">Nosotros</a>
+        <a href="Portafolio.html">Portafolio</a>
+        <a href="Servicios.html">Servicios</a>
+        <a href="Contacto.html">Contacto</a>
+      </nav>
+
+      <p data-i18n="copyright" style="color: #777; font-size: 0.9rem;">
+        © 2026 Crea-Imp. All rights reserved.
+      </p>
+
+      <div class="footer-socials" style="display: flex; gap: 1rem; font-size: 1.2rem; margin-top: 0.5rem;">
+
+        <a href="https://instagram.com/Crea-Imp_oficial"
+           target="_blank"
+           rel="noopener noreferrer"
+           aria-label="Instagram"
+           style="color: #fff;">
+          <i class="fa-brands fa-instagram"></i>
+        </a>
+
+        <!-- Se reemplazó TikTok por Correo Electrónico -->
+        <a href="mailto:creaimp.oficial@gmail.com"
+           aria-label="Correo electrónico"
+           style="color: #fff;">
+          <i class="fa-solid fa-envelope"></i>
+        </a>
+
+        <a href="https://facebook.com"
+           target="_blank"
+           rel="noopener noreferrer"
+           aria-label="Facebook"
+           style="color: #fff;">
+          <i class="fa-brands fa-facebook"></i>
+        </a>
+
+      </div>
+
     </div>
   </footer>
 
-  <!-- Script JS Global -->
+
+  <!-- JavaScript -->
   <script src="js/main.js"></script>
+
 </body>
 </html>
