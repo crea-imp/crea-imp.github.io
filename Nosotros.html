@@ -33,13 +33,16 @@
         grid-template-columns: 1fr;
         gap: 2rem;
       }
+      .nosotros-wrapper {
+        gap: 3rem;
+        padding: 0 1rem 3rem 1rem;
+      }
     }
     .purpose-grid-container {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 2rem;
     }
-    
     .custom-purpose-card {
       background-color: #121212;
       border: 1px solid rgba(255, 255, 255, 0.08);
@@ -47,160 +50,130 @@
       padding: 2rem 1.75rem;
       position: relative;
       overflow: hidden;
-      transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), border-color 0.4s ease, box-shadow 0.4s ease;
     }
-    
-    .custom-purpose-card::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(180deg, rgba(18,18,18,0.95) 0%, rgba(26,26,26,0.98) 100%);
-      z-index: 1;
-      transform: translateY(0);
-      transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
-    }
-
-    .custom-purpose-card:hover {
-      transform: translateY(-8px);
-      border-color: #ff6b00;
-      box-shadow: 0 20px 35px -10px rgba(255, 107, 0, 0.25);
-    }
-    
-    .custom-purpose-card:hover::before {
-      transform: translateY(-100%);
-    }
-
-    .custom-purpose-card > * {
-      position: relative;
-      z-index: 2;
-    }
-
     .objectives-clean-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
       gap: 1.5rem;
-      margin-top: 3rem;
+      margin-top: 2rem;
     }
-
     .objective-clean-card {
       background-color: #0d0d0d;
       border: 1px solid rgba(255, 255, 255, 0.06);
       border-radius: 10px;
-      padding: 2rem;
-      transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+      padding: 1.5rem;
     }
-    .objective-clean-card:hover {
-      transform: translateY(-6px);
-      border-color: #ff6b00;
-      box-shadow: 0 10px 25px -5px rgba(255, 107, 0, 0.15);
-    }
-
     .cta-box-modern {
       background: linear-gradient(135deg, #121212 0%, #0a0a0a 100%);
       border: 1px solid rgba(255, 107, 0, 0.2);
       border-radius: 16px;
-      padding: 4rem 2rem;
+      padding: 3rem 1.5rem;
       text-align: center;
       max-width: 900px;
       margin: 0 auto;
-      box-shadow: 0 20px 40px rgba(0,0,0,0.4);
-      transition: transform 0.3s ease;
     }
-    .cta-box-modern:hover {
-      transform: scale(1.01);
+
+    /* REGLAS RESPONSIVE MÓVIL PARA HEADER Y MENÚ */
+    @media (max-width: 768px) {
+      .main-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem;
+      }
+      .hamburger {
+        display: flex !important;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 28px;
+        height: 20px;
+        background: transparent;
+        border: none;
+        cursor: pointer;
+        z-index: 1001;
+      }
+      .hamburger span {
+        display: block;
+        width: 100%;
+        height: 3px;
+        background-color: #fff;
+        border-radius: 2px;
+      }
+      .nav-menu {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 80%;
+        max-width: 300px;
+        height: 100vh;
+        background-color: #121212;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 1.5rem;
+        transition: right 0.4s ease-in-out;
+        z-index: 1000;
+        box-shadow: -5px 0 25px rgba(0,0,0,0.5);
+        padding: 2rem;
+        display: flex !important;
+      }
+      .nav-menu.active {
+        right: 0;
+      }
     }
   </style>
 </head>
 
 <body>
 
-  <!-- ENCABEZADO -->
   <header class="main-header">
     <a href="index.html" class="logo-link">
       <img src="IMG/logo.png" alt="Logo de Crea-Imp" class="logo-img">
     </a>
 
-    <button class="hamburger" id="hamburger-btn"
-      aria-label="Abrir menú" aria-expanded="false">
+    <button class="hamburger" id="hamburger-btn" aria-label="Abrir menú" aria-expanded="false" type="button">
       <span></span>
       <span></span>
       <span></span>
     </button>
 
     <nav class="nav-menu" id="nav-menu">
-      <a href="index.html" class="nav-link"
-        data-es="Inicio" data-en="Home">Inicio</a>
-      <a href="Nosotros.html" class="nav-link active"
-        data-es="Nosotros" data-en="About Us">Nosotros</a>
-      <a href="Portafolio.html" class="nav-link"
-        data-es="Portafolio" data-en="Portfolio">Portafolio</a>
-      <a href="Servicios.html" class="nav-link"
-        data-es="Servicios" data-en="Services">Servicios</a>
-      <a href="Contacto.html" class="nav-link"
-        data-es="Contacto" data-en="Contact">Contacto</a>
-
-      <button id="language-toggle" class="language-toggle"
-        type="button" aria-label="Cambiar idioma">ESP</button>
-
-      <a href="ingreso.html" class="btn-login-nav"
-        data-es="INICIO DE SESIÓN" data-en="LOG IN">
-        INICIO DE SESIÓN
-      </a>
+      <a href="index.html" class="nav-link" data-es="Inicio" data-en="Home">Inicio</a>
+      <a href="Nosotros.html" class="nav-link active" data-es="Nosotros" data-en="About Us">Nosotros</a>
+      <a href="Portafolio.html" class="nav-link" data-es="Portafolio" data-en="Portfolio">Portafolio</a>
+      <a href="Servicios.html" class="nav-link" data-es="Servicios" data-en="Services">Servicios</a>
+      <a href="Contacto.html" class="nav-link" data-es="Contacto" data-en="Contact">Contacto</a>
+      <button id="language-toggle" class="language-toggle" type="button" aria-label="Cambiar idioma">ESP</button>
+      <a href="ingreso.html" class="btn-login-nav" data-es="INICIO DE SESIÓN" data-en="LOG IN">INICIO DE SESIÓN</a>
     </nav>
   </header>
 
   <main>
-
-    <!-- PRESENTACIÓN / HERO -->
-    <section class="about-hero">
+    <section class="about-hero" style="padding: 3rem 1rem; text-align: center;">
       <div class="hero-content reveal">
-        <span class="section-tag"
-          data-es="CONÓCENOS" data-en="GET TO KNOW US">CONÓCENOS</span>
-
-        <h1 data-es="Creamos ideas que generan impacto."
-            data-en="We create ideas that make an impact.">
+        <span class="section-tag" data-es="CONÓCENOS" data-en="GET TO KNOW US">CONÓCENOS</span>
+        <h1 data-es="Creamos ideas que generan impacto." data-en="We create ideas that make an impact." style="font-size: 2.2rem;">
           Creamos ideas que generan <span>impacto.</span>
         </h1>
-
-        <p data-es="En Crea-Imp ayudamos a emprendedores y pequeños negocios a comunicar sus ideas mediante el diseño gráfico y el contenido visual."
-           data-en="At Crea-Imp, we help entrepreneurs and small businesses communicate their ideas through graphic design and visual content.">
-          En Crea-Imp ayudamos a emprendedores y pequeños negocios a
-          comunicar sus ideas mediante el diseño gráfico y el contenido visual.
+        <p data-es="En Crea-Imp ayudamos a emprendedores y pequeños negocios a comunicar sus ideas mediante el diseño gráfico y el contenido visual." data-en="At Crea-Imp, we help entrepreneurs and small businesses communicate their ideas through graphic design and visual content." style="font-size: 0.95rem; line-height: 1.6;">
+          En Crea-Imp ayudamos a emprendedores y pequeños negocios a comunicar sus ideas mediante el diseño gráfico y el contenido visual.
         </p>
-
-        <a href="Contacto.html" class="btn-primary"
-          data-es="Hablemos de tu idea" data-en="Let's talk about your idea">
+        <a href="Contacto.html" class="btn-primary" data-es="Hablemos de tu idea" data-en="Let's talk about your idea" style="margin-top: 1rem; display: inline-flex;">
           Hablemos de tu idea <span>→</span>
         </a>
       </div>
-
-      <div class="hero-visual reveal">
-        <div class="visual-frame">
-          <div class="visual-mark">C<span>·</span>I</div>
-          <p data-es="DISEÑO CON IDENTIDAD Y PROPÓSITO"
-             data-en="DESIGN WITH IDENTITY AND PURPOSE">
-            DISEÑO CON IDENTIDAD Y PROPÓSITO
-          </p>
-          <div class="visual-line"></div>
-          <span class="visual-caption">CREA-IMP / 2026</span>
-        </div>
-        <div class="orange-orbit"></div>
-      </div>
     </section>
 
-    <!-- CONTENEDOR PRINCIPAL -->
     <div class="nosotros-wrapper">
-
-      <!-- QUIÉNES SOMOS -->
       <section class="clean-grid-section reveal" id="quienes-somos">
         <div>
           <span class="section-tag" data-es="QUIÉNES SOMOS" data-en="WHO WE ARE">QUIÉNES SOMOS</span>
-          <h2 style="font-family: 'Montserrat', sans-serif; font-size: 2.2rem; font-weight: 700; color: #fff; margin-top: 0.5rem;" data-es="Ideas creativas con un propósito." data-en="Creative ideas with a purpose.">
+          <h2 style="font-family: 'Montserrat', sans-serif; font-size: 1.8rem; font-weight: 700; color: #fff; margin-top: 0.5rem;" data-es="Ideas creativas con un propósito." data-en="Creative ideas with a purpose.">
             Ideas creativas con un propósito.
           </h2>
         </div>
 
-        <div style="display: flex; flex-direction: column; gap: 1.25rem; color: #a0a0a0; font-family: 'Inter', sans-serif; line-height: 1.7; text-align: justify;">
+        <div style="display: flex; flex-direction: column; gap: 1rem; color: #a0a0a0; font-family: 'Inter', sans-serif; line-height: 1.6; font-size: 0.95rem; text-align: justify;">
           <p>
             Crea-Imp nace de reconocer que la identidad visual es clave en cómo un negocio se posiciona y es recordado. La manera en que un producto o servicio se presenta influye en cómo el público lo percibe y en la capacidad de destacar en un mercado competitivo.
           </p>
@@ -213,193 +186,127 @@
         </div>
       </section>
 
-      <!-- MISIÓN, VISIÓN Y VALORES -->
       <section class="purpose-grid-container">
-        <!-- Misión -->
         <article class="custom-purpose-card reveal">
-          <div style="font-size: 2rem; font-weight: 800; color: rgba(255,107,0,0.15); margin-bottom: 0.5rem; font-family: 'Montserrat', sans-serif;">01</div>
+          <div style="font-size: 1.8rem; font-weight: 800; color: rgba(255,107,0,0.15); margin-bottom: 0.3rem;">01</div>
           <span class="section-tag" data-es="NUESTRA MISIÓN" data-en="OUR MISSION">NUESTRA MISIÓN</span>
-          <h3 style="font-family: 'Montserrat', sans-serif; color: #fff; font-size: 1.25rem; margin: 0.5rem 0;" data-es="Impulsar ideas a través del diseño." data-en="Empowering ideas through design.">
+          <h3 style="font-family: 'Montserrat', sans-serif; color: #fff; font-size: 1.1rem; margin: 0.4rem 0;" data-es="Impulsar ideas a través del diseño." data-en="Empowering ideas through design.">
             Impulsar ideas a través del diseño.
           </h3>
-          <p style="color: #a0a0a0; font-family: 'Inter', sans-serif; font-size: 0.9rem; line-height: 1.5; margin: 0; text-align: justify;">
+          <p style="color: #a0a0a0; font-family: 'Inter', sans-serif; font-size: 0.85rem; line-height: 1.5; margin: 0; text-align: justify;">
            Apoyar a emprendedores y pequeñas empresas mediante el diseño gráfico y la creación de contenido visual, ofreciéndoles un trabajo creativo de alta calidad que les permita destacar y reforzar su imagen, presencia e identidad visual.
           </p>
         </article>
 
-        <!-- Visión -->
         <article class="custom-purpose-card reveal">
-          <div style="font-size: 2rem; font-weight: 800; color: rgba(255,107,0,0.15); margin-bottom: 0.5rem; font-family: 'Montserrat', sans-serif;">02</div>
+          <div style="font-size: 1.8rem; font-weight: 800; color: rgba(255,107,0,0.15); margin-bottom: 0.3rem;">02</div>
           <span class="section-tag" data-es="NUESTRA VISIÓN" data-en="OUR VISION">NUESTRA VISIÓN</span>
-          <h3 style="font-family: 'Montserrat', sans-serif; color: #fff; font-size: 1.25rem; margin: 0.5rem 0;" data-es="Crecer creando impacto." data-en="Growing by making an impact.">
+          <h3 style="font-family: 'Montserrat', sans-serif; color: #fff; font-size: 1.1rem; margin: 0.4rem 0;" data-es="Crecer creando impacto." data-en="Growing by making an impact.">
             Crecer creando impacto.
           </h3>
-          <p style="color: #a0a0a0; font-family: 'Inter', sans-serif; font-size: 0.9rem; line-height: 1.5; margin: 0; text-align: justify;">
+          <p style="color: #a0a0a0; font-family: 'Inter', sans-serif; font-size: 0.85rem; line-height: 1.5; margin: 0; text-align: justify;">
              Para el año 2031, Crea-Imp será una agencia reconocida por su compromiso con cada proyecto, ayudando a los emprendedores a impulsar el crecimiento de sus negocios y convirtiéndose en un apoyo clave para que las marcas cuenten con una imagen profesional y confiable.
           </p>
         </article>
 
-        <!-- Valores -->
         <article class="custom-purpose-card reveal">
-          <div style="font-size: 2rem; font-weight: 800; color: rgba(255,107,0,0.15); margin-bottom: 0.5rem; font-family: 'Montserrat', sans-serif;">03</div>
+          <div style="font-size: 1.8rem; font-weight: 800; color: rgba(255,107,0,0.15); margin-bottom: 0.3rem;">03</div>
           <span class="section-tag" data-es="NUESTROS VALORES" data-en="OUR VALUES">NUESTROS VALORES</span>
-          <h3 style="font-family: 'Montserrat', sans-serif; color: #fff; font-size: 1.25rem; margin: 0.5rem 0;">
-            Pilares que nos definen.
-          </h3>
-          <ul style="color: #a0a0a0; font-family: 'Inter', sans-serif; font-size: 0.85rem; line-height: 1.5; margin: 0; padding-left: 1rem; display: flex; flex-direction: column; gap: 0.3rem;">
-            <li><strong>Compromiso:</strong> Superando expectativas en cada entrega.</li>
-            <li><strong>Honestidad:</strong> Transparencia total en cada colaboración.</li>
-            <li><strong>Innovación:</strong> Ideas frescas y creativas para destacar.</li>
-            <li><strong>Responsabilidad:</strong> Rigor con los tiempos y la calidad.</li>
-            <li><strong>Empatía:</strong> Conexión real con las metas del cliente.</li>
+          <h3 style="font-family: 'Montserrat', sans-serif; color: #fff; font-size: 1.1rem; margin: 0.4rem 0;">Pilares que nos definen.</h3>
+          <ul style="color: #a0a0a0; font-family: 'Inter', sans-serif; font-size: 0.8rem; line-height: 1.5; margin: 0; padding-left: 1rem; display: flex; flex-direction: column; gap: 0.2rem;">
+            <li><strong>Compromiso:</strong> Superando expectativas.</li>
+            <li><strong>Honestidad:</strong> Transparencia total.</li>
+            <li><strong>Innovación:</strong> Ideas frescas para destacar.</li>
+            <li><strong>Responsabilidad:</strong> Rigor con los tiempos.</li>
+            <li><strong>Empatía:</strong> Conexión con el cliente.</li>
           </ul>
         </article>
       </section>
 
-      <!-- SECCIÓN FUNDADORA -->
       <section class="clean-grid-section reveal" id="fundadora">
         <div style="display: flex; justify-content: center; align-items: center;">
-          <div style="width: 100%; max-width: 360px; height: 400px; border-radius: 12px; overflow: hidden; border: 1px solid rgba(255,255,255,0.1); background-color: #121212; position: relative; box-shadow: 0 20px 30px rgba(0,0,0,0.4);">
+          <div style="width: 100%; max-width: 300px; height: 350px; border-radius: 12px; overflow: hidden; border: 1px solid rgba(255,255,255,0.1); background-color: #121212;">
             <img src="IMG/fundadora.png" alt="Fundadora de Crea-Imp" style="width: 100%; height: 100%; object-fit: cover;">
           </div>
         </div>
 
-        <div style="display: flex; flex-direction: column; gap: 1.25rem;">
+        <div style="display: flex; flex-direction: column; gap: 1rem;">
           <span class="section-tag" data-es="FUNDADORA" data-en="FOUNDER">SOBRE LA FUNDADORA</span>
-          <h2 style="font-family: 'Montserrat', sans-serif; font-size: 2.2rem; font-weight: 700; color: #fff; margin-top: 0.5rem;" data-es="Pasión y liderazgo creativo." data-en="Passion and creative leadership.">
+          <h2 style="font-family: 'Montserrat', sans-serif; font-size: 1.8rem; font-weight: 700; color: #fff; margin-top: 0.5rem;" data-es="Pasión y liderazgo creativo." data-en="Passion and creative leadership.">
             Pasión y liderazgo creativo.
           </h2>
-          <p style="color: #a0a0a0; font-family: 'Inter', sans-serif; line-height: 1.7; text-align: justify;">
-            Como fundadora de Crea-Imp, mi objetivo es transformar cada visión en una identidad visual única. Creo firmemente que el diseño va mucho más allá de la estética: es una herramienta estratégica para conectar, comunicar y potenciar el valor de cada marca en el mercado.
-          </p>
-          <p style="color: #a0a0a0; font-family: 'Inter', sans-serif; line-height: 1.7; text-align: justify;">
-            Cada proyecto es abordado con un firme compromiso por la excelencia y los detalles, guiando a los emprendedores paso a paso para construir una presencia sólida y memorable.
+          <p style="color: #a0a0a0; font-family: 'Inter', sans-serif; font-size: 0.95rem; line-height: 1.6; text-align: justify;">
+            Como fundadora de Crea-Imp, mi objetivo es transformar cada visión en una identidad visual única. El diseño va más allá de la estética: es una herramienta estratégica para conectar y potenciar tu marca.
           </p>
         </div>
       </section>
 
-      <!-- OBJETIVOS -->
       <section class="reveal" id="objetivos">
-        <div style="text-align: center; max-width: 700px; margin: 0 auto 2rem auto;">
+        <div style="text-align: center; max-width: 700px; margin: 0 auto 1.5rem auto;">
           <span class="section-tag" data-es="LO QUE BUSCAMOS" data-en="WHAT WE AIM FOR">LO QUE BUSCAMOS</span>
-          <h2 style="font-family: 'Montserrat', sans-serif; font-size: 2.2rem; font-weight: 700; color: #fff; margin-top: 0.5rem;" data-es="Nuestros objetivos" data-en="Our objectives">Nuestros objetivos</h2>
-          <p style="color: #a0a0a0; font-family: 'Inter', sans-serif; margin-top: 0.5rem;" data-es="Trabajamos con metas claras para aportar valor a cada proyecto." data-en="We work toward clear goals to bring value to every project.">
-            Trabajamos con metas claras para aportar valor a cada proyecto.
-          </p>
+          <h2 style="font-family: 'Montserrat', sans-serif; font-size: 1.8rem; font-weight: 700; color: #fff; margin-top: 0.5rem;" data-es="Nuestros objetivos" data-en="Our objectives">Nuestros objetivos</h2>
         </div>
 
         <div class="objectives-clean-grid">
           <article class="objective-clean-card">
-            <span style="color: #ff6b00; font-weight: 700; font-family: 'Montserrat', sans-serif; font-size: 1.25rem;">01</span>
-            <h3 style="color: #fff; font-family: 'Montserrat', sans-serif; font-size: 1.1rem; margin: 0.75rem 0;" data-es="Crear identidad" data-en="Build identity">Crear identidad</h3>
-            <p style="color: #a0a0a0; font-family: 'Inter', sans-serif; font-size: 0.9rem; line-height: 1.5; margin: 0; text-align: justify;">
-              Diseñar logotipos y elementos visuales que representen cada marca.
-            </p>
+            <span style="color: #ff6b00; font-weight: 700; font-family: 'Montserrat', sans-serif; font-size: 1.1rem;">01</span>
+            <h3 style="color: #fff; font-family: 'Montserrat', sans-serif; font-size: 1rem; margin: 0.5rem 0;">Crear identidad</h3>
+            <p style="color: #a0a0a0; font-family: 'Inter', sans-serif; font-size: 0.85rem; line-height: 1.4; margin: 0; text-align: justify;">Diseñar logotipos y elementos visuales que representen cada marca.</p>
           </article>
-
           <article class="objective-clean-card">
-            <span style="color: #ff6b00; font-weight: 700; font-family: 'Montserrat', sans-serif; font-size: 1.25rem;">02</span>
-            <h3 style="color: #fff; font-family: 'Montserrat', sans-serif; font-size: 1.1rem; margin: 0.75rem 0;" data-es="Destacar" data-en="Stand out">Destacar</h3>
-            <p style="color: #a0a0a0; font-family: 'Inter', sans-serif; font-size: 0.9rem; line-height: 1.5; margin: 0; text-align: justify;">
-              Ayudar a los negocios a diferenciarse mediante diseños creativos.
-            </p>
+            <span style="color: #ff6b00; font-weight: 700; font-family: 'Montserrat', sans-serif; font-size: 1.1rem;">02</span>
+            <h3 style="color: #fff; font-family: 'Montserrat', sans-serif; font-size: 1rem; margin: 0.5rem 0;">Destacar</h3>
+            <p style="color: #a0a0a0; font-family: 'Inter', sans-serif; font-size: 0.85rem; line-height: 1.4; margin: 0; text-align: justify;">Ayudar a los negocios a diferenciarse mediante diseños creativos.</p>
           </article>
-
           <article class="objective-clean-card">
-            <span style="color: #ff6b00; font-weight: 700; font-family: 'Montserrat', sans-serif; font-size: 1.1rem; margin: 0.75rem 0;" data-es="Comunicar mejor" data-en="Communicate better">Comunicar mejor</span>
-            <p style="color: #a0a0a0; font-family: 'Inter', sans-serif; font-size: 0.9rem; line-height: 1.5; margin: 0; text-align: justify;">
-              Crear contenido visual que transmita mensajes de forma clara y atractiva.
-            </p>
+            <span style="color: #ff6b00; font-weight: 700; font-family: 'Montserrat', sans-serif; font-size: 1.1rem;">03</span>
+            <h3 style="color: #fff; font-family: 'Montserrat', sans-serif; font-size: 1rem; margin: 0.5rem 0;">Comunicar mejor</h3>
+            <p style="color: #a0a0a0; font-family: 'Inter', sans-serif; font-size: 0.85rem; line-height: 1.4; margin: 0; text-align: justify;">Crear contenido visual claro y atractivo.</p>
           </article>
-
           <article class="objective-clean-card">
-            <span style="color: #ff6b00; font-weight: 700; font-family: 'Montserrat', sans-serif; font-size: 1.25rem;">04</span>
-            <h3 style="color: #fff; font-family: 'Montserrat', sans-serif; font-size: 1.1rem; margin: 0.75rem 0;" data-es="Aportar calidad" data-en="Deliver quality">Aportar calidad</h3>
-            <p style="color: #a0a0a0; font-family: 'Inter', sans-serif; font-size: 0.9rem; line-height: 1.5; margin: 0; text-align: justify;">
-              Entregar diseños cuidados, organizados y adaptados a las necesidades de cada proyecto.
-            </p>
+            <span style="color: #ff6b00; font-weight: 700; font-family: 'Montserrat', sans-serif; font-size: 1.1rem;">04</span>
+            <h3 style="color: #fff; font-family: 'Montserrat', sans-serif; font-size: 1rem; margin: 0.5rem 0;">Aportar calidad</h3>
+            <p style="color: #a0a0a0; font-family: 'Inter', sans-serif; font-size: 0.85rem; line-height: 1.4; margin: 0; text-align: justify;">Entregar diseños cuidados y adaptados a cada proyecto.</p>
           </article>
         </div>
       </section>
 
-      <!-- POR QUÉ ELEGIRNOS -->
-      <section class="clean-grid-section reveal">
-        <div>
-          <span class="section-tag" data-es="NUESTRO COMPROMISO" data-en="OUR COMMITMENT">NUESTRO COMPROMISO</span>
-          <h2 style="font-family: 'Montserrat', sans-serif; font-size: 2.2rem; font-weight: 700; color: #fff; margin-top: 0.5rem;" data-es="¿Por qué elegir Crea-Imp?" data-en="Why choose Crea-Imp?">
-            ¿Por qué elegir Crea-Imp?
-          </h2>
-          <p style="color: #a0a0a0; font-family: 'Inter', sans-serif; margin-top: 1rem; line-height: 1.6; text-align: justify;">
-            Queremos que cada diseño tenga una razón de ser y ayude a comunicar la esencia de cada negocio.
-          </p>
-        </div>
-
-        <div style="display: flex; flex-direction: column; gap: 1.5rem;">
-          <div class="objective-clean-card" style="display: flex; gap: 1rem; padding: 1.5rem;">
-            <span style="color: #ff6b00; font-size: 1.2rem;">✳</span>
-            <div>
-              <h3 style="color: #fff; font-family: 'Montserrat', sans-serif; font-size: 1.05rem; margin-bottom: 0.4rem;">Creatividad</h3>
-              <p style="color: #a0a0a0; font-family: 'Inter', sans-serif; font-size: 0.9rem; margin: 0; text-align: justify;">Buscamos ideas visuales que llamen la atención y transmitan un mensaje.</p>
-            </div>
-          </div>
-
-          <div class="objective-clean-card" style="display: flex; gap: 1rem; padding: 1.5rem;">
-            <span style="color: #ff6b00; font-size: 1.2rem;">✳</span>
-            <div>
-              <h3 style="color: #fff; font-family: 'Montserrat', sans-serif; font-size: 1.05rem; margin-bottom: 0.4rem;">Atención a cada proyecto</h3>
-              <p style="color: #a0a0a0; font-family: 'Inter', sans-serif; font-size: 0.9rem; margin: 0; text-align: justify;">Tenemos en cuenta las necesidades y objetivos de cada negocio.</p>
-            </div>
-          </div>
-
-          <div class="objective-clean-card" style="display: flex; gap: 1rem; padding: 1.5rem;">
-            <span style="color: #ff6b00; font-size: 1.2rem;">✳</span>
-            <div>
-              <h3 style="color: #fff; font-family: 'Montserrat', sans-serif; font-size: 1.05rem; margin-bottom: 0.4rem;">Diseño con propósito</h3>
-              <p style="color: #a0a0a0; font-family: 'Inter', sans-serif; font-size: 0.9rem; margin: 0; text-align: justify;">Cada elemento visual debe aportar al mensaje y a la identidad de la marca.</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- LLAMADO A LA ACCIÓN -->
       <section class="cta-box-modern reveal">
         <span class="section-tag" style="justify-content: center;" data-es="HAGAMOS ALGO CREATIVO" data-en="LET'S CREATE SOMETHING">HAGAMOS ALGO CREATIVO</span>
-        <h2 style="font-family: 'Montserrat', sans-serif; font-size: 2.2rem; font-weight: 700; color: #fff; margin: 1rem 0;" data-es="Tu idea puede generar un gran impacto." data-en="Your idea can make a big impact.">
+        <h2 style="font-family: 'Montserrat', sans-serif; font-size: 1.8rem; font-weight: 700; color: #fff; margin: 0.8rem 0;" data-es="Tu idea puede generar un gran impacto." data-en="Your idea can make a big impact.">
           Tu idea puede generar un <span style="color: #ff6b00;">gran impacto.</span>
         </h2>
-        <p style="color: #a0a0a0; font-family: 'Inter', sans-serif; max-width: 600px; margin: 0 auto 2rem auto; line-height: 1.6; text-align: justify;">
+        <p style="color: #a0a0a0; font-family: 'Inter', sans-serif; max-width: 600px; margin: 0 auto 1.5rem auto; line-height: 1.5; font-size: 0.9rem;" data-es="Cuéntanos qué tienes en mente y exploremos cómo darle vida visualmente." data-en="Tell us what you have in mind and let's explore how to bring it to life visually.">
           Cuéntanos qué tienes en mente y exploremos cómo darle vida visualmente.
         </p>
-        <a href="Contacto.html" class="btn-primary" data-es="Contáctanos →" data-en="Contact us →">
-          Contáctanos →
-        </a>
+        <a href="Contacto.html" class="btn-primary" data-es="Contáctanos →" data-en="Contact us →">Contáctanos →</a>
       </section>
-
     </div>
-
   </main>
 
-  <!-- PIE DE PÁGINA -->
-  <footer class="about-footer">
+  <footer class="about-footer" style="padding: 2.5rem 1rem; text-align: center;">
     <a href="index.html" class="footer-brand">Crea-Imp<span>.</span></a>
-
-    <p data-es="Diseñamos marcas con identidad y propósito."
-       data-en="We design brands with identity and purpose.">
-      Diseñamos marcas con identidad y propósito.
-    </p>
-
-    <div class="footer-links">
+    <p data-es="Diseñamos marcas con identidad y propósito." data-en="We design brands with identity and purpose." style="font-size: 0.9rem;">Diseñamos marcas con identidad y propósito.</p>
+    <div class="footer-links" style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; margin: 1rem 0;">
       <a href="index.html" data-es="Inicio" data-en="Home">Inicio</a>
       <a href="Portafolio.html" data-es="Portafolio" data-en="Portfolio">Portafolio</a>
       <a href="Servicios.html" data-es="Servicios" data-en="Services">Servicios</a>
       <a href="Contacto.html" data-es="Contacto" data-en="Contact">Contacto</a>
     </div>
-
-    <p class="copyright">© 2026 Crea-Imp. <span
-      data-es="Todos los derechos reservados."
-      data-en="All rights reserved.">Todos los derechos reservados.</span></p>
+    <p class="copyright" style="font-size: 0.85rem;">© 2026 Crea-Imp. <span data-es="Todos los derechos reservados." data-en="All rights reserved.">Todos los derechos reservados.</span></p>
   </footer>
 
   <script src="js/nosotros.js"></script>
+  <script>
+    const hamburgerBtn = document.getElementById('hamburger-btn');
+    const navMenu = document.getElementById('nav-menu');
+    if(hamburgerBtn && navMenu) {
+      hamburgerBtn.addEventListener('click', () => {
+        navMenu.classList.toggle('active');
+        const expanded = hamburgerBtn.getAttribute('aria-expanded') === 'true' || false;
+        hamburgerBtn.setAttribute('aria-expanded', !expanded);
+      });
+    }
+  </script>
 </body>
 </html>

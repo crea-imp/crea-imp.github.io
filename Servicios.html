@@ -13,17 +13,71 @@
   <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
   <link rel="stylesheet" href="css/servicios.css">
   <script src="js/servicios.js" defer></script>
+
+  <style>
+    /* REGLAS RESPONSIVE MÓVIL PARA SERVICIOS */
+    @media (max-width: 768px) {
+      .site-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem;
+      }
+      .mobile-menu-btn {
+        display: flex !important;
+        background: transparent;
+        border: none;
+        color: #fff;
+        cursor: pointer;
+        z-index: 1001;
+      }
+      .mobile-nav {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 80%;
+        max-width: 300px;
+        height: 100vh;
+        background-color: #121212;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 1.5rem;
+        transition: right 0.4s ease-in-out;
+        z-index: 1000;
+        box-shadow: -5px 0 25px rgba(0,0,0,0.5);
+        padding: 2rem;
+        display: flex !important;
+      }
+      .mobile-nav:not(.hidden) {
+        right: 0;
+      }
+      .desktop-nav {
+        display: none !important;
+      }
+      .services-hero {
+        flex-direction: column !important;
+        text-align: center;
+        padding: 3rem 1rem !important;
+      }
+      .services-grid {
+        grid-template-columns: 1fr !important;
+        padding: 0 1rem;
+      }
+      .process-steps {
+        flex-direction: column !important;
+      }
+    }
+  </style>
 </head>
 
 <body>
   <header class="site-header">
     <a class="logo" href="index.html" aria-label="Crea-Imp, inicio">
-      <img src="IMG/logo.png" alt="Logo de Crea-Imp">
+      <img src="IMG/logo.png" alt="Logo de Crea-Imp" style="max-width: 120px;">
     </a>
 
-    <button class="mobile-menu-btn" id="mobile-menu-btn"
-      type="button" aria-label="Abrir menú" aria-expanded="false"
-      aria-controls="mobile-menu">
+    <button class="mobile-menu-btn" id="mobile-menu-btn" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="mobile-menu">
       <span class="material-symbols-outlined" aria-hidden="true">menu</span>
     </button>
 
@@ -43,7 +97,6 @@
       <a href="Portafolio.html" data-es="Portafolio" data-en="Portfolio">Portafolio</a>
       <a href="Servicios.html" class="active" aria-current="page" data-es="Servicios" data-en="Services">Servicios</a>
       <a href="Contacto.html" data-es="Contacto" data-en="Contact">Contacto</a>
-
       <button class="language-btn" id="mobile-language-toggle" type="button">ESP</button>
       <a class="login-btn" href="ingreso.html" data-es="INICIO DE SESIÓN" data-en="LOG IN">INICIO DE SESIÓN</a>
     </nav>
@@ -53,17 +106,17 @@
     <section class="services-hero">
       <div class="hero-content">
         <span class="eyebrow" data-es="IDEAS QUE TOMAN FORMA" data-en="IDEAS TAKING SHAPE">IDEAS QUE TOMAN FORMA</span>
-        <h1 data-es="Diseño que comunica y deja huella." data-en="Design that communicates and makes an impact.">Diseño que comunica y deja huella.</h1>
-        <p data-es="En Crea-Imp ayudamos a emprendedores y pequeños negocios a mostrar sus ideas con diseños visuales atractivos y pensados para su marca." data-en="At Crea-Imp, we help entrepreneurs and small businesses present their ideas through attractive visual designs made for their brands.">
+        <h1 data-es="Diseño que comunica y deja huella." data-en="Design that communicates and makes an impact." style="font-size: 2rem;">Diseño que comunica y deja huella.</h1>
+        <p data-es="En Crea-Imp ayudamos a emprendedores y pequeños negocios a mostrar sus ideas con diseños visuales atractivos y pensados para su marca." data-en="At Crea-Imp, we help entrepreneurs and small businesses present their ideas through attractive visual designs made for their brands." style="font-size: 0.95rem;">
           En Crea-Imp ayudamos a emprendedores y pequeños negocios a mostrar sus ideas con diseños visuales atractivos y pensados para su marca.
         </p>
-        <a class="button button-primary" href="Contacto.html">
+        <a class="button button-primary" href="Contacto.html" style="margin-top: 1rem; display: inline-flex;">
           <span data-es="Hablemos de tu idea" data-en="Let's talk about your idea">Hablemos de tu idea</span>
           <span aria-hidden="true">↗</span>
         </a>
       </div>
 
-      <div class="hero-art" aria-hidden="true">
+      <div class="hero-art" aria-hidden="true" style="transform: scale(0.85); margin-top: 1rem;">
         <div class="art-orbit orbit-one"></div>
         <div class="art-orbit orbit-two"></div>
         <div class="art-square square-one"></div>
@@ -76,11 +129,11 @@
       </div>
     </section>
 
-    <section class="services-section" id="servicios">
-      <div class="section-heading reveal-on-scroll">
+    <section class="services-section" id="servicios" style="padding: 3rem 1rem;">
+      <div class="section-heading reveal-on-scroll" style="text-align: center; margin-bottom: 2rem;">
         <span class="eyebrow" data-es="LO QUE HACEMOS" data-en="WHAT WE DO">LO QUE HACEMOS</span>
-        <h2 data-es="Nuestros servicios" data-en="Our services">Nuestros servicios</h2>
-        <p data-es="Soluciones visuales para darle personalidad a tu marca y comunicar mejor tus ideas." data-en="Visual solutions to give your brand personality and communicate your ideas more clearly.">
+        <h2 data-es="Nuestros servicios" data-en="Our services" style="font-size: 1.8rem;">Nuestros servicios</h2>
+        <p data-es="Soluciones visuales para darle personalidad a tu marca y comunicar mejor tus ideas." data-en="Visual solutions to give your brand personality and communicate your ideas more clearly." style="font-size: 0.9rem;">
           Soluciones visuales para darle personalidad a tu marca y comunicar mejor tus ideas.
         </p>
       </div>
@@ -197,11 +250,11 @@
       </div>
     </section>
 
-    <section class="process-section reveal-on-scroll">
-      <div class="process-intro">
+    <section class="process-section reveal-on-scroll" style="padding: 3rem 1rem;">
+      <div class="process-intro" style="text-align: center; margin-bottom: 2rem;">
         <span class="eyebrow" data-es="ASÍ TRABAJAMOS" data-en="HOW WE WORK">ASÍ TRABAJAMOS</span>
-        <h2 data-es="Tu idea, paso a paso." data-en="Your idea, step by step.">Tu idea, paso a paso.</h2>
-        <p data-es="Queremos entender lo que necesitas y acompañarte durante el proceso de diseño." data-en="We want to understand what you need and guide you through the design process.">
+        <h2 data-es="Tu idea, paso a paso." data-en="Your idea, step by step." style="font-size: 1.8rem;">Tu idea, paso a paso.</h2>
+        <p data-es="Queremos entender lo que necesitas y acompañarte durante el proceso de diseño." data-en="We want to understand what you need and guide you through the design process." style="font-size: 0.9rem;">
           Queremos entender lo que necesitas y acompañarte durante el proceso de diseño.
         </p>
       </div>
@@ -221,33 +274,45 @@
       </div>
     </section>
 
-    <section class="services-cta reveal-on-scroll">
+    <section class="services-cta reveal-on-scroll" style="padding: 3rem 1rem; text-align: center;">
       <div>
         <span class="eyebrow" data-es="EMPECEMOS" data-en="LET'S GET STARTED">EMPECEMOS</span>
-        <h2 data-es="¿Tienes una idea en mente?" data-en="Have an idea in mind?">¿Tienes una idea en mente?</h2>
-        <p data-es="Cuéntanos qué necesitas y busquemos una solución visual para tu marca." data-en="Tell us what you need and let's find a visual solution for your brand.">
+        <h2 data-es="¿Tienes una idea en mente?" data-en="Have an idea in mind?" style="font-size: 1.8rem;">¿Tienes una idea en mente?</h2>
+        <p data-es="Cuéntanos qué necesitas y busquemos una solución visual para tu marca." data-en="Tell us what you need and let's find a visual solution for your brand." style="font-size: 0.9rem;">
           Cuéntanos qué necesitas y busquemos una solución visual para tu marca.
         </p>
       </div>
-      <a class="button button-primary" href="Contacto.html">
+      <a class="button button-primary" href="Contacto.html" style="margin-top: 1rem; display: inline-flex;">
         <span data-es="Contactar a Crea-Imp" data-en="Contact Crea-Imp">Contactar a Crea-Imp</span>
         <span aria-hidden="true">↗</span>
       </a>
     </section>
   </main>
 
-  <footer class="site-footer">
+  <footer class="site-footer" style="padding: 2rem 1rem; text-align: center;">
     <a class="footer-logo" href="index.html">
-      <img src="IMG/logo.png" alt="Crea-Imp">
+      <img src="IMG/logo.png" alt="Crea-Imp" style="max-width: 120px;">
     </a>
-    <p data-es="Diseñamos marcas con identidad y propósito." data-en="We design brands with identity and purpose.">Diseñamos marcas con identidad y propósito.</p>
-    <div class="footer-links">
+    <p data-es="Diseñamos marcas con identidad y propósito." data-en="We design brands with identity and purpose." style="font-size: 0.85rem;">Diseñamos marcas con identidad y propósito.</p>
+    <div class="footer-links" style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; margin: 1rem 0;">
       <a href="Nosotros.html" data-es="Nosotros" data-en="About us">Nosotros</a>
       <a href="Portafolio.html" data-es="Portafolio" data-en="Portfolio">Portafolio</a>
       <a href="Servicios.html" data-es="Servicios" data-en="Services">Servicios</a>
       <a href="Contacto.html" data-es="Contacto" data-en="Contact">Contacto</a>
     </div>
-    <p class="copyright">© 2026 Crea-Imp. <span data-es="Todos los derechos reservados." data-en="All rights reserved.">Todos los derechos reservados.</span></p>
+    <p class="copyright" style="font-size: 0.8rem;">© 2026 Crea-Imp. <span data-es="Todos los derechos reservados." data-en="All rights reserved.">Todos los derechos reservados.</span></p>
   </footer>
+
+  <script>
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    if(mobileMenuBtn && mobileMenu) {
+      mobileMenuBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+        const expanded = mobileMenuBtn.getAttribute('aria-expanded') === 'true' || false;
+        mobileMenuBtn.setAttribute('aria-expanded', !expanded);
+      });
+    }
+  </script>
 </body>
 </html>
