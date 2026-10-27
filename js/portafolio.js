@@ -140,3 +140,85 @@ document.addEventListener("DOMContentLoaded", () => {
   // ESTADO INICIAL DE LOS FILTROS
   filterProjects("all");
 });
+
+
+
+function openModal(type, src1, src2, title, description) {
+  const modal = document.getElementById('portfolioModal');
+  const mediaContainer = document.getElementById('modalMedia');
+  const modalTitle = document.getElementById('modalTitle');
+  const modalDescription = document.getElementById('modalDescription');
+
+  mediaContainer.innerHTML = '';
+
+  if (type === 'video') {
+    const video = document.createElement('video');
+    video.src = src1;
+    video.controls = true;
+    video.autoplay = true;
+    mediaContainer.appendChild(video);
+  } else if (type === 'image') {
+    const img = document.createElement('img');
+    img.src = src1;
+    img.alt = title;
+    mediaContainer.appendChild(img);
+  } else if (type === 'comparison') {
+    // Contenedor para mostrar las dos imágenes lado a lado (Antes y Después)
+    const wrapper = document.createElement('div');
+    wrapper.style.display = 'flex';
+    wrapper.style.gap = '15px';
+    wrapper.style.width = '100%';
+    wrapper.style.justifyContent = 'center';
+    wrapper.style.alignItems = 'center';
+    wrapper.style.padding = '10px';
+
+    // Imagen de ANTES
+    const div1 = document.createElement('div');
+    div1.style.flex = '1';
+    div1.style.textAlign = 'center';
+    div1.innerHTML = '<p style="color: var(--orange); font-weight: bold; margin-bottom: 8px; font-size: 0.95rem;">ANTES</p>';
+    const imgBefore = document.createElement('img');
+    imgBefore.src = src1;
+    imgBefore.alt = title + ' - Antes';
+    imgBefore.style.maxWidth = '100%';
+    imgBefore.style.maxHeight = '350px';
+    imgBefore.style.objectFit = 'contain';
+    div1.appendChild(imgBefore);
+
+    // Imagen de DESPUÉS
+    const div2 = document.createElement('div');
+    div2.style.flex = '1';
+    div2.style.textAlign = 'center';
+    div2.innerHTML = '<p style="color: var(--orange); font-weight: bold; margin-bottom: 8px; font-size: 0.95rem;">DESPUÉS</p>';
+    const imgAfter = document.createElement('img');
+    imgAfter.src = src2;
+    imgAfter.alt = title + ' - Después';
+    imgAfter.style.maxWidth = '100%';
+    imgAfter.style.maxHeight = '350px';
+    imgAfter.style.objectFit = 'contain';
+    div2.appendChild(imgAfter);
+
+    wrapper.appendChild(div1);
+    wrapper.appendChild(div2);
+    mediaContainer.appendChild(wrapper);
+  }
+
+  modalTitle.textContent = title;
+  modalDescription.textContent = description;
+  modal.classList.add('active');
+}
+
+function closeModal() {
+  const modal = document.getElementById('portfolioModal');
+  const mediaContainer = document.getElementById('modalMedia');
+  mediaContainer.innerHTML = '';
+  modal.classList.remove('active');
+}
+
+// Cerrar modal al hacer clic fuera del contenido
+window.onclick = function(event) {
+  const modal = document.getElementById('portfolioModal');
+  if (event.target === modal) {
+    closeModal();
+  }
+};
