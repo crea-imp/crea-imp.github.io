@@ -72,34 +72,36 @@
 </head>
 
 <body>
-  <header class="site-header">
-    <a class="logo" href="index.html" aria-label="Crea-Imp, inicio">
-      <img src="IMG/logo.png" alt="Logo de Crea-Imp" style="max-width: 120px;">
-    </a>
+  <header class="main-header">
+    <div class="header-container">
+      <a href="index.html" class="logo-link">
+        <img src="IMG/logo.png" alt="Crea-Imp Logo" class="logo-img">
+      </a>
 
-    <button class="mobile-menu-btn" id="mobile-menu-btn" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="mobile-menu">
-      <span class="material-symbols-outlined" aria-hidden="true">menu</span>
-    </button>
+      <!-- Botón de hamburguesa unificado con el mismo ID que inicio -->
+      <button class="hamburger" id="hamburger-btn" type="button" aria-label="Open menu" aria-controls="nav-menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
 
-    <nav class="desktop-nav" aria-label="Navegación principal">
-      <a href="index.html" data-es="Inicio" data-en="Home">Inicio</a>
-      <a href="Nosotros.html" data-es="Nosotros" data-en="About us">Nosotros</a>
-      <a href="Portafolio.html" data-es="Portafolio" data-en="Portfolio">Portafolio</a>
-      <a href="Servicios.html" class="active" aria-current="page" data-es="Servicios" data-en="Services">Servicios</a>
-      <a href="Contacto.html" data-es="Contacto" data-en="Contact">Contacto</a>
-      <button class="language-btn" id="language-toggle" type="button" aria-label="Cambiar idioma">ESP</button>
-      <a class="login-btn" href="ingreso.html" data-es="INICIO DE SESIÓN" data-en="LOG IN">INICIO DE SESIÓN</a>
-    </nav>
-
-    <nav class="mobile-nav hidden" id="mobile-menu" aria-label="Navegación móvil">
-      <a href="index.html" data-es="Inicio" data-en="Home">Inicio</a>
-      <a href="Nosotros.html" data-es="Nosotros" data-en="About us">Nosotros</a>
-      <a href="Portafolio.html" data-es="Portafolio" data-en="Portfolio">Portafolio</a>
-      <a href="Servicios.html" class="active" aria-current="page" data-es="Servicios" data-en="Services">Servicios</a>
-      <a href="Contacto.html" data-es="Contacto" data-en="Contact">Contacto</a>
-      <button class="language-btn" id="mobile-language-toggle" type="button">ESP</button>
-      <a class="login-btn" href="ingreso.html" data-es="INICIO DE SESIÓN" data-en="LOG IN">INICIO DE SESIÓN</a>
-    </nav>
+      <!-- Navegación unificada con el id="nav-menu" -->
+      <nav aria-label="Main navigation">
+        <ul class="nav-menu" id="nav-menu">
+          <li><a href="index.html" class="nav-link">Inicio</a></li>
+          <li><a href="Nosotros.html" class="nav-link">Nosotros</a></li>
+          <li><a href="Portafolio.html" class="nav-link">Portafolio</a></li>
+          <li><a href="Servicios.html" class="nav-link">Servicios</a></li>
+          <li><a href="Contacto.html" class="nav-link">Contacto</a></li>
+          <li>
+            <button type="button" id="language-toggle" class="btn-language">ESP</button>
+          </li>
+          <li>
+            <a href="ingreso.html" class="btn-login-nav">INICIO DE SESIÓN</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
   </header>
 
   <main>
@@ -314,5 +316,19 @@
       });
     }
   </script>
+
+  <script>
+  const hamburgerBtn = document.getElementById('hamburger-btn');
+  const navMenu = document.getElementById('nav-menu');
+
+  if (hamburgerBtn && navMenu) {
+    hamburgerBtn.addEventListener('click', () => {
+      navMenu.classList.toggle('is-active'); // O .active según el CSS global de tu menú
+      const expanded = hamburgerBtn.getAttribute('aria-expanded') === 'true';
+      hamburgerBtn.setAttribute('aria-expanded', !expanded);
+      hamburgerBtn.classList.toggle('is-active');
+    });
+  }
+</script>
 </body>
 </html>

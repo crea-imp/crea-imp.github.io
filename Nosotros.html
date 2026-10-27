@@ -3,91 +3,37 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Conoce Crea-Imp, nuestra misión, visión y objetivos en diseño gráfico e identidad visual.">
-  <title>Nosotros | Crea-Imp</title>
+  <meta name="theme-color" content="#0b0c0e">
+  <meta name="description" content="Explora el portafolio de Crea-Imp: videos educativos, animación de logo y diseño de identidades visuales.">
+  <title>Crea-Imp | Portafolio</title>
 
-  <link rel="stylesheet" href="css/styles.css">
-  <link rel="stylesheet" href="css/nosotros.css">
+  <link rel="icon" href="IMG/logo.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+ 
+  <link rel="stylesheet" href="css/portafolio.css">
+  <script src="js/portafolio.js" defer></script>
 
   <style>
-    /* Estilos unificados para el menú móvil idénticos a Inicio */
-    .main-header {
-      background-color: #0b0c0e;
-      position: relative;
-      z-index: 100;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-    }
-    .header-container {
-      max-width: 1280px;
-      margin: 0 auto;
-      padding: 1rem 5%;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    .logo-img {
-      max-width: 120px;
-      height: auto;
-      display: block;
-    }
-    .hamburger {
-      display: none;
-      flex-direction: column;
-      justify-content: space-between;
-      width: 28px;
-      height: 20px;
-      background: transparent;
-      border: none;
-      cursor: pointer;
-      z-index: 1001;
-    }
-    .hamburger span {
-      display: block;
-      width: 100%;
-      height: 3px;
-      background-color: #fff;
-      border-radius: 2px;
-      transition: all 0.3s ease;
-    }
-    .nav-menu {
-      display: flex;
-      list-style: none;
-      gap: 1.5rem;
-      align-items: center;
-      margin: 0;
-      padding: 0;
-    }
-    .nav-menu a, .nav-menu button {
-      color: #fff;
-      text-decoration: none;
-      font-family: 'Inter', sans-serif;
-      font-weight: 500;
-      font-size: 0.95rem;
-      background: transparent;
-      border: none;
-      cursor: pointer;
-      transition: color 0.3s ease;
-    }
-    .nav-menu a:hover, .nav-menu a.active, .nav-menu button:hover {
-      color: #ff6b00;
-    }
-    .btn-login-nav {
-      background-color: #ff6b00;
-      padding: 0.5rem 1rem;
-      border-radius: 6px;
-      color: #fff !important;
-      font-weight: 600;
-    }
-
+    /* REGLAS RESPONSIVE PARA MÓVIL EN PORTAFOLIO */
     @media (max-width: 768px) {
-      .hamburger {
-        display: flex !important;
+      .header-inner {
+        padding: 0 1rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
       }
-      .nav-menu {
+      .mobile-menu-btn {
+        display: flex !important;
+        background: transparent;
+        border: none;
+        color: #fff;
+        cursor: pointer;
+        z-index: 1001;
+      }
+      .mobile-nav {
         position: fixed;
         top: 0;
         right: -100%;
@@ -103,124 +49,260 @@
         z-index: 1000;
         box-shadow: -5px 0 25px rgba(0,0,0,0.5);
         padding: 2rem;
+        display: flex !important;
       }
-      .nav-menu.active {
+      .mobile-nav:not(.hidden) {
         right: 0;
       }
-    }
-
-    .nosotros-wrapper {
-      max-width: 1280px;
-      margin: 0 auto;
-      padding: 0 5% 5rem 5%;
-      display: flex;
-      flex-direction: column;
-      gap: 6rem;
-    }
-    .clean-grid-section {
-      display: grid;
-      grid-template-columns: 1fr 1.5fr;
-      gap: 4rem;
-      align-items: center;
-    }
-    @media (max-width: 900px) {
-      .clean-grid-section {
-        grid-template-columns: 1fr;
-        gap: 2rem;
+      .desktop-nav {
+        display: none !important;
       }
-      .nosotros-wrapper {
-        gap: 3rem;
-        padding: 0 1rem 3rem 1rem;
+      .portfolio-hero {
+        padding: 3rem 1rem !important;
+        text-align: center;
       }
-    }
-    .purpose-grid-container {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 2rem;
-    }
-    .custom-purpose-card {
-      background-color: #121212;
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      border-radius: 12px;
-      padding: 2rem 1.75rem;
-      position: relative;
-      overflow: hidden;
-    }
-    .objectives-clean-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 1.5rem;
-      margin-top: 2rem;
-    }
-    .objective-clean-card {
-      background-color: #0d0d0d;
-      border: 1px solid rgba(255, 255, 255, 0.06);
-      border-radius: 10px;
-      padding: 1.5rem;
-    }
-    .cta-box-modern {
-      background: linear-gradient(135deg, #121212 0%, #0a0a0a 100%);
-      border: 1px solid rgba(255, 107, 0, 0.2);
-      border-radius: 16px;
-      padding: 3rem 1.5rem;
-      text-align: center;
-      max-width: 900px;
-      margin: 0 auto;
+      .project-grid {
+        grid-template-columns: 1fr !important;
+        padding: 0 1rem;
+      }
     }
   </style>
 </head>
 
 <body>
-
   <header class="main-header">
     <div class="header-container">
       <a href="index.html" class="logo-link">
-        <img src="IMG/logo.png" alt="Logo de Crea-Imp" class="logo-img">
+        <img src="IMG/logo.png" alt="Crea-Imp Logo" class="logo-img">
       </a>
 
-      <button class="hamburger" id="hamburger-btn" aria-label="Abrir menú" aria-expanded="false" type="button">
+      <!-- Botón de hamburguesa unificado con el mismo ID que inicio -->
+      <button class="hamburger" id="hamburger-btn" type="button" aria-label="Open menu" aria-controls="nav-menu" aria-expanded="false">
         <span></span>
         <span></span>
         <span></span>
       </button>
 
+      <!-- Navegación unificada con el id="nav-menu" -->
       <nav aria-label="Main navigation">
         <ul class="nav-menu" id="nav-menu">
           <li><a href="index.html" class="nav-link">Inicio</a></li>
-          <li><a href="Nosotros.html" class="nav-link active">Nosotros</a></li>
+          <li><a href="Nosotros.html" class="nav-link">Nosotros</a></li>
           <li><a href="Portafolio.html" class="nav-link">Portafolio</a></li>
           <li><a href="Servicios.html" class="nav-link">Servicios</a></li>
           <li><a href="Contacto.html" class="nav-link">Contacto</a></li>
-          <li><button id="language-toggle" type="button" aria-label="Cambiar idioma">ESP</button></li>
-          <li><a href="ingreso.html" class="btn-login-nav">INICIO DE SESIÓN</a></li>
+          <li>
+            <button type="button" id="language-toggle" class="btn-language">ESP</button>
+          </li>
+          <li>
+            <a href="ingreso.html" class="btn-login-nav">INICIO DE SESIÓN</a>
+          </li>
         </ul>
       </nav>
     </div>
   </header>
 
   <main>
-    <section class="about-hero" style="padding: 3rem 1rem; text-align: center;">
-      <div class="hero-content reveal">
-        <span class="section-tag" data-es="CONÓCENOS" data-en="GET TO KNOW US">CONÓCENOS</span>
-        <h1 data-es="Creamos ideas que generan impacto." data-en="We create ideas that make an impact." style="font-size: 2.2rem;">
-          Creamos ideas que generan <span>impacto.</span>
-        </h1>
-        <p data-es="En Crea-Imp ayudamos a emprendedores y pequeños negocios a comunicar sus ideas mediante el diseño gráfico y el contenido visual." data-en="At Crea-Imp, we help entrepreneurs and small businesses communicate their ideas through graphic design and visual content." style="font-size: 0.95rem; line-height: 1.6;">
-          En Crea-Imp ayudamos a emprendedores y pequeños negocios a comunicar sus ideas mediante el diseño gráfico y el contenido visual.
+    <section class="portfolio-hero">
+      <span class="eyebrow" data-es="NUESTRO TRABAJO" data-en="OUR WORK">NUESTRO TRABAJO</span>
+      <h1 data-es="Diseños que dejan huella." data-en="Designs that make an impact." style="font-size: 2rem;">Diseños que dejan huella.</h1>
+      <p data-es="Explora una muestra de los trabajos multimedia y de diseño realizados por Crea-Imp." data-en="Explore a selection of multimedia and design work by Crea-Imp." style="font-size: 0.95rem;">
+        Explora una muestra de los trabajos multimedia y de diseño realizados por Crea-Imp.
+      </p>
+    </section>
+
+    <section class="portfolio-section" aria-label="Galería del portafolio">
+      <div class="portfolio-heading" style="padding: 0 1rem; text-align: center;">
+        <div>
+          <span class="eyebrow" data-es="GALERÍA" data-en="GALLERY">GALERÍA</span>
+          <h2 data-es="Explora nuestros proyectos" data-en="Explore our projects" style="font-size: 1.8rem;">Explora nuestros proyectos</h2>
+        </div>
+        <p data-es="Selecciona una categoría para filtrar los trabajos." data-en="Choose a category to filter the work." style="font-size: 0.9rem;">
+          Selecciona una categoría para filtrar los trabajos.
         </p>
-        <a href="Contacto.html" class="btn-primary" data-es="Hablemos de tu idea" data-en="Let's talk about your idea" style="margin-top: 1rem; display: inline-flex;">
-          Hablemos de tu idea <span>→</span>
-        </a>
+      </div>
+
+      <div class="filter-list" role="group" aria-label="Filtrar trabajos" style="justify-content: center; padding: 0 1rem;">
+        <button class="filter-btn active" type="button" data-filter="all" aria-pressed="true" data-es="Todos" data-en="All">Todos</button>
+        <button class="filter-btn" type="button" data-filter="videos" aria-pressed="false" data-es="Videos" data-en="Videos">Videos</button>
+        <button class="filter-btn" type="button" data-filter="logotipos" aria-pressed="false" data-es="Logotipos" data-en="Logos">Logotipos</button>
+      </div>
+
+      <div class="project-grid" id="project-grid">
+        <article class="project-card" data-category="videos">
+          <div class="project-preview">
+            <video src="portafolio/matematicas.mp4" preload="metadata"></video>
+          </div>
+          <div class="project-info">
+            <span class="project-category">CONTENIDO AUDIOVISUAL</span>
+            <h3>Video Educativo: Matemática</h3>
+            <p>Contenido pedagógico audiovisual enfocado en el aprendizaje dinámico y didáctico de las matemáticas.</p>
+            <button class="btn-details" onclick="openModal('video', 'portafolio/matematicas.mp4', 'Video Educativo: Matemática', 'Este material audiovisual fue diseñado para facilitar la comprensión de conceptos matemáticos mediante recursos visuales claros y dinámicos.')">Ver detalles</button>
+          </div>
+        </article>
+
+        <article class="project-card" data-category="videos">
+          <div class="project-preview">
+            <video src="portafolio/Video_Profe_Primaria.mp4" preload="metadata"></video>
+          </div>
+          <div class="project-info">
+            <span class="project-category">PRODUCCIÓN MULTIMEDIA</span>
+            <h3>Video Profesora de Primaria</h3>
+            <p>Producción de recursos orientados al apoyo educativo y dinámicas para nivel de primaria.</p>
+            <button class="btn-details" onclick="openModal('video', 'portafolio/Video_Profe_Primaria.mp4', 'Video Profe Primaria', 'Recurso multimedia dirigido a la enseñanza escolar básica, optimizado para captar la atención de los estudiantes y apoyar al docente.')">Ver detalles</button>
+          </div>
+        </article>
+
+        <article class="project-card" data-category="videos">
+          <div class="project-preview">
+            <video src="portafolio/animacion-logo.mp4" preload="metadata"></video>
+          </div>
+          <div class="project-info">
+            <span class="project-category">MOTION GRAPHICS</span>
+            <h3>Animación de Logo</h3>
+            <p>Pieza en movimiento diseñada para dar vida dinámica a la identidad de la marca y captar la atención en redes sociales.</p>
+            <button class="btn-details" onclick="openModal('video', 'portafolio/animacion-logo.mp4', 'Animación de Logotipo', 'Movimiento y fluidez aplicados a la identidad visual de la marca para dotarla de un carácter moderno, memorable y profesional en plataformas digitales.')">Ver detalles</button>
+          </div>
+        </article>
+
+        <article class="project-card" data-category="logotipos">
+          <div class="project-preview">
+            <img src="portafolio/SUECA.png" alt="Logo SUECA" class="logo-img" loading="lazy">
+          </div>
+          <div class="project-info">
+            <span class="project-category">DISEÑO DE IDENTIDAD</span>
+            <h3>Logotipo SUECA</h3>
+            <p>Diseño de logotipo corporativo y propuesta de identidad visual para la marca SUECA.</p>
+            <button class="btn-details" onclick="openModal('comparison', 'portafolio/SUECA-antes.png', 'portafolio/SUECA.png', 'Logotipo SUECA: Proceso de Rediseño', 'Aquí puedes ver el antes y el después de la identidad visual de SUECA. Se realizó una evolución gráfica para modernizar la marca, mejorar su legibilidad y adaptarla con mayor solidez a diferentes plataformas corporativas.')">Ver detalles</button>
+          </div>
+        </article>
       </div>
     </section>
 
-    <div class="nosotros-wrapper">
-      <section class="clean-grid-section reveal" id="quienes-somos">
-        <div>
-          <span class="section-tag" data-es="QUIÉNES SOMOS" data-en="WHO WE ARE">QUIÉNES SOMOS</span>
-          <h2 style="font-family: 'Montserrat', sans-serif; font-size: 1.8rem; font-weight: 700; color: #fff; margin-top: 0.5rem;" data-es="Ideas creativas con un propósito." data-en="Creative ideas with a purpose.">
-            Ideas creativas con un propósito.
-          </h2>
-        </div>
+    <section class="portfolio-cta" style="padding: 3rem 1rem; text-align: center;">
+      <span class="eyebrow" data-es="¿TIENES UNA IDEA?" data-en="HAVE AN IDEA?">¿TIENES UNA IDEA?</span>
+      <h2 data-es="Hagámosla realidad." data-en="Let's bring it to life." style="font-size: 1.8rem;">Hagámosla realidad.</h2>
+      <p data-es="Cuéntanos qué necesitas y exploremos cómo darle forma a tu idea." data-en="Tell us what you need and let's explore how to bring your idea to life." style="font-size: 0.9rem;">
+        Cuéntanos qué necesitas y exploremos cómo darle forma a tu idea.
+      </p>
+      <a class="cta-button" href="Contacto.html" data-es="Contáctanos" data-en="Contact us" style="margin-top: 1rem; display: inline-flex;">Contáctanos <span aria-hidden="true">↗</span></a>
+    </section>
+  </main>
 
-        <div style="display: flex; flex-direction: column; gap: 1rem; color: #a0a0a0; font-family
+  <div id="portfolioModal" class="modal">
+    <div class="modal-content" style="width: 90%; max-width: 600px; padding: 1.5rem;">
+      <span class="close-btn" onclick="closeModal()">&times;</span>
+      <div class="modal-media-container" id="modalMedia"></div>
+      <div class="modal-body">
+        <h3 class="modal-title" id="modalTitle"></h3>
+        <p class="modal-description" id="modalDescription"></p>
+      </div>
+    </div>
+  </div>
+
+  <footer class="site-footer" style="padding: 2rem 1rem; text-align: center;">
+    <div class="footer-inner">
+      <a class="footer-brand" href="index.html">
+        <img src="IMG/logo.png" alt="Logo Crea-Imp" style="max-width: 120px;">
+      </a>
+      <p data-es="Diseño gráfico y contenido visual para marcas con identidad y propósito." data-en="Graphic design and visual content for brands with identity and purpose." style="font-size: 0.85rem;">
+        Diseño gráfico y contenido visual para marcas con identidad y propósito.
+      </p>
+      <div class="footer-links" style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; margin: 1rem 0;">
+        <a href="Nosotros.html" data-es="Nosotros" data-en="About us">Nosotros</a>
+        <a href="Servicios.html" data-es="Servicios" data-en="Services">Servicios</a>
+        <a href="Contacto.html" data-es="Contacto" data-en="Contact">Contacto</a>
+      </div>
+      <span class="copyright" style="font-size: 0.8rem;">© 2026 Crea-Imp. <span data-es="Todos los derechos reservados." data-en="All rights reserved.">Todos los derechos reservados.</span></span>
+    </div>
+  </footer>
+
+  <script>
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    if(mobileMenuBtn && mobileMenu) {
+      mobileMenuBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+        const expanded = mobileMenuBtn.getAttribute('aria-expanded') === 'true' || false;
+        mobileMenuBtn.setAttribute('aria-expanded', !expanded);
+      });
+    }
+
+    function openModal(type, src, title, description) {
+      const modal = document.getElementById('portfolioModal');
+      const mediaContainer = document.getElementById('modalMedia');
+      const modalTitle = document.getElementById('modalTitle');
+      const modalDescription = document.getElementById('modalDescription');
+      mediaContainer.innerHTML = '';
+      if (type === 'video') {
+        const video = document.createElement('video');
+        video.src = src;
+        video.controls = true;
+        video.autoplay = true;
+        video.style.width = '100%';
+        mediaContainer.appendChild(video);
+      } else if (type === 'image' || type === 'comparison') {
+        const img = document.createElement('img');
+        img.src = src;
+        img.alt = title;
+        img.style.width = '100%';
+        mediaContainer.appendChild(img);
+      }
+      modalTitle.textContent = title;
+      modalDescription.textContent = description;
+      modal.classList.add('active');
+    }
+
+    function closeModal() {
+      const modal = document.getElementById('portfolioModal');
+      const mediaContainer = document.getElementById('modalMedia');
+      mediaContainer.innerHTML = '';
+      modal.classList.remove('active');
+    }
+
+    window.onclick = function(event) {
+      const modal = document.getElementById('portfolioModal');
+      if (event.target === modal) {
+        closeModal();
+      }
+    };
+
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const projectCards = document.querySelectorAll('.project-card');
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterBtns.forEach(b => {
+          b.classList.remove('active');
+          b.setAttribute('aria-pressed', 'false');
+        });
+        btn.classList.add('active');
+        btn.setAttribute('aria-pressed', 'true');
+        const filter = btn.getAttribute('data-filter');
+        projectCards.forEach(card => {
+          if (filter === 'all' || card.getAttribute('data-category') === filter) {
+            card.style.display = 'flex';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      });
+    });
+  </script>
+
+<script>
+  const hamburgerBtn = document.getElementById('hamburger-btn');
+  const navMenu = document.getElementById('nav-menu');
+
+  if (hamburgerBtn && navMenu) {
+    hamburgerBtn.addEventListener('click', () => {
+      navMenu.classList.toggle('is-active'); // O .active según el CSS global de tu menú
+      const expanded = hamburgerBtn.getAttribute('aria-expanded') === 'true';
+      hamburgerBtn.setAttribute('aria-expanded', !expanded);
+      hamburgerBtn.classList.toggle('is-active');
+    });
+  }
+</script>
+
+
+</body>
+</html>
