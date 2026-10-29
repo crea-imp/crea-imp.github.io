@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8">
@@ -15,23 +15,79 @@
   <script src="js/servicios.js" defer></script>
 
   <style>
-    /* REGLAS RESPONSIVE MÓVIL PARA SERVICIOS */
+    .main-header {
+      background-color: #0b0c0e;
+      position: relative;
+      z-index: 100;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    .header-container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 1rem 5%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .logo-img {
+      max-width: 120px;
+      height: auto;
+      display: block;
+    }
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      justify-content: space-between;
+      width: 28px;
+      height: 20px;
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      z-index: 1001;
+    }
+    .hamburger span {
+      display: block;
+      width: 100%;
+      height: 3px;
+      background-color: #fff;
+      border-radius: 2px;
+      transition: all 0.3s ease;
+    }
+    .nav-menu {
+      display: flex;
+      list-style: none;
+      gap: 1.5rem;
+      align-items: center;
+      margin: 0;
+      padding: 0;
+    }
+    .nav-menu a, .nav-menu button {
+      color: #fff;
+      text-decoration: none;
+      font-family: 'Inter', sans-serif;
+      font-weight: 500;
+      font-size: 0.95rem;
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      transition: color 0.3s ease;
+    }
+    .nav-menu a:hover, .nav-menu a.active, .nav-menu button:hover {
+      color: #ff6b00;
+    }
+    .btn-login-nav {
+      background-color: #ff6b00;
+      padding: 0.5rem 1rem;
+      border-radius: 6px;
+      color: #fff !important;
+      font-weight: 600;
+    }
+
     @media (max-width: 768px) {
-      .site-header {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 1rem;
-      }
-      .mobile-menu-btn {
+      .hamburger {
         display: flex !important;
-        background: transparent;
-        border: none;
-        color: #fff;
-        cursor: pointer;
-        z-index: 1001;
       }
-      .mobile-nav {
+      .nav-menu {
         position: fixed;
         top: 0;
         right: -100%;
@@ -47,13 +103,9 @@
         z-index: 1000;
         box-shadow: -5px 0 25px rgba(0,0,0,0.5);
         padding: 2rem;
-        display: flex !important;
       }
-      .mobile-nav:not(.hidden) {
+      .nav-menu.active {
         right: 0;
-      }
-      .desktop-nav {
-        display: none !important;
       }
       .services-hero {
         flex-direction: column !important;
@@ -75,30 +127,24 @@
   <header class="main-header">
     <div class="header-container">
       <a href="index.html" class="logo-link">
-        <img src="IMG/logo.png" alt="Crea-Imp Logo" class="logo-img">
+        <img src="IMG/logo.png" alt="Logo de Crea-Imp" class="logo-img">
       </a>
 
-      <!-- Botón de hamburguesa unificado con el mismo ID que inicio -->
-      <button class="hamburger" id="hamburger-btn" type="button" aria-label="Open menu" aria-controls="nav-menu" aria-expanded="false">
+      <button class="hamburger" id="hamburger-btn" aria-label="Abrir menú" aria-expanded="false" type="button">
         <span></span>
         <span></span>
         <span></span>
       </button>
 
-      <!-- Navegación unificada con el id="nav-menu" -->
       <nav aria-label="Main navigation">
         <ul class="nav-menu" id="nav-menu">
           <li><a href="index.html" class="nav-link">Inicio</a></li>
           <li><a href="Nosotros.html" class="nav-link">Nosotros</a></li>
           <li><a href="Portafolio.html" class="nav-link">Portafolio</a></li>
-          <li><a href="Servicios.html" class="nav-link">Servicios</a></li>
+          <li><a href="Servicios.html" class="nav-link active">Servicios</a></li>
           <li><a href="Contacto.html" class="nav-link">Contacto</a></li>
-          <li>
-            <button type="button" id="language-toggle" class="btn-language">ESP</button>
-          </li>
-          <li>
-            <a href="ingreso.html" class="btn-login-nav">INICIO DE SESIÓN</a>
-          </li>
+          <li><button id="language-toggle" type="button" aria-label="Cambiar idioma">ESP</button></li>
+          <li><a href="ingreso.html" class="btn-login-nav">INICIO DE SESIÓN</a></li>
         </ul>
       </nav>
     </div>
@@ -306,29 +352,15 @@
   </footer>
 
   <script>
-    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-    const mobileMenu = document.getElementById('mobile-menu');
-    if(mobileMenuBtn && mobileMenu) {
-      mobileMenuBtn.addEventListener('click', () => {
-        mobileMenu.classList.toggle('hidden');
-        const expanded = mobileMenuBtn.getAttribute('aria-expanded') === 'true' || false;
-        mobileMenuBtn.setAttribute('aria-expanded', !expanded);
+    const hamburgerBtn = document.getElementById('hamburger-btn');
+    const navMenu = document.getElementById('nav-menu');
+    if(hamburgerBtn && navMenu) {
+      hamburgerBtn.addEventListener('click', () => {
+        navMenu.classList.toggle('active');
+        const expanded = hamburgerBtn.getAttribute('aria-expanded') === 'true' || false;
+        hamburgerBtn.setAttribute('aria-expanded', !expanded);
       });
     }
   </script>
-
-  <script>
-  const hamburgerBtn = document.getElementById('hamburger-btn');
-  const navMenu = document.getElementById('nav-menu');
-
-  if (hamburgerBtn && navMenu) {
-    hamburgerBtn.addEventListener('click', () => {
-      navMenu.classList.toggle('is-active'); // O .active según el CSS global de tu menú
-      const expanded = hamburgerBtn.getAttribute('aria-expanded') === 'true';
-      hamburgerBtn.setAttribute('aria-expanded', !expanded);
-      hamburgerBtn.classList.toggle('is-active');
-    });
-  }
-</script>
 </body>
 </html>
