@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', () => {
+﻿document.addEventListener('DOMContentLoaded', () => {
   const hamburgerBtn = document.getElementById('hamburger-btn');
   const navMenu = document.getElementById('nav-menu');
   const languageBtn = document.getElementById('language-toggle');
@@ -161,6 +161,40 @@ document.addEventListener('DOMContentLoaded', () => {
       localStorage.setItem('creaImpLanguage', lang);
     } catch (error) {
       // El sitio sigue funcionando si el navegador bloquea el almacenamiento.
+    }
+
+    // === AQUÍ SE INTEGRA EL CAMBIO DE IDIOMA DEL CHATBOT ===
+    const chatBotMsg = document.querySelector("#ciMessages .ci-msg.bot");
+    const chatInput = document.getElementById("ciUserInput");
+
+    if (chatBotMsg && chatInput) {
+      if (lang === "en") {
+        chatBotMsg.innerHTML = `
+          Hello! 👋 I am the <strong>Crea-Imp</strong> virtual assistant. Select a frequent question or type your inquiry below:<br><br>
+          <div class="ci-faq-list">
+            <button type="button" class="ci-faq-item-btn" data-q="How much does a service cost?">How much does a service cost?</button>
+            <button type="button" class="ci-faq-item-btn" data-q="What is the hiring process?">What is the hiring process?</button>
+            <button type="button" class="ci-faq-item-btn" data-q="What is the delivery time?">What is the delivery time?</button>
+            <button type="button" class="ci-faq-item-btn" data-q="What do I need to hire a service?">What do I need to hire a service?</button>
+            <button type="button" class="ci-faq-item-btn" data-q="Can I request design changes?">Can I request design changes?</button>
+            <button type="button" class="ci-faq-item-btn" data-q="Where are you located?">Where are you located?</button>
+          </div>
+        `;
+        chatInput.placeholder = "Type your inquiry here...";
+      } else {
+        chatBotMsg.innerHTML = `
+          ¡Hola! 👋 Soy el asistente virtual de <strong>Crea-Imp</strong>. Selecciona una pregunta frecuente o escribe tu duda aquí abajo:<br><br>
+          <div class="ci-faq-list">
+            <button type="button" class="ci-faq-item-btn" data-q="¿Cuánto cuesta contratar un servicio?">¿Cuánto cuesta contratar un servicio?</button>
+            <button type="button" class="ci-faq-item-btn" data-q="¿Cómo es el proceso de contratación?">¿Cómo es el proceso de contratación?</button>
+            <button type="button" class="ci-faq-item-btn" data-q="¿Cuánto tiempo tarda la entrega de un diseño?">¿Cuánto tiempo tarda la entrega?</button>
+            <button type="button" class="ci-faq-item-btn" data-q="¿Qué necesito para contratar un servicio?">¿Qué necesito para contratar?</button>
+            <button type="button" class="ci-faq-item-btn" data-q="¿Puedo solicitar cambios después de la primera propuesta?">¿Puedo solicitar cambios en el diseño?</button>
+            <button type="button" class="ci-faq-item-btn" data-q="¿Dónde están ubicados?">¿Dónde están ubicados?</button>
+          </div>
+        `;
+        chatInput.placeholder = "Escribe tu duda aquí...";
+      }
     }
   }
 
